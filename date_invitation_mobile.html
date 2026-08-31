@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A Little Question ❤️</title>
+<title>One Little Question ❤️</title>
 
 <style>
 * {
@@ -15,11 +15,11 @@ body {
     margin: 0;
     min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     padding: 20px;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffdce8, #fff5f8);
+    background: linear-gradient(135deg, #ffd6e4, #fff5f8);
     color: #3b2530;
     overflow: hidden;
 }
@@ -27,17 +27,17 @@ body {
 .card {
     width: 100%;
     max-width: 430px;
-    background: rgba(255,255,255,0.95);
-    border-radius: 28px;
+    background: white;
+    border-radius: 30px;
     padding: 35px 24px;
     text-align: center;
-    box-shadow: 0 18px 50px rgba(130,50,80,0.18);
+    box-shadow: 0 20px 60px rgba(100, 40, 70, 0.2);
     position: relative;
     z-index: 2;
 }
 
 .heart {
-    font-size: 60px;
+    font-size: 65px;
     animation: pulse 1.4s infinite;
 }
 
@@ -55,26 +55,23 @@ h1 {
 p {
     font-size: 17px;
     line-height: 1.6;
-    color: #6d5660;
+    color: #705b64;
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 14px;
+    gap: 15px;
     margin-top: 28px;
-    min-height: 65px;
 }
 
 button {
     border: none;
-    border-radius: 999px;
-    padding: 15px 26px;
-    font-size: 17px;
+    border-radius: 50px;
+    padding: 15px 25px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.2s;
     box-shadow: 0 7px 18px rgba(0,0,0,0.12);
 }
 
@@ -83,43 +80,48 @@ button {
     color: white;
 }
 
-#yes:active {
-    transform: scale(0.95);
-}
-
 #no {
     background: #eeeeee;
     color: #555;
-    position: relative;
 }
 
-.small {
-    font-size: 13px;
-    color: #927b84;
+#hint {
     margin-top: 20px;
+    font-size: 13px;
+    color: #9a7c88;
 }
 
-#message {
+#datePage {
     display: none;
 }
 
-.choices {
+.places {
     display: grid;
     gap: 12px;
-    margin-top: 22px;
+    margin-top: 25px;
 }
 
-.choice {
+.place {
     width: 100%;
     background: #fff0f4;
     color: #c93661;
+    font-size: 17px;
 }
 
-.choice:active {
-    transform: scale(0.97);
+.place:hover {
+    transform: scale(1.02);
 }
 
-#final {
+#whatsapp {
+    display: none;
+    width: 100%;
+    margin-top: 20px;
+    background: #25D366;
+    color: white;
+    font-size: 17px;
+}
+
+#selected {
     font-weight: bold;
     color: #c93661;
     margin-top: 20px;
@@ -128,8 +130,7 @@ button {
 .float {
     position: fixed;
     bottom: -40px;
-    font-size: 24px;
-    opacity: 0.7;
+    font-size: 25px;
     animation: floatUp 7s linear forwards;
     z-index: 1;
 }
@@ -137,7 +138,7 @@ button {
 @keyframes floatUp {
     from {
         transform: translateY(0) rotate(0deg);
-        opacity: 0.7;
+        opacity: 0.8;
     }
 
     to {
@@ -152,8 +153,8 @@ button {
 
 <div class="card">
 
-    <!-- السؤال -->
-    <div id="question">
+    <!-- الصفحة الأولى -->
+    <div id="questionPage">
 
         <div class="heart">❤️</div>
 
@@ -175,45 +176,58 @@ button {
 
         </div>
 
-        <div class="small" id="hint">
-            Be honest... but think carefully 😂
+        <div id="hint">
+            Be honest... 😂
         </div>
 
     </div>
 
 
-    <!-- بعد YES -->
-    <div id="message">
+    <!-- صفحة اختيار المكان -->
+    <div id="datePage">
 
         <div class="heart">🥰</div>
 
-        <h1>I knew it! ❤️</h1>
+        <h1>Yaaay! ❤️</h1>
 
         <p>
-            Okay, now the important part...
+            Now you choose where we should go 😌
         </p>
 
-        <p>
-            <b>What would you choose for our first date?</b>
-        </p>
+        <div class="places">
 
-        <div class="choices">
-
-            <button class="choice" onclick="choose('☕ Coffee')">
-                ☕ Coffee
+            <button class="place"
+                onclick="choosePlace('☕ A Café')">
+                ☕ A Café
             </button>
 
-            <button class="choice" onclick="choose('🍕 Dinner')">
-                🍕 Dinner
+            <button class="place"
+                onclick="choosePlace('🍕 A Restaurant')">
+                🍕 A Restaurant
             </button>
 
-            <button class="choice" onclick="choose('🌅 A walk')">
-                🌅 A walk
+            <button class="place"
+                onclick="choosePlace('🎬 The Cinema')">
+                🎬 The Cinema
+            </button>
+
+            <button class="place"
+                onclick="choosePlace('🌅 A Walk')">
+                🌅 A Walk
+            </button>
+
+            <button class="place"
+                onclick="choosePlace('🎡 Somewhere fun')">
+                🎡 Somewhere fun
             </button>
 
         </div>
 
-        <p id="final"></p>
+        <p id="selected"></p>
+
+        <button id="whatsapp" onclick="sendWhatsApp()">
+            💬 Send my answer on WhatsApp
+        </button>
 
     </div>
 
@@ -227,6 +241,7 @@ const yesButton = document.getElementById("yes");
 const hint = document.getElementById("hint");
 
 let attempts = 0;
+let selectedPlace = "";
 
 const phrases = [
     "Are you sure? 😂",
@@ -234,7 +249,7 @@ const phrases = [
     "Give me a chance ❤️",
     "One more try? 🥹",
     "The NO button is getting nervous 😂",
-    "Okay... but I still hope YES ❤️"
+    "Maybe YES? 😏"
 ];
 
 
@@ -246,8 +261,8 @@ noButton.addEventListener("click", function() {
     hint.textContent =
         phrases[Math.min(attempts - 1, phrases.length - 1)];
 
-    const x = (Math.random() * 180) - 90;
-    const y = (Math.random() * 120) - 60;
+    const x = Math.random() * 160 - 80;
+    const y = Math.random() * 100 - 50;
 
     noButton.style.transform =
         "translate(" + x + "px, " + y + "px)";
@@ -262,34 +277,63 @@ noButton.addEventListener("click", function() {
 // زر YES
 yesButton.addEventListener("click", function() {
 
-    document.getElementById("question").style.display = "none";
+    document.getElementById("questionPage").style.display = "none";
 
-    document.getElementById("message").style.display = "block";
+    document.getElementById("datePage").style.display = "block";
 
-    for (let i = 0; i < 18; i++) {
+    for (let i = 0; i < 20; i++) {
         createHeart();
     }
 
 });
 
 
-// اختيار الموعد
-function choose(choice) {
+// اختيار المكان
+function choosePlace(place) {
 
-    document.getElementById("final").textContent =
-        "Perfect choice! ❤️ You chose " + choice + " 😊";
+    selectedPlace = place;
 
+    document.getElementById("selected").textContent =
+        "Perfect choice! ❤️ " + place;
+
+    document.getElementById("whatsapp").style.display =
+        "block";
 }
 
 
-// القلوب المتحركة
+// فتح WhatsApp
+function sendWhatsApp() {
+
+    const phone = "212631752271";
+
+    const message =
+        "I said YES ❤️\n\n" +
+        "And I choose " + selectedPlace + " 😌\n\n" +
+        "So... when are we going? ❤️";
+
+    const url =
+        "https://wa.me/" +
+        phone +
+        "?text=" +
+        encodeURIComponent(message);
+
+    window.location.href = url;
+}
+
+
+// قلوب متحركة
 function createHeart() {
 
     const heart = document.createElement("div");
 
     heart.className = "float";
 
-    const emojis = ["❤️", "💕", "✨", "🌸"];
+    const emojis = [
+        "❤️",
+        "💕",
+        "✨",
+        "🌸"
+    ];
 
     heart.textContent =
         emojis[Math.floor(Math.random() * emojis.length)];
@@ -305,7 +349,6 @@ function createHeart() {
     setTimeout(function() {
         heart.remove();
     }, 7500);
-
 }
 
 </script>
