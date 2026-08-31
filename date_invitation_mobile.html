@@ -1,57 +1,314 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سؤال مهم 😄</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #ffe6e9;
-            font-family: sans-serif;
-            text-align: center;
-        }
-        h1 { color: #d63384; font-size: 2rem; margin-bottom: 30px; }
-        .buttons { display: flex; gap: 20px; position: relative; }
-        button {
-            padding: 15px 30px; font-size: 1.2rem; font-weight: bold;
-            border: none; border-radius: 12px; cursor: pointer;
-        }
-        #yesBtn { background-color: #28a745; color: white; }
-        #noBtn {
-            background-color: #dc3545; color: white;
-            position: absolute; left: 110px; transition: 0.15s ease;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Question ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffdce8, #fff5f8);
+    color: #3b2530;
+    overflow: hidden;
+}
+
+.card {
+    width: 100%;
+    max-width: 430px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 28px;
+    padding: 35px 24px;
+    text-align: center;
+    box-shadow: 0 18px 50px rgba(130,50,80,0.18);
+    position: relative;
+    z-index: 2;
+}
+
+.heart {
+    font-size: 60px;
+    animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+h1 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #6d5660;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+    min-height: 65px;
+}
+
+button {
+    border: none;
+    border-radius: 999px;
+    padding: 15px 26px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 7px 18px rgba(0,0,0,0.12);
+}
+
+#yes {
+    background: #ff4f7b;
+    color: white;
+}
+
+#yes:active {
+    transform: scale(0.95);
+}
+
+#no {
+    background: #eeeeee;
+    color: #555;
+    position: relative;
+}
+
+.small {
+    font-size: 13px;
+    color: #927b84;
+    margin-top: 20px;
+}
+
+#message {
+    display: none;
+}
+
+.choices {
+    display: grid;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.choice {
+    width: 100%;
+    background: #fff0f4;
+    color: #c93661;
+}
+
+.choice:active {
+    transform: scale(0.97);
+}
+
+#final {
+    font-weight: bold;
+    color: #c93661;
+    margin-top: 20px;
+}
+
+.float {
+    position: fixed;
+    bottom: -40px;
+    font-size: 24px;
+    opacity: 0.7;
+    animation: floatUp 7s linear forwards;
+    z-index: 1;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.7;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
 </head>
+
 <body>
-    <h1>تقبلي تخرجي معايا؟ ☕✨</h1>
-    <div class="buttons">
-        <button id="yesBtn" onclick="accepted()">Yes ❤️</button>
-        <button id="noBtn" onclick="moveButton()" ontouchstart="moveButton()">No 😜</button>
+
+<div class="card">
+
+    <!-- السؤال -->
+    <div id="question">
+
+        <div class="heart">❤️</div>
+
+        <h1>I have a little question...</h1>
+
+        <p>
+            Would you like to go on a date with me? 😌
+        </p>
+
+        <div class="buttons">
+
+            <button id="yes">
+                YES ❤️
+            </button>
+
+            <button id="no">
+                NO 🙈
+            </button>
+
+        </div>
+
+        <div class="small" id="hint">
+            Be honest... but think carefully 😂
+        </div>
+
     </div>
-    <script>
-        function moveButton() {
-            const noBtn = document.getElementById('noBtn');
-            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 40);
-            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 40);
-            noBtn.style.position = 'fixed';
-            noBtn.style.left = `${x}px`;
-            noBtn.style.top = `${y}px`;
-        }
-        function accepted() {
-            // اكتب رقم الواتساب ديالك هنا بالرمز الدولي (مثلا المغرب 212)
-            let phoneNumber = "212631752271"; 
-            let message = "صافي قبلت نخرج معاك! 😉☕";
-            
-            let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            window.location.href = url;
-        }
-    </script>
+
+
+    <!-- بعد YES -->
+    <div id="message">
+
+        <div class="heart">🥰</div>
+
+        <h1>I knew it! ❤️</h1>
+
+        <p>
+            Okay, now the important part...
+        </p>
+
+        <p>
+            <b>What would you choose for our first date?</b>
+        </p>
+
+        <div class="choices">
+
+            <button class="choice" onclick="choose('☕ Coffee')">
+                ☕ Coffee
+            </button>
+
+            <button class="choice" onclick="choose('🍕 Dinner')">
+                🍕 Dinner
+            </button>
+
+            <button class="choice" onclick="choose('🌅 A walk')">
+                🌅 A walk
+            </button>
+
+        </div>
+
+        <p id="final"></p>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const noButton = document.getElementById("no");
+const yesButton = document.getElementById("yes");
+const hint = document.getElementById("hint");
+
+let attempts = 0;
+
+const phrases = [
+    "Are you sure? 😂",
+    "Think again 😌",
+    "Give me a chance ❤️",
+    "One more try? 🥹",
+    "The NO button is getting nervous 😂",
+    "Okay... but I still hope YES ❤️"
+];
+
+
+// زر NO
+noButton.addEventListener("click", function() {
+
+    attempts++;
+
+    hint.textContent =
+        phrases[Math.min(attempts - 1, phrases.length - 1)];
+
+    const x = (Math.random() * 180) - 90;
+    const y = (Math.random() * 120) - 60;
+
+    noButton.style.transform =
+        "translate(" + x + "px, " + y + "px)";
+
+    if (attempts >= 5) {
+        noButton.textContent = "Maybe? 😏";
+    }
+
+});
+
+
+// زر YES
+yesButton.addEventListener("click", function() {
+
+    document.getElementById("question").style.display = "none";
+
+    document.getElementById("message").style.display = "block";
+
+    for (let i = 0; i < 18; i++) {
+        createHeart();
+    }
+
+});
+
+
+// اختيار الموعد
+function choose(choice) {
+
+    document.getElementById("final").textContent =
+        "Perfect choice! ❤️ You chose " + choice + " 😊";
+
+}
+
+
+// القلوب المتحركة
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "float";
+
+    const emojis = ["❤️", "💕", "✨", "🌸"];
+
+    heart.textContent =
+        emojis[Math.floor(Math.random() * emojis.length)];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.animationDelay =
+        Math.random() * 2 + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+        heart.remove();
+    }, 7500);
+
+}
+
+</script>
+
 </body>
 </html>
