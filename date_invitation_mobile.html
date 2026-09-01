@@ -1,357 +1,1605 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>One Little Question ❤️</title>
+  <meta charset="UTF-8">
 
-<style>
-* {
-    box-sizing: border-box;
-}
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffd6e4, #fff5f8);
-    color: #3b2530;
-    overflow: hidden;
-}
+  <title>
+    GROUP NOURA LLD | Location de voitures Marrakech
+  </title>
 
-.card {
-    width: 100%;
-    max-width: 430px;
-    background: white;
-    border-radius: 30px;
-    padding: 35px 24px;
-    text-align: center;
-    box-shadow: 0 20px 60px rgba(100, 40, 70, 0.2);
-    position: relative;
-    z-index: 2;
-}
+  <meta name="description"
+        content="GROUP NOURA LLD - Location de voitures à Marrakech. Réservez votre voiture facilement par WhatsApp.">
 
-.heart {
-    font-size: 65px;
-    animation: pulse 1.4s infinite;
-}
+  <meta name="theme-color"
+        content="#0a0a0a">
 
-@keyframes pulse {
-    50% {
-        transform: scale(1.12);
-    }
-}
 
-h1 {
-    font-size: 28px;
-    margin: 15px 0;
-}
+  <style>
 
-p {
-    font-size: 17px;
-    line-height: 1.6;
-    color: #705b64;
-}
+    /* =========================================
+       GENERAL
+    ========================================= */
 
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 28px;
-}
-
-button {
-    border: none;
-    border-radius: 50px;
-    padding: 15px 25px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 7px 18px rgba(0,0,0,0.12);
-}
-
-#yes {
-    background: #ff4f7b;
-    color: white;
-}
-
-#no {
-    background: #eeeeee;
-    color: #555;
-}
-
-#hint {
-    margin-top: 20px;
-    font-size: 13px;
-    color: #9a7c88;
-}
-
-#datePage {
-    display: none;
-}
-
-.places {
-    display: grid;
-    gap: 12px;
-    margin-top: 25px;
-}
-
-.place {
-    width: 100%;
-    background: #fff0f4;
-    color: #c93661;
-    font-size: 17px;
-}
-
-.place:hover {
-    transform: scale(1.02);
-}
-
-#whatsapp {
-    display: none;
-    width: 100%;
-    margin-top: 20px;
-    background: #25D366;
-    color: white;
-    font-size: 17px;
-}
-
-#selected {
-    font-weight: bold;
-    color: #c93661;
-    margin-top: 20px;
-}
-
-.float {
-    position: fixed;
-    bottom: -40px;
-    font-size: 25px;
-    animation: floatUp 7s linear forwards;
-    z-index: 1;
-}
-
-@keyframes floatUp {
-    from {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0.8;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
-    to {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
+    :root {
+
+      --gold: #d4af37;
+      --gold-light: #f2d675;
+
+      --black: #050505;
+      --dark: #0b0b0b;
+      --dark2: #111111;
+
+      --card: #161616;
+
+      --white: #ffffff;
+
+      --gray: #999999;
+      --gray2: #cccccc;
+
     }
-}
-</style>
+
+    body {
+
+      font-family:
+        Arial,
+        Tahoma,
+        sans-serif;
+
+      background: var(--black);
+
+      color: var(--white);
+
+      line-height: 1.7;
+
+      overflow-x: hidden;
+
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    select {
+      font-family: inherit;
+    }
+
+
+    /* =========================================
+       NAVBAR
+    ========================================= */
+
+    nav {
+
+      position: fixed;
+
+      top: 0;
+      right: 0;
+
+      width: 100%;
+
+      z-index: 9999;
+
+      background:
+        rgba(5,5,5,.94);
+
+      backdrop-filter:
+        blur(15px);
+
+      border-bottom:
+        1px solid rgba(255,255,255,.08);
+
+    }
+
+    .nav-container {
+
+      max-width: 1250px;
+
+      margin: auto;
+
+      padding:
+        17px 25px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+    }
+
+    .logo {
+
+      font-size: 22px;
+
+      font-weight: 900;
+
+      letter-spacing: 1px;
+
+      white-space: nowrap;
+
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+
+      list-style: none;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 28px;
+
+    }
+
+    .nav-links a {
+
+      color: #ddd;
+
+      font-size: 14px;
+
+      transition: .3s;
+
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-button {
+
+      background: var(--gold);
+
+      color: #000 !important;
+
+      padding:
+        9px 16px;
+
+      border-radius: 7px;
+
+      font-weight: bold;
+
+    }
+
+    .menu {
+
+      display: none;
+
+      font-size: 29px;
+
+      cursor: pointer;
+
+    }
+
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .hero {
+
+      min-height: 100vh;
+
+      position: relative;
+
+      display: flex;
+
+      align-items: center;
+
+      overflow: hidden;
+
+      background:
+
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.97),
+          rgba(0,0,0,.68),
+          rgba(0,0,0,.45)
+        ),
+
+        url("https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
+
+    }
+
+    .hero::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      right: -180px;
+      top: 25%;
+
+      background:
+        rgba(212,175,55,.12);
+
+      filter:
+        blur(80px);
+
+      border-radius: 50%;
+
+    }
+
+    .hero-content {
+
+      width: 100%;
+
+      max-width: 1250px;
+
+      margin: auto;
+
+      padding:
+        150px 25px 80px;
+
+      position: relative;
+
+      z-index: 2;
+
+    }
+
+    .location-badge {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      color: var(--gold);
+
+      border:
+        1px solid
+        rgba(212,175,55,.55);
+
+      background:
+        rgba(0,0,0,.35);
+
+      padding:
+        7px 15px;
+
+      border-radius: 50px;
+
+      font-size: 14px;
+
+      margin-bottom: 20px;
+
+    }
+
+    .hero h1 {
+
+      font-size:
+        clamp(43px, 7vw, 78px);
+
+      line-height: 1.05;
+
+      max-width: 850px;
+
+      margin-bottom: 25px;
+
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+
+      color: #ccc;
+
+      font-size: 18px;
+
+      max-width: 650px;
+
+      margin-bottom: 32px;
+
+    }
+
+    .buttons {
+
+      display: flex;
+
+      gap: 13px;
+
+      flex-wrap: wrap;
+
+    }
+
+    .btn {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      padding:
+        14px 23px;
+
+      border-radius: 8px;
+
+      font-weight: bold;
+
+      transition: .3s;
+
+      border: none;
+
+      cursor: pointer;
+
+    }
+
+    .btn-primary {
+
+      background: var(--gold);
+
+      color: #000;
+
+    }
+
+    .btn-primary:hover {
+
+      transform:
+        translateY(-3px);
+
+      background:
+        var(--gold-light);
+
+      box-shadow:
+        0 12px 35px
+        rgba(212,175,55,.25);
+
+    }
+
+    .btn-outline {
+
+      border:
+        1px solid #555;
+
+      background:
+        rgba(0,0,0,.2);
+
+      color: #fff;
+
+    }
+
+    .btn-outline:hover {
+
+      border-color:
+        var(--gold);
+
+      color:
+        var(--gold);
+
+    }
+
+
+    /* =========================================
+       BOOKING BOX
+    ========================================= */
+
+    .booking-wrapper {
+
+      position: relative;
+
+      margin-top: -75px;
+
+      z-index: 20;
+
+      padding: 0 20px;
+
+    }
+
+    .booking-box {
+
+      max-width: 1150px;
+
+      margin: auto;
+
+      background:
+        rgba(20,20,20,.97);
+
+      border:
+        1px solid #292929;
+
+      border-radius: 18px;
+
+      padding: 28px;
+
+      box-shadow:
+        0 20px 70px
+        rgba(0,0,0,.5);
+
+    }
+
+    .booking-title {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      margin-bottom: 22px;
+
+      gap: 15px;
+
+    }
+
+    .booking-title h2 {
+
+      font-size: 25px;
+
+    }
+
+    .booking-title span {
+
+      color: var(--gold);
+
+      font-size: 13px;
+
+    }
+
+    .booking-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 14px;
+
+    }
+
+    .field label {
+
+      display: block;
+
+      color: #aaa;
+
+      font-size: 13px;
+
+      margin-bottom: 6px;
+
+    }
+
+    .field input,
+    .field select {
+
+      width: 100%;
+
+      background: #0c0c0c;
+
+      color: white;
+
+      border:
+        1px solid #333;
+
+      border-radius: 8px;
+
+      padding:
+        12px;
+
+      outline: none;
+
+    }
+
+    .field input:focus,
+    .field select:focus {
+
+      border-color:
+        var(--gold);
+
+    }
+
+    .booking-button {
+
+      width: 100%;
+
+      margin-top: 20px;
+
+    }
+
+
+    /* =========================================
+       SECTIONS
+    ========================================= */
+
+    section {
+      padding: 95px 20px;
+    }
+
+    .container {
+
+      max-width: 1250px;
+
+      margin: auto;
+
+    }
+
+    .section-title {
+
+      text-align: center;
+
+      margin-bottom: 50px;
+
+    }
+
+    .section-title small {
+
+      color: var(--gold);
+
+      font-weight: bold;
+
+    }
+
+    .section-title h2 {
+
+      font-size: 40px;
+
+      margin-top: 5px;
+
+    }
+
+    .section-title p {
+
+      color: var(--gray);
+
+      max-width: 650px;
+
+      margin:
+        10px auto;
+
+    }
+
+
+    /* =========================================
+       CARS
+    ========================================= */
+
+    #cars {
+      background: var(--dark);
+    }
+
+    .cars-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 25px;
+
+    }
+
+    .car-card {
+
+      background:
+        var(--card);
+
+      border:
+        1px solid #292929;
+
+      border-radius: 16px;
+
+      overflow: hidden;
+
+      transition: .3s;
+
+    }
+
+    .car-card:hover {
+
+      transform:
+        translateY(-7px);
+
+      border-color:
+        rgba(212,175,55,.55);
+
+    }
+
+    .car-image {
+
+      height: 225px;
+
+      overflow: hidden;
+
+      background: #111;
+
+      position: relative;
+
+    }
+
+    .car-image img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      display: block;
+
+      transition: .5s;
+
+    }
+
+    .car-card:hover
+    .car-image img {
+
+      transform:
+        scale(1.06);
+
+    }
+
+    .car-category {
+
+      position: absolute;
+
+      top: 13px;
+      right: 13px;
+
+      background:
+        rgba(0,0,0,.75);
+
+      color:
+        var(--gold);
+
+      border:
+        1px solid
+        rgba(212,175,55,.5);
+
+      padding:
+        5px 10px;
+
+      border-radius: 20px;
+
+      font-size: 12px;
+
+    }
+
+    .car-info {
+
+      padding: 22px;
+
+    }
+
+    .car-info h3 {
+
+      font-size: 22px;
+
+      margin-bottom: 7px;
+
+    }
+
+    .car-specs {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin:
+        12px 0 20px;
+
+    }
+
+    .spec {
+
+      background: #202020;
+
+      color: #aaa;
+
+      padding:
+        5px 9px;
+
+      border-radius: 5px;
+
+      font-size: 12px;
+
+    }
+
+    .car-bottom {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 10px;
+
+    }
+
+    .price {
+
+      color: var(--gold);
+
+      font-size: 17px;
+
+      font-weight: bold;
+
+    }
+
+    .price small {
+
+      color: #777;
+
+      font-size: 11px;
+
+      font-weight: normal;
+
+    }
+
+    .reserve-btn {
+
+      background: var(--gold);
+
+      color: #000;
+
+      padding:
+        9px 14px;
+
+      border-radius: 7px;
+
+      font-size: 13px;
+
+      font-weight: bold;
+
+    }
+
+
+    /* =========================================
+       SERVICES
+    ========================================= */
+
+    .services {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 22px;
+
+    }
+
+    .service {
+
+      padding: 30px 25px;
+
+      background:
+        #111;
+
+      border:
+        1px solid #252525;
+
+      border-radius: 15px;
+
+      text-align: center;
+
+      transition: .3s;
+
+    }
+
+    .service:hover {
+
+      transform:
+        translateY(-5px);
+
+      border-color:
+        rgba(212,175,55,.45);
+
+    }
+
+    .service-icon {
+
+      font-size: 40px;
+
+      margin-bottom: 13px;
+
+    }
+
+    .service h3 {
+
+      margin-bottom: 8px;
+
+    }
+
+    .service p {
+
+      color: #888;
+
+      font-size: 14px;
+
+    }
+
+
+    /* =========================================
+       MARRAKECH
+    ========================================= */
+
+    .marrakech {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 45px;
+
+      align-items: center;
+
+    }
+
+    .marrakech-image {
+
+      min-height: 400px;
+
+      border-radius: 18px;
+
+      background:
+
+        linear-gradient(
+          rgba(0,0,0,.15),
+          rgba(0,0,0,.25)
+        ),
+
+        url("https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=1200&q=85")
+        center/cover;
+
+      border:
+        1px solid #292929;
+
+    }
+
+    .marrakech-text small {
+
+      color: var(--gold);
+
+      font-weight: bold;
+
+    }
+
+    .marrakech-text h2 {
+
+      font-size: 40px;
+
+      line-height: 1.2;
+
+      margin:
+        10px 0 15px;
+
+    }
+
+    .marrakech-text p {
+
+      color: #999;
+
+      margin-bottom: 22px;
+
+    }
+
+    .location-list {
+
+      list-style: none;
+
+      display: grid;
+
+      gap: 10px;
+
+      margin-bottom: 25px;
+
+    }
+
+    .location-list li {
+
+      background: #151515;
+
+      border:
+        1px solid #242424;
+
+      padding:
+        11px 14px;
+
+      border-radius: 8px;
+
+      color: #ccc;
+
+    }
+
+
+    /* =========================================
+       WHY US
+    ========================================= */
+
+    .why {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 55px;
+
+      align-items: center;
+
+    }
+
+    .why h2 {
+
+      font-size: 40px;
+
+      line-height: 1.2;
+
+      margin:
+        10px 0 15px;
+
+    }
+
+    .why > div > p {
+
+      color: #999;
+
+      margin-bottom: 25px;
+
+    }
+
+    .features {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 14px;
+
+    }
+
+    .feature {
+
+      padding: 18px;
+
+      background: #141414;
+
+      border:
+        1px solid #262626;
+
+      border-radius: 10px;
+
+    }
+
+    .feature strong {
+
+      display: block;
+
+      margin-bottom: 4px;
+
+    }
+
+    .feature span {
+
+      color: #888;
+
+      font-size: 13px;
+
+    }
+
+    .stats {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 15px;
+
+    }
+
+    .stat {
+
+      background:
+        linear-gradient(
+          135deg,
+          #181818,
+          #0c0c0c
+        );
+
+      border:
+        1px solid #292929;
+
+      padding: 35px 20px;
+
+      text-align: center;
+
+      border-radius: 15px;
+
+    }
+
+    .stat h3 {
+
+      color: var(--gold);
+
+      font-size: 36px;
+
+    }
+
+    .stat p {
+
+      color: #888;
+
+    }
+
+
+    /* =========================================
+       CONTACT
+    ========================================= */
+
+    #contact {
+
+      background: var(--dark);
+
+    }
+
+    .contact-box {
+
+      max-width: 900px;
+
+      margin: auto;
+
+      text-align: center;
+
+      padding: 60px 25px;
+
+      border-radius: 20px;
+
+      border:
+        1px solid #292929;
+
+      background:
+        linear-gradient(
+          135deg,
+          #181818,
+          #0d0d0d
+        );
+
+    }
+
+    .contact-box h2 {
+
+      font-size: 40px;
+
+      margin-bottom: 10px;
+
+    }
+
+    .contact-box p {
+
+      color: #999;
+
+      margin-bottom: 18px;
+
+    }
+
+    .phone {
+
+      display: block;
+
+      color: var(--gold);
+
+      font-size: 28px;
+
+      font-weight: bold;
+
+      margin-bottom: 25px;
+
+      direction: ltr;
+
+    }
+
+    .contact-buttons {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+
+    }
+
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer {
+
+      background: #030303;
+
+      border-top:
+        1px solid #1c1c1c;
+
+      text-align: center;
+
+      padding:
+        35px 20px;
+
+      color: #777;
+
+      font-size: 13px;
+
+    }
+
+    footer strong {
+
+      color: var(--gold);
+
+    }
+
+
+    /* =========================================
+       WHATSAPP FLOAT
+    ========================================= */
+
+    .whatsapp {
+
+      position: fixed;
+
+      left: 20px;
+
+      bottom: 20px;
+
+      width: 60px;
+
+      height: 60px;
+
+      border-radius: 50%;
+
+      background: #25D366;
+
+      color: white;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-size: 28px;
+
+      z-index: 9999;
+
+      box-shadow:
+        0 8px 30px
+        rgba(0,0,0,.5);
+
+      transition: .3s;
+
+    }
+
+    .whatsapp:hover {
+
+      transform:
+        scale(1.1);
+
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media(max-width:900px) {
+
+      .menu {
+        display: block;
+      }
+
+      .nav-links {
+
+        position: absolute;
+
+        top: 68px;
+        right: 0;
+
+        width: 100%;
+
+        background: #090909;
+
+        display: none;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 22px;
+
+        gap: 18px;
+
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .booking-grid {
+
+        grid-template-columns:
+          1fr 1fr;
+
+      }
+
+      .cars-grid,
+      .services {
+
+        grid-template-columns:
+          1fr 1fr;
+
+      }
+
+      .marrakech,
+      .why {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+      .marrakech-image {
+
+        min-height: 300px;
+
+      }
+
+    }
+
+
+    @media(max-width:600px) {
+
+      section {
+        padding: 75px 15px;
+      }
+
+      .hero-content {
+
+        padding:
+          130px 20px 100px;
+
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .booking-wrapper {
+
+        margin-top: -55px;
+
+      }
+
+      .booking-box {
+        padding: 20px 15px;
+      }
+
+      .booking-grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+      .cars-grid,
+      .services {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+      .section-title h2,
+      .marrakech-text h2,
+      .why h2,
+      .contact-box h2 {
+
+        font-size: 31px;
+
+      }
+
+      .features,
+      .stats {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+      .phone {
+
+        font-size: 22px;
+
+      }
+
+      .car-image {
+
+        height: 210px;
+
+      }
+
+    }
+
+  </style>
+
 </head>
+
 
 <body>
 
-<div class="card">
 
-    <!-- الصفحة الأولى -->
-    <div id="questionPage">
+  <!-- =========================================
+       NAVIGATION
+  ========================================= -->
 
-        <div class="heart">❤️</div>
+  <nav>
 
-        <h1>I have a little question...</h1>
+    <div class="nav-container">
 
-        <p>
-            Would you like to go on a date with me? 😌
-        </p>
+      <a href="#home"
+         class="logo">
 
-        <div class="buttons">
+        GROUP
+        <span>NOURA</span>
+        LLD
 
-            <button id="yes">
-                YES ❤️
-            </button>
-
-            <button id="no">
-                NO 🙈
-            </button>
-
-        </div>
-
-        <div id="hint">
-            Be honest... 😂
-        </div>
-
-    </div>
+      </a>
 
 
-    <!-- صفحة اختيار المكان -->
-    <div id="datePage">
+      <div class="menu"
+           onclick="toggleMenu()">
 
-        <div class="heart">🥰</div>
+        ☰
 
-        <h1>Yaaay! ❤️</h1>
+      </div>
 
-        <p>
-            Now you choose where we should go 😌
-        </p>
 
-        <div class="places">
+      <ul class="nav-links"
+          id="navLinks">
 
-            <button class="place"
-                onclick="choosePlace('☕ A Café')">
-                ☕ A Café
-            </button>
+        <li>
+          <a href="#home">
+            الرئيسية
+          </a>
+        </li>
 
-            <button class="place"
-                onclick="choosePlace('🍕 A Restaurant')">
-                🍕 A Restaurant
-            </button>
+        <li>
+          <a href="#cars">
+            السيارات
+          </a>
+        </li>
 
-            <button class="place"
-                onclick="choosePlace('🎬 The Cinema')">
-                🎬 The Cinema
-            </button>
+        <li>
+          <a href="#services">
+            خدماتنا
+          </a>
+        </li>
 
-            <button class="place"
-                onclick="choosePlace('🌅 A Walk')">
-                🌅 A Walk
-            </button>
+        <li>
+          <a href="#marrakech">
+            مراكش
+          </a>
+        </li>
 
-            <button class="place"
-                onclick="choosePlace('🎡 Somewhere fun')">
-                🎡 Somewhere fun
-            </button>
+        <li>
+          <a href="#contact">
+            اتصل بنا
+          </a>
+        </li>
 
-        </div>
+        <li>
+          <a
+            class="nav-button"
+            href="#booking">
 
-        <p id="selected"></p>
+            احجز الآن
 
-        <button id="whatsapp" onclick="sendWhatsApp()">
-            💬 Send my answer on WhatsApp
-        </button>
+          </a>
+        </li>
+
+      </ul>
 
     </div>
 
-</div>
+  </nav>
 
 
-<script>
 
-const noButton = document.getElementById("no");
-const yesButton = document.getElementById("yes");
-const hint = document.getElementById("hint");
+  <!-- =========================================
+       HERO
+  ========================================= -->
 
-let attempts = 0;
-let selectedPlace = "";
+  <section class="hero"
+           id="home">
 
-const phrases = [
-    "Are you sure? 😂",
-    "Think again 😌",
-    "Give me a chance ❤️",
-    "One more try? 🥹",
-    "The NO button is getting nervous 😂",
-    "Maybe YES? 😏"
-];
+    <div class="hero-content">
+
+      <div class="location-badge">
+
+        📍 Marrakech · Morocco
+
+      </div>
 
 
-// زر NO
-noButton.addEventListener("click", function() {
+      <h1>
 
-    attempts++;
+        اكتشف مراكش
+        <br>
 
-    hint.textContent =
-        phrases[Math.min(attempts - 1, phrases.length - 1)];
+        <span>بالسيارة المناسبة.</span>
 
-    const x = Math.random() * 160 - 80;
-    const y = Math.random() * 100 - 50;
-
-    noButton.style.transform =
-        "translate(" + x + "px, " + y + "px)";
-
-    if (attempts >= 5) {
-        noButton.textContent = "Maybe? 😏";
-    }
-
-});
+      </h1>
 
 
-// زر YES
-yesButton.addEventListener("click", function() {
+      <p>
 
-    document.getElementById("questionPage").style.display = "none";
+        GROUP NOURA LLD
+        يوفر لك تجربة سهلة واحترافية لكراء السيارات في مراكش،
+        مع إمكانية الاستلام داخل المدينة أو بمطار مراكش المنارة.
 
-    document.getElementById("datePage").style.display = "block";
-
-    for (let i = 0; i < 20; i++) {
-        createHeart();
-    }
-
-});
+      </p>
 
 
-// اختيار المكان
-function choosePlace(place) {
+      <div class="buttons">
 
-    selectedPlace = place;
+        <a
+          class="btn btn-primary"
+          href="#booking">
 
-    document.getElementById("selected").textContent =
-        "Perfect choice! ❤️ " + place;
+          🚗 احجز سيارتك
 
-    document.getElementById("whatsapp").style.display =
-        "block";
-}
+        </a>
 
 
-// فتح WhatsApp
-function sendWhatsApp() {
+        <a
+          class="btn btn-outline"
+          href="https://wa.me/212631752271?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20كراء%20سيارة%20في%20مراكش"
+          target="_blank">
 
-    const phone = "212631752271";
+          💬 WhatsApp
 
-    const message =
-        "I said YES ❤️\n\n" +
-        "And I choose " + selectedPlace + " 😌\n\n" +
-        "So... when are we going? ❤️";
+        </a>
 
-    const url =
-        "https://wa.me/" +
-        phone +
-        "?text=" +
-        encodeURIComponent(message);
+      </div>
 
-    window.location.href = url;
-}
+    </div>
+
+  </section>
 
 
-// قلوب متحركة
-function createHeart() {
 
-    const heart = document.createElement("div");
+  <!-- =========================================
+       BOOKING
+  ========================================= -->
 
-    heart.className = "float";
+  <div class="booking-wrapper"
+       id="booking">
 
-    const emojis = [
-        "❤️",
-        "💕",
-        "✨",
-        "🌸"
-    ];
+    <div class="booking-box">
 
-    heart.textContent =
-        emojis[Math.floor(Math.random() * emojis.length)];
 
-    heart.style.left =
-        Math.random() * 100 + "vw";
+      <div class="booking-title">
 
-    heart.style.animationDelay =
-        Math.random() * 2 + "s";
+        <h2>
+          احجز سيارتك
+        </h2>
 
-    document.body.appendChild(heart);
+        <span>
+          ⚡ الحجز عبر WhatsApp
+        </span>
 
-    setTimeout(function() {
-        heart.remove();
-    }, 7500);
-}
+      </div>
 
-</script>
 
-</body>
-</html>
+      <div class="booking-grid">
+
+
+        <!-- CAR -->
+
+        <div class="field">
+
+          <label>
+            نوع السيارة
+          </label>
+
+          <select id="car">
+
+            <option value="سيارة اقتصادية">
+              سيارة اقتصادية
+            </option>
+
+            <option value="سيدان">
+              سيدان
+            </option>
+
+            <option value="SUV">
+              SUV
+            </option>
+
+            <option value="سيارة فاخرة">
+              سيارة فاخرة
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- PICKUP -->
+
+        <div class="field">
+
+          <label>
+            مكان الاستلام
+          </label>
+
+          <select id="pickup">
+
+            <option value="مطار مراكش المنارة">
+              ✈️ مطار مراكش المنارة
+            </option>
+
+            <option value="مراكش - وسط المدينة">
+              📍 مراكش - وسط المدينة
+            </option>
+
+            <option value="الفندق / الرياض">
+              🏨 الفندق / الرياض
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- START DATE -->
+
+        <div class="field">
+
+          <label>
+            تاريخ الاستلام
+          </label>
+
+          <input
+            type="date"
+            id="startDate">
+
+        </div>
+
+          
