@@ -3,1360 +3,1275 @@
 
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-  <title>
-    GROUP NOURA LLD | Location de voitures Marrakech
-  </title>
+<title>GROUP NOURA LLD | Location de voitures Marrakech</title>
 
-  <meta name="description"
-        content="GROUP NOURA LLD - Location de voitures à Marrakech. Réservez votre voiture facilement par WhatsApp.">
+<meta name="description"
+content="GROUP NOURA LLD - Location de voitures à Marrakech. Réservez votre voiture facilement par WhatsApp.">
 
-  <meta name="theme-color"
-        content="#0a0a0a">
+<meta name="theme-color" content="#080808">
 
 
-  <style>
+<style>
 
-    /* =========================================
-       GENERAL
-    ========================================= */
+/* =========================
+   RESET
+========================= */
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
 
-    :root {
+:root{
 
-      --gold: #d4af37;
-      --gold-light: #f2d675;
+--gold:#d4af37;
+--gold-light:#f4d76a;
 
-      --black: #050505;
-      --dark: #0b0b0b;
-      --dark2: #111111;
+--black:#050505;
+--dark:#0c0c0c;
+--card:#151515;
 
-      --card: #161616;
+--white:#fff;
+--gray:#999;
+--border:#292929;
 
-      --white: #ffffff;
+}
 
-      --gray: #999999;
-      --gray2: #cccccc;
+body{
 
-    }
+font-family:
+Arial,
+Tahoma,
+sans-serif;
 
-    body {
+background:var(--black);
 
-      font-family:
-        Arial,
-        Tahoma,
-        sans-serif;
+color:var(--white);
 
-      background: var(--black);
+line-height:1.7;
 
-      color: var(--white);
+overflow-x:hidden;
 
-      line-height: 1.7;
+}
 
-      overflow-x: hidden;
+a{
+text-decoration:none;
+color:inherit;
+}
 
-    }
+button,
+input,
+select{
+font-family:inherit;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
 
-    button,
-    input,
-    select {
-      font-family: inherit;
-    }
+/* =========================
+   NAVBAR
+========================= */
 
+nav{
 
-    /* =========================================
-       NAVBAR
-    ========================================= */
+position:fixed;
 
-    nav {
+top:0;
+right:0;
 
-      position: fixed;
+width:100%;
 
-      top: 0;
-      right: 0;
+z-index:9999;
 
-      width: 100%;
+background:
+rgba(5,5,5,.95);
 
-      z-index: 9999;
+backdrop-filter:blur(15px);
 
-      background:
-        rgba(5,5,5,.94);
+border-bottom:
+1px solid rgba(255,255,255,.08);
 
-      backdrop-filter:
-        blur(15px);
+}
 
-      border-bottom:
-        1px solid rgba(255,255,255,.08);
+.nav-container{
 
-    }
+max-width:1250px;
 
-    .nav-container {
+margin:auto;
 
-      max-width: 1250px;
+padding:17px 25px;
 
-      margin: auto;
+display:flex;
 
-      padding:
-        17px 25px;
+align-items:center;
 
-      display: flex;
+justify-content:space-between;
 
-      align-items: center;
+}
 
-      justify-content: space-between;
+.logo{
 
-    }
+font-size:21px;
 
-    .logo {
+font-weight:900;
 
-      font-size: 22px;
+letter-spacing:1px;
 
-      font-weight: 900;
+}
 
-      letter-spacing: 1px;
+.logo span{
+color:var(--gold);
+}
 
-      white-space: nowrap;
+.nav-links{
 
-    }
+display:flex;
 
-    .logo span {
-      color: var(--gold);
-    }
+align-items:center;
 
-    .nav-links {
+gap:25px;
 
-      list-style: none;
+list-style:none;
 
-      display: flex;
+}
 
-      align-items: center;
+.nav-links a{
 
-      gap: 28px;
+font-size:14px;
 
-    }
+color:#ddd;
 
-    .nav-links a {
+transition:.3s;
 
-      color: #ddd;
+}
 
-      font-size: 14px;
+.nav-links a:hover{
+color:var(--gold);
+}
 
-      transition: .3s;
+.nav-button{
 
-    }
+background:var(--gold);
 
-    .nav-links a:hover {
-      color: var(--gold);
-    }
+color:#000 !important;
 
-    .nav-button {
+padding:9px 16px;
 
-      background: var(--gold);
+border-radius:7px;
 
-      color: #000 !important;
+font-weight:bold;
 
-      padding:
-        9px 16px;
+}
 
-      border-radius: 7px;
+.menu{
 
-      font-weight: bold;
+display:none;
 
-    }
+font-size:29px;
 
-    .menu {
+cursor:pointer;
 
-      display: none;
+}
 
-      font-size: 29px;
 
-      cursor: pointer;
+/* =========================
+   HERO
+========================= */
 
-    }
+.hero{
 
+min-height:100vh;
 
-    /* =========================================
-       HERO
-    ========================================= */
+display:flex;
 
-    .hero {
+align-items:center;
 
-      min-height: 100vh;
+position:relative;
 
-      position: relative;
+overflow:hidden;
 
-      display: flex;
+background:
 
-      align-items: center;
+linear-gradient(
+90deg,
+rgba(0,0,0,.96),
+rgba(0,0,0,.62)
+),
 
-      overflow: hidden;
+url("https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2000&q=85")
+center/cover no-repeat;
 
-      background:
+}
 
-        linear-gradient(
-          90deg,
-          rgba(0,0,0,.97),
-          rgba(0,0,0,.68),
-          rgba(0,0,0,.45)
-        ),
+.hero-content{
 
-        url("https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2000&q=85")
-        center/cover no-repeat;
+width:100%;
 
-    }
+max-width:1250px;
 
-    .hero::after {
+margin:auto;
 
-      content: "";
+padding:150px 25px 110px;
 
-      position: absolute;
+position:relative;
 
-      width: 500px;
-      height: 500px;
+z-index:2;
 
-      right: -180px;
-      top: 25%;
+}
 
-      background:
-        rgba(212,175,55,.12);
+.badge{
 
-      filter:
-        blur(80px);
+display:inline-block;
 
-      border-radius: 50%;
+color:var(--gold);
 
-    }
+border:
+1px solid rgba(212,175,55,.5);
 
-    .hero-content {
+padding:7px 15px;
 
-      width: 100%;
+border-radius:50px;
 
-      max-width: 1250px;
+font-size:13px;
 
-      margin: auto;
+margin-bottom:20px;
 
-      padding:
-        150px 25px 80px;
+background:
+rgba(0,0,0,.3);
 
-      position: relative;
+}
 
-      z-index: 2;
+.hero h1{
 
-    }
+font-size:
+clamp(44px,7vw,78px);
 
-    .location-badge {
+line-height:1.05;
 
-      display: inline-flex;
+max-width:850px;
 
-      align-items: center;
+margin-bottom:25px;
 
-      gap: 7px;
+}
 
-      color: var(--gold);
+.hero h1 span{
+color:var(--gold);
+}
 
-      border:
-        1px solid
-        rgba(212,175,55,.55);
+.hero p{
 
-      background:
-        rgba(0,0,0,.35);
+font-size:18px;
 
-      padding:
-        7px 15px;
+color:#ccc;
 
-      border-radius: 50px;
+max-width:650px;
 
-      font-size: 14px;
+margin-bottom:30px;
 
-      margin-bottom: 20px;
+}
 
-    }
+.buttons{
 
-    .hero h1 {
+display:flex;
 
-      font-size:
-        clamp(43px, 7vw, 78px);
+gap:12px;
 
-      line-height: 1.05;
+flex-wrap:wrap;
 
-      max-width: 850px;
+}
 
-      margin-bottom: 25px;
+.btn{
 
-    }
+display:inline-flex;
 
-    .hero h1 span {
-      color: var(--gold);
-    }
+align-items:center;
 
-    .hero p {
+justify-content:center;
 
-      color: #ccc;
+gap:8px;
 
-      font-size: 18px;
+padding:14px 23px;
 
-      max-width: 650px;
+border-radius:8px;
 
-      margin-bottom: 32px;
+font-weight:bold;
 
-    }
+border:none;
 
-    .buttons {
+cursor:pointer;
 
-      display: flex;
+transition:.3s;
 
-      gap: 13px;
+}
 
-      flex-wrap: wrap;
+.btn-primary{
 
-    }
+background:var(--gold);
 
-    .btn {
+color:#000;
 
-      display: inline-flex;
+}
 
-      align-items: center;
+.btn-primary:hover{
 
-      justify-content: center;
+background:var(--gold-light);
 
-      gap: 8px;
+transform:translateY(-3px);
 
-      padding:
-        14px 23px;
+}
 
-      border-radius: 8px;
+.btn-outline{
 
-      font-weight: bold;
+border:1px solid #555;
 
-      transition: .3s;
+color:#fff;
 
-      border: none;
+}
 
-      cursor: pointer;
+.btn-outline:hover{
 
-    }
+border-color:var(--gold);
 
-    .btn-primary {
+color:var(--gold);
 
-      background: var(--gold);
+}
 
-      color: #000;
 
-    }
+/* =========================
+   BOOKING
+========================= */
 
-    .btn-primary:hover {
+.booking-wrapper{
 
-      transform:
-        translateY(-3px);
+position:relative;
 
-      background:
-        var(--gold-light);
+margin-top:-65px;
 
-      box-shadow:
-        0 12px 35px
-        rgba(212,175,55,.25);
+z-index:50;
 
-    }
+padding:0 20px;
 
-    .btn-outline {
+}
 
-      border:
-        1px solid #555;
+.booking-box{
 
-      background:
-        rgba(0,0,0,.2);
+max-width:1150px;
 
-      color: #fff;
+margin:auto;
 
-    }
+background:
+rgba(20,20,20,.98);
 
-    .btn-outline:hover {
+border:
+1px solid var(--border);
 
-      border-color:
-        var(--gold);
+border-radius:18px;
 
-      color:
-        var(--gold);
+padding:28px;
 
-    }
+box-shadow:
+0 20px 70px rgba(0,0,0,.55);
 
+}
 
-    /* =========================================
-       BOOKING BOX
-    ========================================= */
+.booking-title{
 
-    .booking-wrapper {
+display:flex;
 
-      position: relative;
+align-items:center;
 
-      margin-top: -75px;
+justify-content:space-between;
 
-      z-index: 20;
+gap:10px;
 
-      padding: 0 20px;
+margin-bottom:22px;
 
-    }
+}
 
-    .booking-box {
+.booking-title h2{
+font-size:25px;
+}
 
-      max-width: 1150px;
+.booking-title span{
 
-      margin: auto;
+font-size:13px;
 
-      background:
-        rgba(20,20,20,.97);
+color:var(--gold);
 
-      border:
-        1px solid #292929;
+}
 
-      border-radius: 18px;
+.booking-grid{
 
-      padding: 28px;
+display:grid;
 
-      box-shadow:
-        0 20px 70px
-        rgba(0,0,0,.5);
+grid-template-columns:
+repeat(4,1fr);
 
-    }
+gap:14px;
 
-    .booking-title {
+}
 
-      display: flex;
+.field label{
 
-      align-items: center;
+display:block;
 
-      justify-content: space-between;
+font-size:13px;
 
-      margin-bottom: 22px;
+color:#aaa;
 
-      gap: 15px;
+margin-bottom:6px;
 
-    }
+}
 
-    .booking-title h2 {
+.field input,
+.field select{
 
-      font-size: 25px;
+width:100%;
 
-    }
+padding:12px;
 
-    .booking-title span {
+border-radius:8px;
 
-      color: var(--gold);
+border:1px solid #333;
 
-      font-size: 13px;
+background:#0c0c0c;
 
-    }
+color:#fff;
 
-    .booking-grid {
+outline:none;
 
-      display: grid;
+}
 
-      grid-template-columns:
-        repeat(4, 1fr);
+.field input:focus,
+.field select:focus{
 
-      gap: 14px;
+border-color:var(--gold);
 
-    }
+}
 
-    .field label {
+.booking-button{
 
-      display: block;
+width:100%;
 
-      color: #aaa;
+margin-top:20px;
 
-      font-size: 13px;
+font-size:15px;
 
-      margin-bottom: 6px;
+}
 
-    }
+.booking-note{
 
-    .field input,
-    .field select {
+margin-top:12px;
 
-      width: 100%;
+font-size:12px;
 
-      background: #0c0c0c;
+color:#777;
 
-      color: white;
+text-align:center;
 
-      border:
-        1px solid #333;
+}
 
-      border-radius: 8px;
 
-      padding:
-        12px;
+/* =========================
+   SECTIONS
+========================= */
 
-      outline: none;
+section{
+padding:90px 20px;
+}
 
-    }
+.container{
 
-    .field input:focus,
-    .field select:focus {
+max-width:1250px;
 
-      border-color:
-        var(--gold);
+margin:auto;
 
-    }
+}
 
-    .booking-button {
+.section-title{
 
-      width: 100%;
+text-align:center;
 
-      margin-top: 20px;
+margin-bottom:45px;
 
-    }
+}
 
+.section-title small{
 
-    /* =========================================
-       SECTIONS
-    ========================================= */
+color:var(--gold);
 
-    section {
-      padding: 95px 20px;
-    }
+font-weight:bold;
 
-    .container {
+}
 
-      max-width: 1250px;
+.section-title h2{
 
-      margin: auto;
+font-size:40px;
 
-    }
+margin-top:5px;
 
-    .section-title {
+}
 
-      text-align: center;
+.section-title p{
 
-      margin-bottom: 50px;
+max-width:650px;
 
-    }
+margin:10px auto;
 
-    .section-title small {
+color:var(--gray);
 
-      color: var(--gold);
+}
 
-      font-weight: bold;
 
-    }
+/* =========================
+   CARS
+========================= */
 
-    .section-title h2 {
+#cars{
+background:var(--dark);
+}
 
-      font-size: 40px;
+.cars-grid{
 
-      margin-top: 5px;
+display:grid;
 
-    }
+grid-template-columns:
+repeat(3,1fr);
 
-    .section-title p {
+gap:25px;
 
-      color: var(--gray);
+}
 
-      max-width: 650px;
+.car-card{
 
-      margin:
-        10px auto;
+background:var(--card);
 
-    }
+border:1px solid var(--border);
 
+border-radius:16px;
 
-    /* =========================================
-       CARS
-    ========================================= */
+overflow:hidden;
 
-    #cars {
-      background: var(--dark);
-    }
+transition:.3s;
 
-    .cars-grid {
+}
 
-      display: grid;
+.car-card:hover{
 
-      grid-template-columns:
-        repeat(3, 1fr);
+transform:translateY(-7px);
 
-      gap: 25px;
+border-color:
+rgba(212,175,55,.6);
 
-    }
+}
 
-    .car-card {
+.car-image{
 
-      background:
-        var(--card);
+height:220px;
 
-      border:
-        1px solid #292929;
+position:relative;
 
-      border-radius: 16px;
+overflow:hidden;
 
-      overflow: hidden;
+background:#111;
 
-      transition: .3s;
+}
 
-    }
+.car-image img{
 
-    .car-card:hover {
+width:100%;
 
-      transform:
-        translateY(-7px);
+height:100%;
 
-      border-color:
-        rgba(212,175,55,.55);
+object-fit:cover;
 
-    }
+display:block;
 
-    .car-image {
+transition:.5s;
 
-      height: 225px;
+}
 
-      overflow: hidden;
+.car-card:hover
+.car-image img{
 
-      background: #111;
+transform:scale(1.06);
 
-      position: relative;
+}
 
-    }
+.car-category{
 
-    .car-image img {
+position:absolute;
 
-      width: 100%;
+top:13px;
 
-      height: 100%;
+right:13px;
 
-      object-fit: cover;
+background:
+rgba(0,0,0,.78);
 
-      display: block;
+color:var(--gold);
 
-      transition: .5s;
+border:
+1px solid rgba(212,175,55,.5);
 
-    }
+padding:5px 10px;
 
-    .car-card:hover
-    .car-image img {
+border-radius:20px;
 
-      transform:
-        scale(1.06);
+font-size:11px;
 
-    }
+}
 
-    .car-category {
+.car-info{
+padding:22px;
+}
 
-      position: absolute;
+.car-info h3{
 
-      top: 13px;
-      right: 13px;
+font-size:22px;
 
-      background:
-        rgba(0,0,0,.75);
+margin-bottom:8px;
 
-      color:
-        var(--gold);
+}
 
-      border:
-        1px solid
-        rgba(212,175,55,.5);
+.car-specs{
 
-      padding:
-        5px 10px;
+display:flex;
 
-      border-radius: 20px;
+flex-wrap:wrap;
 
-      font-size: 12px;
+gap:7px;
 
-    }
+margin:12px 0 20px;
 
-    .car-info {
+}
 
-      padding: 22px;
+.spec{
 
-    }
+background:#202020;
 
-    .car-info h3 {
+color:#aaa;
 
-      font-size: 22px;
+padding:5px 9px;
 
-      margin-bottom: 7px;
+border-radius:5px;
 
-    }
+font-size:12px;
 
-    .car-specs {
+}
 
-      display: flex;
+.car-bottom{
 
-      flex-wrap: wrap;
+display:flex;
 
-      gap: 8px;
+align-items:center;
 
-      margin:
-        12px 0 20px;
+justify-content:space-between;
 
-    }
+gap:10px;
 
-    .spec {
+}
 
-      background: #202020;
+.price{
 
-      color: #aaa;
+color:var(--gold);
 
-      padding:
-        5px 9px;
+font-size:16px;
 
-      border-radius: 5px;
+font-weight:bold;
 
-      font-size: 12px;
+}
 
-    }
+.price small{
 
-    .car-bottom {
+color:#777;
 
-      display: flex;
+font-size:11px;
 
-      align-items: center;
+}
 
-      justify-content: space-between;
+.reserve{
 
-      gap: 10px;
+background:var(--gold);
 
-    }
+color:#000;
 
-    .price {
+padding:9px 15px;
 
-      color: var(--gold);
+border-radius:7px;
 
-      font-size: 17px;
+font-size:13px;
 
-      font-weight: bold;
+font-weight:bold;
 
-    }
+}
 
-    .price small {
 
-      color: #777;
+/* =========================
+   SERVICES
+========================= */
 
-      font-size: 11px;
+.services{
 
-      font-weight: normal;
+display:grid;
 
-    }
+grid-template-columns:
+repeat(3,1fr);
 
-    .reserve-btn {
+gap:22px;
 
-      background: var(--gold);
+}
 
-      color: #000;
+.service{
 
-      padding:
-        9px 14px;
+background:#111;
 
-      border-radius: 7px;
+border:1px solid #252525;
 
-      font-size: 13px;
+border-radius:15px;
 
-      font-weight: bold;
+padding:30px 25px;
 
-    }
+text-align:center;
 
+transition:.3s;
 
-    /* =========================================
-       SERVICES
-    ========================================= */
+}
 
-    .services {
+.service:hover{
 
-      display: grid;
+transform:translateY(-5px);
 
-      grid-template-columns:
-        repeat(3, 1fr);
+border-color:
+rgba(212,175,55,.5);
 
-      gap: 22px;
+}
 
-    }
+.service-icon{
 
-    .service {
+font-size:40px;
 
-      padding: 30px 25px;
+margin-bottom:12px;
 
-      background:
-        #111;
+}
 
-      border:
-        1px solid #252525;
+.service h3{
+margin-bottom:8px;
+}
 
-      border-radius: 15px;
+.service p{
 
-      text-align: center;
+font-size:14px;
 
-      transition: .3s;
+color:#888;
 
-    }
+}
 
-    .service:hover {
 
-      transform:
-        translateY(-5px);
+/* =========================
+   MARRAKECH
+========================= */
 
-      border-color:
-        rgba(212,175,55,.45);
+.marrakech{
 
-    }
+display:grid;
 
-    .service-icon {
+grid-template-columns:
+1fr 1fr;
 
-      font-size: 40px;
+gap:45px;
 
-      margin-bottom: 13px;
+align-items:center;
 
-    }
+}
 
-    .service h3 {
+.marrakech-image{
 
-      margin-bottom: 8px;
+min-height:390px;
 
-    }
+border-radius:18px;
 
-    .service p {
+background:
 
-      color: #888;
+url("https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=1200&q=85")
+center/cover;
 
-      font-size: 14px;
+border:1px solid var(--border);
 
-    }
+}
 
+.marrakech-text small{
 
-    /* =========================================
-       MARRAKECH
-    ========================================= */
+color:var(--gold);
 
-    .marrakech {
+font-weight:bold;
 
-      display: grid;
+}
 
-      grid-template-columns:
-        1fr 1fr;
+.marrakech-text h2{
 
-      gap: 45px;
+font-size:40px;
 
-      align-items: center;
+line-height:1.2;
 
-    }
+margin:10px 0 15px;
 
-    .marrakech-image {
+}
 
-      min-height: 400px;
+.marrakech-text p{
 
-      border-radius: 18px;
+color:#999;
 
-      background:
+margin-bottom:20px;
 
-        linear-gradient(
-          rgba(0,0,0,.15),
-          rgba(0,0,0,.25)
-        ),
+}
 
-        url("https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=1200&q=85")
-        center/cover;
+.location-list{
 
-      border:
-        1px solid #292929;
+list-style:none;
 
-    }
+display:grid;
 
-    .marrakech-text small {
+gap:9px;
 
-      color: var(--gold);
+margin-bottom:22px;
 
-      font-weight: bold;
+}
 
-    }
+.location-list li{
 
-    .marrakech-text h2 {
+background:#151515;
 
-      font-size: 40px;
+border:1px solid #242424;
 
-      line-height: 1.2;
+padding:10px 14px;
 
-      margin:
-        10px 0 15px;
+border-radius:8px;
 
-    }
+color:#ccc;
 
-    .marrakech-text p {
+}
 
-      color: #999;
 
-      margin-bottom: 22px;
+/* =========================
+   WHY US
+========================= */
 
-    }
+.why{
 
-    .location-list {
+display:grid;
 
-      list-style: none;
+grid-template-columns:
+1fr 1fr;
 
-      display: grid;
+gap:55px;
 
-      gap: 10px;
+align-items:center;
 
-      margin-bottom: 25px;
+}
 
-    }
+.why h2{
 
-    .location-list li {
+font-size:40px;
 
-      background: #151515;
+line-height:1.2;
 
-      border:
-        1px solid #242424;
+margin:10px 0 15px;
 
-      padding:
-        11px 14px;
+}
 
-      border-radius: 8px;
+.why > div > p{
 
-      color: #ccc;
+color:#999;
 
-    }
+margin-bottom:25px;
 
+}
 
-    /* =========================================
-       WHY US
-    ========================================= */
+.features{
 
-    .why {
+display:grid;
 
-      display: grid;
+grid-template-columns:
+1fr 1fr;
 
-      grid-template-columns:
-        1fr 1fr;
+gap:14px;
 
-      gap: 55px;
+}
 
-      align-items: center;
+.feature{
 
-    }
+background:#141414;
 
-    .why h2 {
+border:1px solid #262626;
 
-      font-size: 40px;
+border-radius:10px;
 
-      line-height: 1.2;
+padding:18px;
 
-      margin:
-        10px 0 15px;
+}
 
-    }
+.feature strong{
 
-    .why > div > p {
+display:block;
 
-      color: #999;
+margin-bottom:4px;
 
-      margin-bottom: 25px;
+}
 
-    }
+.feature span{
 
-    .features {
+color:#888;
 
-      display: grid;
+font-size:13px;
 
-      grid-template-columns:
-        1fr 1fr;
+}
 
-      gap: 14px;
+.stats{
 
-    }
+display:grid;
 
-    .feature {
+grid-template-columns:
+1fr 1fr;
 
-      padding: 18px;
+gap:15px;
 
-      background: #141414;
+}
 
-      border:
-        1px solid #262626;
+.stat{
 
-      border-radius: 10px;
+background:
+linear-gradient(
+135deg,
+#181818,
+#0c0c0c
+);
 
-    }
+border:1px solid #292929;
 
-    .feature strong {
+border-radius:15px;
 
-      display: block;
+padding:35px 20px;
 
-      margin-bottom: 4px;
+text-align:center;
 
-    }
+}
 
-    .feature span {
+.stat h3{
 
-      color: #888;
+font-size:36px;
 
-      font-size: 13px;
+color:var(--gold);
 
-    }
+}
 
-    .stats {
+.stat p{
 
-      display: grid;
+color:#888;
 
-      grid-template-columns:
-        1fr 1fr;
+}
 
-      gap: 15px;
 
-    }
+/* =========================
+   CONTACT
+========================= */
 
-    .stat {
+#contact{
+background:var(--dark);
+}
 
-      background:
-        linear-gradient(
-          135deg,
-          #181818,
-          #0c0c0c
-        );
+.contact-box{
 
-      border:
-        1px solid #292929;
+max-width:900px;
 
-      padding: 35px 20px;
+margin:auto;
 
-      text-align: center;
+text-align:center;
 
-      border-radius: 15px;
+padding:55px 25px;
 
-    }
+background:
+linear-gradient(
+135deg,
+#181818,
+#0d0d0d
+);
 
-    .stat h3 {
+border:1px solid #292929;
 
-      color: var(--gold);
+border-radius:20px;
 
-      font-size: 36px;
+}
 
-    }
+.contact-box h2{
 
-    .stat p {
+font-size:40px;
 
-      color: #888;
+margin-bottom:10px;
 
-    }
+}
 
+.contact-box p{
 
-    /* =========================================
-       CONTACT
-    ========================================= */
+color:#999;
 
-    #contact {
+margin-bottom:17px;
 
-      background: var(--dark);
+}
 
-    }
+.phone{
 
-    .contact-box {
+display:block;
 
-      max-width: 900px;
+color:var(--gold);
 
-      margin: auto;
+font-size:28px;
 
-      text-align: center;
+font-weight:bold;
 
-      padding: 60px 25px;
+direction:ltr;
 
-      border-radius: 20px;
+margin-bottom:25px;
 
-      border:
-        1px solid #292929;
+}
 
-      background:
-        linear-gradient(
-          135deg,
-          #181818,
-          #0d0d0d
-        );
+.contact-buttons{
 
-    }
+display:flex;
 
-    .contact-box h2 {
+justify-content:center;
 
-      font-size: 40px;
+gap:12px;
 
-      margin-bottom: 10px;
+flex-wrap:wrap;
 
-    }
+}
 
-    .contact-box p {
 
-      color: #999;
+/* =========================
+   FOOTER
+========================= */
 
-      margin-bottom: 18px;
+footer{
 
-    }
+background:#030303;
 
-    .phone {
+border-top:1px solid #1c1c1c;
 
-      display: block;
+padding:35px 20px;
 
-      color: var(--gold);
+text-align:center;
 
-      font-size: 28px;
+color:#777;
 
-      font-weight: bold;
+font-size:13px;
 
-      margin-bottom: 25px;
+}
 
-      direction: ltr;
+footer strong{
+color:var(--gold);
+}
 
-    }
 
-    .contact-buttons {
+/* =========================
+   WHATSAPP
+========================= */
 
-      display: flex;
+.whatsapp{
 
-      justify-content: center;
+position:fixed;
 
-      gap: 12px;
+left:20px;
 
-      flex-wrap: wrap;
+bottom:20px;
 
-    }
+width:60px;
 
+height:60px;
 
-    /* =========================================
-       FOOTER
-    ========================================= */
+border-radius:50%;
 
-    footer {
+background:#25D366;
 
-      background: #030303;
+color:white;
 
-      border-top:
-        1px solid #1c1c1c;
+display:flex;
 
-      text-align: center;
+align-items:center;
 
-      padding:
-        35px 20px;
+justify-content:center;
 
-      color: #777;
+font-size:27px;
 
-      font-size: 13px;
+z-index:9999;
 
-    }
+box-shadow:
+0 8px 30px rgba(0,0,0,.5);
 
-    footer strong {
+transition:.3s;
 
-      color: var(--gold);
+}
 
-    }
+.whatsapp:hover{
 
+transform:scale(1.1);
 
-    /* =========================================
-       WHATSAPP FLOAT
-    ========================================= */
+}
 
-    .whatsapp {
 
-      position: fixed;
+/* =========================
+   MOBILE
+========================= */
 
-      left: 20px;
+@media(max-width:900px){
 
-      bottom: 20px;
+.menu{
+display:block;
+}
 
-      width: 60px;
+.nav-links{
 
-      height: 60px;
+position:absolute;
 
-      border-radius: 50%;
+top:68px;
 
-      background: #25D366;
+right:0;
 
-      color: white;
+width:100%;
 
-      display: flex;
+background:#090909;
 
-      align-items: center;
+display:none;
 
-      justify-content: center;
+flex-direction:column;
 
-      font-size: 28px;
+text-align:center;
 
-      z-index: 9999;
+padding:22px;
 
-      box-shadow:
-        0 8px 30px
-        rgba(0,0,0,.5);
+gap:18px;
 
-      transition: .3s;
+}
 
-    }
+.nav-links.active{
+display:flex;
+}
 
-    .whatsapp:hover {
+.booking-grid{
 
-      transform:
-        scale(1.1);
+grid-template-columns:
+1fr 1fr;
 
-    }
+}
 
+.cars-grid,
+.services{
 
-    /* =========================================
-       MOBILE
-    ========================================= */
+grid-template-columns:
+1fr 1fr;
 
-    @media(max-width:900px) {
+}
 
-      .menu {
-        display: block;
-      }
+.marrakech,
+.why{
 
-      .nav-links {
+grid-template-columns:
+1fr;
 
-        position: absolute;
+}
 
-        top: 68px;
-        right: 0;
+.marrakech-image{
 
-        width: 100%;
+min-height:300px;
 
-        background: #090909;
+}
 
-        display: none;
+}
 
-        flex-direction: column;
 
-        text-align: center;
+@media(max-width:600px){
 
-        padding: 22px;
+section{
+padding:70px 15px;
+}
 
-        gap: 18px;
+.hero-content{
 
-      }
+padding:
+130px 20px 100px;
 
-      .nav-links.active {
-        display: flex;
-      }
+}
 
-      .booking-grid {
+.hero h1{
+font-size:42px;
+}
 
-        grid-template-columns:
-          1fr 1fr;
+.hero p{
+font-size:16px;
+}
 
-      }
+.booking-wrapper{
 
-      .cars-grid,
-      .services {
+margin-top:-50px;
 
-        grid-template-columns:
-          1fr 1fr;
+}
 
-      }
+.booking-box{
+padding:20px 15px;
+}
 
-      .marrakech,
-      .why {
+.booking-grid{
 
-        grid-template-columns:
-          1fr;
+grid-template-columns:
+1fr;
 
-      }
+}
 
-      .marrakech-image {
+.cars-grid,
+.services{
 
-        min-height: 300px;
+grid-template-columns:
+1fr;
 
-      }
+}
 
-    }
+.section-title h2,
+.marrakech-text h2,
+.why h2,
+.contact-box h2{
 
+font-size:31px;
 
-    @media(max-width:600px) {
+}
 
-      section {
-        padding: 75px 15px;
-      }
+.features,
+.stats{
 
-      .hero-content {
+grid-template-columns:
+1fr;
 
-        padding:
-          130px 20px 100px;
+}
 
-      }
+.phone{
 
-      .hero h1 {
-        font-size: 43px;
-      }
+font-size:22px;
 
-      .hero p {
-        font-size: 16px;
-      }
+}
 
-      .booking-wrapper {
+.car-image{
 
-        margin-top: -55px;
+height:215px;
 
-      }
+}
 
-      .booking-box {
-        padding: 20px 15px;
-      }
+}
 
-      .booking-grid {
-
-        grid-template-columns:
-          1fr;
-
-      }
-
-      .cars-grid,
-      .services {
-
-        grid-template-columns:
-          1fr;
-
-      }
-
-      .section-title h2,
-      .marrakech-text h2,
-      .why h2,
-      .contact-box h2 {
-
-        font-size: 31px;
-
-      }
-
-      .features,
-      .stats {
-
-        grid-template-columns:
-          1fr;
-
-      }
-
-      .phone {
-
-        font-size: 22px;
-
-      }
-
-      .car-image {
-
-        height: 210px;
-
-      }
-
-    }
-
-  </style>
+</style>
 
 </head>
 
@@ -1364,242 +1279,1522 @@
 <body>
 
 
-  <!-- =========================================
-       NAVIGATION
-  ========================================= -->
+<!-- =========================
+     NAVBAR
+========================= -->
 
-  <nav>
+<nav>
 
-    <div class="nav-container">
+<div class="nav-container">
 
-      <a href="#home"
-         class="logo">
+<a href="#home"
+class="logo">
 
-        GROUP
-        <span>NOURA</span>
-        LLD
+GROUP
+<span>NOURA</span>
+LLD
 
-      </a>
+</a>
 
 
-      <div class="menu"
-           onclick="toggleMenu()">
+<div class="menu"
+onclick="toggleMenu()">
 
-        ☰
+☰
 
-      </div>
+</div>
 
 
-      <ul class="nav-links"
-          id="navLinks">
+<ul class="nav-links"
+id="navLinks">
 
-        <li>
-          <a href="#home">
-            الرئيسية
-          </a>
-        </li>
+<li>
+<a href="#home">
+الرئيسية
+</a>
+</li>
 
-        <li>
-          <a href="#cars">
-            السيارات
-          </a>
-        </li>
+<li>
+<a href="#cars">
+السيارات
+</a>
+</li>
 
-        <li>
-          <a href="#services">
-            خدماتنا
-          </a>
-        </li>
+<li>
+<a href="#services">
+خدماتنا
+</a>
+</li>
 
-        <li>
-          <a href="#marrakech">
-            مراكش
-          </a>
-        </li>
+<li>
+<a href="#marrakech">
+مراكش
+</a>
+</li>
 
-        <li>
-          <a href="#contact">
-            اتصل بنا
-          </a>
-        </li>
+<li>
+<a href="#contact">
+اتصل بنا
+</a>
+</li>
 
-        <li>
-          <a
-            class="nav-button"
-            href="#booking">
+<li>
+<a href="#booking"
+class="nav-button">
 
-            احجز الآن
+احجز الآن
 
-          </a>
-        </li>
+</a>
+</li>
 
-      </ul>
+</ul>
 
-    </div>
+</div>
 
-  </nav>
+</nav>
 
 
 
-  <!-- =========================================
-       HERO
-  ========================================= -->
+<!-- =========================
+     HERO
+========================= -->
 
-  <section class="hero"
-           id="home">
+<section class="hero"
+id="home">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-      <div class="location-badge">
+<div class="badge">
 
-        📍 Marrakech · Morocco
+📍 Marrakech · Morocco
 
-      </div>
+</div>
 
 
-      <h1>
+<h1>
 
-        اكتشف مراكش
-        <br>
+اكتشف مراكش
+<br>
 
-        <span>بالسيارة المناسبة.</span>
+<span>
+بالسيارة المناسبة.
+</span>
 
-      </h1>
+</h1>
 
 
-      <p>
+<p>
 
-        GROUP NOURA LLD
-        يوفر لك تجربة سهلة واحترافية لكراء السيارات في مراكش،
-        مع إمكانية الاستلام داخل المدينة أو بمطار مراكش المنارة.
+GROUP NOURA LLD
+يوفر لك تجربة سهلة واحترافية لكراء السيارات في مراكش،
+مع إمكانية الاستلام من المطار أو داخل المدينة.
 
-      </p>
+</p>
 
 
-      <div class="buttons">
+<div class="buttons">
 
-        <a
-          class="btn btn-primary"
-          href="#booking">
+<a
+href="#booking"
+class="btn btn-primary">
 
-          🚗 احجز سيارتك
+🚗 احجز سيارتك
 
-        </a>
+</a>
 
 
-        <a
-          class="btn btn-outline"
-          href="https://wa.me/212631752271?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20كراء%20سيارة%20في%20مراكش"
-          target="_blank">
+<a
+href="https://wa.me/212631752271?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20كراء%20سيارة%20في%20مراكش"
+target="_blank"
+class="btn btn-outline">
 
-          💬 WhatsApp
+💬 WhatsApp
 
-        </a>
+</a>
 
-      </div>
+</div>
 
-    </div>
+</div>
 
-  </section>
+</section>
 
 
 
-  <!-- =========================================
-       BOOKING
-  ========================================= -->
+<!-- =========================
+     BOOKING
+========================= -->
 
-  <div class="booking-wrapper"
-       id="booking">
+<div class="booking-wrapper"
+id="booking">
 
-    <div class="booking-box">
+<div class="booking-box">
 
 
-      <div class="booking-title">
+<div class="booking-title">
 
-        <h2>
-          احجز سيارتك
-        </h2>
+<h2>
+احجز سيارتك
+</h2>
 
-        <span>
-          ⚡ الحجز عبر WhatsApp
-        </span>
+<span>
+⚡ الحجز عبر WhatsApp
+</span>
 
-      </div>
+</div>
 
 
-      <div class="booking-grid">
 
+<div class="booking-grid">
 
-        <!-- CAR -->
 
-        <div class="field">
+<!-- NAME -->
 
-          <label>
-            نوع السيارة
-          </label>
+<div class="field">
 
-          <select id="car">
+<label>
+الاسم الكامل
+</label>
 
-            <option value="سيارة اقتصادية">
-              سيارة اقتصادية
-            </option>
+<input
+type="text"
+id="customerName"
+placeholder="مثال: يوسف">
 
-            <option value="سيدان">
-              سيدان
-            </option>
+</div>
 
-            <option value="SUV">
-              SUV
-            </option>
 
-            <option value="سيارة فاخرة">
-              سيارة فاخرة
-            </option>
+<!-- PHONE -->
 
-          </select>
+<div class="field">
 
-        </div>
+<label>
+رقم الهاتف
+</label>
 
+<input
+type="tel"
+id="customerPhone"
+placeholder="مثال: 06XXXXXXXX">
 
-        <!-- PICKUP -->
+</div>
 
-        <div class="field">
 
-          <label>
-            مكان الاستلام
-          </label>
+<!-- CAR -->
 
-          <select id="pickup">
+<div class="field">
 
-            <option value="مطار مراكش المنارة">
-              ✈️ مطار مراكش المنارة
-            </option>
+<label>
+السيارة
+</label>
 
-            <option value="مراكش - وسط المدينة">
-              📍 مراكش - وسط المدينة
-            </option>
+<select id="car">
 
-            <option value="الفندق / الرياض">
-              🏨 الفندق / الرياض
-            </option>
+<option value="سيارة اقتصادية">
+سيارة اقتصادية
+</option>
 
-          </select>
+<option value="سيارة سيدان">
+سيارة سيدان
+</option>
 
-        </div>
+<option value="SUV">
+SUV
+</option>
 
+<option value="سيارة فاخرة">
+سيارة فاخرة
+</option>
 
-        <!-- START DATE -->
+<option value="سيارة عائلية">
+سيارة عائلية
+</option>
 
-        <div class="field">
+</select>
 
-          <label>
-            تاريخ الاستلام
-          </label>
+</div>
 
-          <input
-            type="date"
-            id="startDate">
 
-        </div>
+<!-- PICKUP -->
 
-          
+<div class="field">
+
+<label>
+مكان الاستلام
+</label>
+
+<select id="pickup">
+
+<option value="مطار مراكش المنارة">
+✈️ مطار مراكش المنارة
+</option>
+
+<option value="وسط مدينة مراكش">
+📍 وسط مدينة مراكش
+</option>
+
+<option value="الفندق / الرياض">
+🏨 الفندق / الرياض
+</option>
+
+</select>
+
+</div>
+
+
+<!-- START DATE -->
+
+<div class="field">
+
+<label>
+تاريخ الاستلام
+</label>
+
+<input
+type="date"
+id="startDate">
+
+</div>
+
+
+<!-- START TIME -->
+
+<div class="field">
+
+<label>
+وقت الاستلام
+</label>
+
+<input
+type="time"
+id="startTime"
+value="10:00">
+
+</div>
+
+
+<!-- END DATE -->
+
+<div class="field">
+
+<label>
+تاريخ الإرجاع
+</label>
+
+<input
+type="date"
+id="endDate">
+
+</div>
+
+
+<!-- END TIME -->
+
+<div class="field">
+
+<label>
+وقت الإرجاع
+</label>
+
+<input
+type="time"
+id="endTime"
+value="10:00">
+
+</div>
+
+
+</div>
+
+
+<button
+class="btn btn-primary booking-button"
+onclick="sendBooking()">
+
+💬 إرسال طلب الحجز عبر WhatsApp
+
+</button>
+
+
+<div class="booking-note">
+
+سيتم فتح WhatsApp وإرسال تفاصيل الحجز مباشرة إلى GROUP NOURA LLD.
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =========================
+     CARS
+========================= -->
+
+<section id="cars">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<small>
+GROUP NOURA LLD
+</small>
+
+<h2>
+أسطول السيارات
+</h2>
+
+<p>
+اختار السيارة المناسبة لرحلتك في مراكش.
+</p>
+
+</div>
+
+
+<div class="cars-grid">
+
+
+<!-- CAR 1 -->
+
+<div class="car-card">
+
+<div class="car-image">
+
+<img
+src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=85"
+alt="سيارة اقتصادية">
+
+<span class="car-category">
+ECONOMY
+</span>
+
+</div>
+
+
+<div class="car-info">
+
+<h3>
+سيارة اقتصادية
+</h3>
+
+<div class="car-specs">
+
+<span class="spec">
+👤 5 أشخاص
+</span>
+
+<span class="spec">
+⚙️ أوتوماتيك
+</span>
+
+<span class="spec">
+❄️ مكيفة
+</span>
+
+</div>
+
+
+<div class="car-bottom">
+
+<div class="price">
+السعر حسب التوفر
+<small>/ اليوم</small>
+</div>
+
+
+<a
+href="#booking"
+class="reserve">
+
+احجز
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- CAR 2 -->
+
+<div class="car-card">
+
+<div class="car-image">
+
+<img
+src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1000&q=85"
+alt="سيارة سيدان">
+
+<span class="car-category">
+SEDAN
+</span>
+
+</div>
+
+
+<div class="car-info">
+
+<h3>
+سيارة سيدان
+</h3>
+
+<div class="car-specs">
+
+<span class="spec">
+👤 5 أشخاص
+</span>
+
+<span class="spec">
+⚙️ أوتوماتيك
+</span>
+
+<span class="spec">
+❄️ مكيفة
+</span>
+
+</div>
+
+
+<div class="car-bottom">
+
+<div class="price">
+السعر حسب التوفر
+<small>/ اليوم</small>
+</div>
+
+<a
+href="#booking"
+class="reserve">
+
+احجز
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- CAR 3 -->
+
+<div class="car-card">
+
+<div class="car-image">
+
+<img
+src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1000&q=85"
+alt="SUV">
+
+<span class="car-category">
+SUV
+</span>
+
+</div>
+
+
+<div class="car-info">
+
+<h3>
+SUV
+</h3>
+
+<div class="car-specs">
+
+<span class="spec">
+👤 5-7 أشخاص
+</span>
+
+<span class="spec">
+⚙️ أوتوماتيك
+</span>
+
+<span class="spec">
+❄️ مكيفة
+</span>
+
+</div>
+
+
+<div class="car-bottom">
+
+<div class="price">
+السعر حسب التوفر
+<small>/ اليوم</small>
+</div>
+
+<a
+href="#booking"
+class="reserve">
+
+احجز
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- CAR 4 -->
+
+<div class="car-card">
+
+<div class="car-image">
+
+<img
+src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=85"
+alt="سيارة فاخرة">
+
+<span class="car-category">
+PREMIUM
+</span>
+
+</div>
+
+
+<div class="car-info">
+
+<h3>
+سيارة فاخرة
+</h3>
+
+<div class="car-specs">
+
+<span class="spec">
+👤 5 أشخاص
+</span>
+
+<span class="spec">
+⚙️ أوتوماتيك
+</span>
+
+<span class="spec">
+⭐ Premium
+</span>
+
+</div>
+
+
+<div class="car-bottom">
+
+<div class="price">
+السعر حسب التوفر
+<small>/ اليوم</small>
+</div>
+
+<a
+href="#booking"
+class="reserve">
+
+احجز
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- CAR 5 -->
+
+<div class="car-card">
+
+<div class="car-image">
+
+<img
+src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1000&q=85"
+alt="سيارة رياضية">
+
+<span class="car-category">
+SPORT
+</span>
+
+</div>
+
+
+<div class="car-info">
+
+<h3>
+سيارة رياضية
+</h3>
+
+<div class="car-specs">
+
+<span class="spec">
+👤 2-5 أشخاص
+</span>
+
+<span class="spec">
+⚙️ أوتوماتيك
+</span>
+
+<span class="spec">
+⭐ Premium
+</span>
+
+</div>
+
+
+<div class="car-bottom">
+
+<div class="price">
+السعر حسب التوفر
+<small>/ اليوم</small>
+</div>
+
+<a
+href="#booking"
+class="reserve">
+
+احجز
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- CAR 6 -->
+
+<div class="car-card">
+
+<div class="car-image">
+
+<img
+src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=85"
+alt="سيارة عائلية">
+
+<span class="car-category">
+FAMILY
+</span>
+
+</div>
+
+
+<div class="car-info">
+
+<h3>
+سيارة عائلية
+</h3>
+
+<div class="car-specs">
+
+<span class="spec">
+👤 7 أشخاص
+</span>
+
+<span class="spec">
+⚙️ أوتوماتيك
+</span>
+
+<span class="spec">
+🧳 مساحة كبيرة
+</span>
+
+</div>
+
+
+<div class="car-bottom">
+
+<div class="price">
+السعر حسب التوفر
+<small>/ اليوم</small>
+</div>
+
+<a
+href="#booking"
+class="reserve">
+
+احجز
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<small>
+SERVICES
+</small>
+
+<h2>
+خدماتنا
+</h2>
+
+<p>
+خدمات مصممة باش تكون رحلتك أسهل.
+</p>
+
+</div>
+
+
+<div class="services">
+
+
+<div class="service">
+
+<div class="service-icon">
+✈️
+</div>
+
+<h3>
+الاستلام من المطار
+</h3>
+
+<p>
+إمكانية تنسيق استلام السيارة من مطار مراكش المنارة.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🏨
+</div>
+
+<h3>
+الفندق أو الرياض
+</h3>
+
+<p>
+يمكن الاتفاق على مكان الاستلام داخل مراكش حسب التوفر.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+📱
+</div>
+
+<h3>
+حجز WhatsApp
+</h3>
+
+<p>
+أرسل تفاصيل الحجز وتواصل معنا مباشرة.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🚗
+</div>
+
+<h3>
+سيارات متنوعة
+</h3>
+
+<p>
+اقتصادية، سيدان، SUV وفئات أخرى حسب التوفر.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🕐
+</div>
+
+<h3>
+مرونة في المواعيد
+</h3>
+
+<p>
+اختار تاريخ ووقت الاستلام والإرجاع.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+⭐
+</div>
+
+<h3>
+خدمة احترافية
+</h3>
+
+<p>
+نهتم بتوفير تجربة واضحة وسهلة لكل زبون.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     MARRAKECH
+========================= -->
+
+<section id="marrakech">
+
+<div class="container">
+
+
+<div class="marrakech">
+
+
+<div class="marrakech-image">
+</div>
+
+
+<div class="marrakech-text">
+
+<small>
+LOCATION · MARRAKECH
+</small>
+
+<h2>
+كرّي سيارتك في مراكش
+</h2>
+
+<p>
+GROUP NOURA LLD يوفر لك إمكانية استلام السيارة
+من عدة أماكن داخل مراكش حسب الاتفاق والتوفر.
+</p>
+
+
+<ul class="location-list">
+
+<li>
+✈️ مطار مراكش المنارة
+</li>
+
+<li>
+📍 وسط مدينة مراكش
+</li>
+
+<li>
+🏨 الفنادق والرياضات
+</li>
+
+<li>
+🌴 مناطق مراكش حسب الاتفاق
+</li>
+
+</ul>
+
+
+<a
+class="btn btn-primary"
+href="https://www.google.com/maps/search/?api=1&query=Marrakech%2C%20Morocco"
+target="_blank">
+
+📍 افتح Marrakech في Maps
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     WHY US
+========================= -->
+
+<section>
+
+<div class="container">
+
+
+<div class="why">
+
+
+<div>
+
+<small style="color:#d4af37;font-weight:bold;">
+
+GROUP NOURA LLD
+
+</small>
+
+
+<h2>
+كراء سيارة بلا تعقيدات.
+</h2>
+
+
+<p>
+اختار السيارة، حدد التواريخ ومكان الاستلام،
+ومن بعد أرسل طلب الحجز مباشرة عبر WhatsApp.
+</p>
+
+
+<div class="features">
+
+
+<div class="feature">
+
+<strong>
+✓ حجز سريع
+</strong>
+
+<span>
+تفاصيل الحجز تصلك مباشرة
+</span>
+
+</div>
+
+
+<div class="feature">
+
+<strong>
+✓ مراكش
+</strong>
+
+<span>
+خدمة مخصصة لمراكش
+</span>
+
+</div>
+
+
+<div class="feature">
+
+<strong>
+✓ سيارات متعددة
+</strong>
+
+<span>
+فئات مختلفة حسب التوفر
+</span>
+
+</div>
+
+
+<div class="feature">
+
+<strong>
+✓ تواصل مباشر
+</strong>
+
+<span>
+WhatsApp واتصال مباشر
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+<h3>
+📍
+</h3>
+
+<p>
+Marrakech
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>
+🚗
+</h3>
+
+<p>
+سيارات متنوعة
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>
+📱
+</h3>
+
+<p>
+WhatsApp
+</p>
+
+</div>
+
+
+<div class="stat">
+
+<h3>
+⭐
+</h3>
+
+<p>
+خدمة احترافية
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+<div class="container">
+
+
+<div class="contact-box">
+
+<h2>
+جاهز تحجز؟
+</h2>
+
+<p>
+تواصل معنا الآن لمعرفة السيارات المتوفرة والأسعار.
+</p>
+
+
+<a
+href="tel:+212631752271"
+class="phone">
+
++212 6 31 75 22 71
+
+</a>
+
+
+<div class="contact-buttons">
+
+
+<a
+class="btn btn-primary"
+href="https://wa.me/212631752271?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20كراء%20سيارة%20في%20مراكش"
+target="_blank">
+
+💬 WhatsApp
+
+</a>
+
+
+<a
+class="btn btn-outline"
+href="tel:+212631752271">
+
+📞 اتصل بنا
+
+</a>
+
+
+<a
+class="btn btn-outline"
+href="https://www.google.com/maps/search/?api=1&query=Marrakech%2C%20Morocco"
+target="_blank">
+
+📍 Google Maps
+
+</a>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<p>
+
+© 2026
+
+<strong>
+GROUP NOURA LLD
+</strong>
+
+— Marrakech, Morocco
+
+</p>
+
+<p style="margin-top:7px;">
+
+Location de voitures · Marrakech
+
+</p>
+
+</footer>
+
+
+
+<!-- =========================
+     WHATSAPP FLOAT
+========================= -->
+
+<a
+class="whatsapp"
+href="https://wa.me/212631752271?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20كراء%20سيارة%20في%20مراكش"
+target="_blank"
+aria-label="WhatsApp">
+
+💬
+
+</a>
+
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+document
+.getElementById("navLinks")
+.classList
+.toggle("active");
+
+}
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+document
+.getElementById("navLinks")
+.classList
+.remove("active");
+
+});
+
+});
+
+
+/* =========================
+   BOOKING
+========================= */
+
+function sendBooking(){
+
+const name =
+document
+.getElementById("customerName")
+.value
+.trim();
+
+const phone =
+document
+.getElementById("customerPhone")
+.value
+.trim();
+
+const car =
+document
+.getElementById("car")
+.value;
+
+const pickup =
+document
+.getElementById("pickup")
+.value;
+
+const startDate =
+document
+.getElementById("startDate")
+.value;
+
+const startTime =
+document
+.getElementById("startTime")
+.value;
+
+const endDate =
+document
+.getElementById("endDate")
+.value;
+
+const endTime =
+document
+.getElementById("endTime")
+.value;
+
+
+/* CHECK REQUIRED */
+
+if(
+!name ||
+!phone ||
+!startDate ||
+!startTime ||
+!endDate ||
+!endTime
+){
+
+alert(
+"من فضلك عمر جميع الخانات المطلوبة."
+);
+
+return;
+
+}
+
+
+/* CHECK PHONE */
+
+if(phone.length < 8){
+
+alert(
+"من فضلك أدخل رقم هاتف صحيح."
+);
+
+return;
+
+}
+
+
+/* CHECK DATES */
+
+const start =
+new Date(
+startDate +
+"T" +
+startTime
+);
+
+const end =
+new Date(
+endDate +
+"T" +
+endTime
+);
+
+
+if(end <= start){
+
+alert(
+"تاريخ ووقت الإرجاع يجب أن يكونا بعد تاريخ ووقت الاستلام."
+);
+
+return;
+
+}
+
+
+/* FORMAT DATES */
+
+const startFormatted =
+formatDate(startDate);
+
+const endFormatted =
+formatDate(endDate);
+
+
+/* WHATSAPP MESSAGE */
+
+const message =
+
+"السلام عليكم، أريد حجز سيارة من GROUP NOURA LLD 🚗\n\n" +
+
+"👤 الاسم: " +
+name +
+"\n" +
+
+"📞 هاتف الزبون: " +
+phone +
+"\n" +
+
+"🚘 السيارة: " +
+car +
+"\n" +
+
+"📍 مكان الاستلام: " +
+pickup +
+"\n" +
+
+"📅 تاريخ الاستلام: " +
+startFormatted +
+"\n" +
+
+"⏰ وقت الاستلام: " +
+startTime +
+"\n" +
+
+"📅 تاريخ الإرجاع: " +
+endFormatted +
+"\n" +
+
+"⏰ وقت الإرجاع: " +
+endTime +
+"\n\n" +
+
+"أريد معرفة السعر والتوفر. شكراً لكم 🙏";
+
+
+/* WHATSAPP URL */
+
+const whatsappURL =
+
+"https://wa.me/212631752271?text=" +
+
+encodeURIComponent(message);
+
+
+/* OPEN WHATSAPP */
+
+window.location.href =
+whatsappURL;
+
+}
+
+
+/* =========================
+   DATE FORMAT
+========================= */
+
+function formatDate(date){
+
+const parts =
+date.split("-");
+
+return (
+parts[2] +
+"/" +
+parts[1] +
+"/" +
+parts[0]
+);
+
+}
+
+
+/* =========================
+   SET MIN DATE
+========================= */
+
+const today =
+new Date()
+.toISOString()
+.split("T")[0];
+
+
+document
+.getElementById("startDate")
+.min = today;
+
+
+document
+.getElementById("endDate")
+.min = today;
+
+
+/* =========================
+   START DATE CHANGE
+========================= */
+
+document
+.getElementById("startDate")
+.addEventListener(
+"change",
+function(){
+
+document
+.getElementById("endDate")
+.min = this.value;
+
+}
+);
+
+</script>
+
+
+</body>
+
+</html>
