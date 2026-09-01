@@ -1,1846 +1,2081 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
+<html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GROUP NOURA LLD | Location de voitures au Maroc</title>
+  <title>Location de voitures au Maroc | Youssef Cars</title>
 
-<meta name="description"
-content="GROUP NOURA LLD - Location de voitures au Maroc. Réservez votre voiture facilement par WhatsApp.">
+  <meta name="description"
+        content="Location de voitures au Maroc. Découvrez notre flotte de citadines, SUV et voitures premium à Rabat, Casablanca, Marrakech, Agadir, Tanger, Fès et dans les principaux aéroports du Maroc.">
 
-<style>
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Youssef Cars">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
+  <!-- À remplacer par ton vrai domaine -->
+  <link rel="canonical" href="https://example.com/">
 
-:root{
-    --gold:#d4af37;
-    --gold2:#f3d66b;
-    --black:#050505;
-    --dark:#0d0d0d;
-    --card:#151515;
-    --border:#292929;
-    --white:#fff;
-    --gray:#999;
-    --green:#25D366;
-}
+  <meta property="og:title" content="Youssef Cars - Location de voitures au Maroc">
+  <meta property="og:description"
+        content="Location de voitures au Maroc : citadines, SUV et véhicules premium.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/">
 
-body{
-    font-family:Arial,Tahoma,sans-serif;
-    background:var(--black);
-    color:white;
-    line-height:1.7;
-}
+  <!--
+  ==========================================
+  GOOGLE ADSENSE
+  ==========================================
 
-a{
-    text-decoration:none;
-    color:inherit;
-}
+  Après acceptation de ton site par Google AdSense,
+  Google te donnera ton propre code.
 
-button,input,select{
-    font-family:inherit;
-}
+  Tu devras placer le code fourni par Google ici.
 
-/* NAVBAR */
+  NE METS PAS un code AdSense inventé.
+  ==========================================
+  -->
 
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    z-index:9999;
-    background:rgba(5,5,5,.95);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid #222;
-}
+  <style>
 
-.nav-container{
-    max-width:1250px;
-    margin:auto;
-    padding:16px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-size:21px;
-    font-weight:900;
-}
-
-.logo span{
-    color:var(--gold);
-}
-
-.nav-links{
-    display:flex;
-    gap:25px;
-    list-style:none;
-    align-items:center;
-}
-
-.nav-links a{
-    color:#ddd;
-    font-size:14px;
-}
-
-.nav-links a:hover{
-    color:var(--gold);
-}
-
-.nav-button{
-    background:var(--gold);
-    color:#000!important;
-    padding:9px 16px;
-    border-radius:7px;
-    font-weight:bold;
-}
-
-.menu{
-    display:none;
-    font-size:28px;
-    cursor:pointer;
-}
-
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    background:
-    linear-gradient(90deg,rgba(0,0,0,.95),rgba(0,0,0,.5)),
-    url("https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2000&q=85")
-    center/cover;
-}
-
-.hero-content{
-    max-width:1250px;
-    width:100%;
-    margin:auto;
-    padding:150px 20px 100px;
-}
-
-.badge{
-    display:inline-block;
-    color:var(--gold);
-    border:1px solid #8c7425;
-    padding:7px 15px;
-    border-radius:30px;
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-size:clamp(42px,7vw,76px);
-    line-height:1.05;
-    max-width:850px;
-    margin-bottom:25px;
-}
-
-.hero h1 span{
-    color:var(--gold);
-}
-
-.hero p{
-    max-width:700px;
-    color:#ccc;
-    font-size:18px;
-    margin-bottom:30px;
-}
-
-.buttons{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    border:none;
-    cursor:pointer;
-    padding:13px 22px;
-    border-radius:8px;
-    font-weight:bold;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:7px;
-}
-
-.btn-primary{
-    background:var(--gold);
-    color:#000;
-}
-
-.btn-primary:hover{
-    background:var(--gold2);
-    transform:translateY(-2px);
-}
-
-.btn-outline{
-    border:1px solid #555;
-    color:white;
-}
-
-.btn-outline:hover{
-    border-color:var(--gold);
-    color:var(--gold);
-}
-
-/* BOOKING */
-
-.booking-wrapper{
-    margin-top:-60px;
-    position:relative;
-    z-index:10;
-    padding:0 15px;
-}
-
-.booking-box{
-    max-width:1150px;
-    margin:auto;
-    background:#151515;
-    border:1px solid #292929;
-    border-radius:18px;
-    padding:28px;
-    box-shadow:0 20px 60px rgba(0,0,0,.6);
-}
-
-.booking-title{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:22px;
-}
-
-.booking-title h2{
-    font-size:25px;
-}
-
-.booking-title span{
-    color:var(--gold);
-    font-size:13px;
-}
-
-.booking-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:14px;
-}
-
-.field label{
-    display:block;
-    color:#aaa;
-    font-size:13px;
-    margin-bottom:6px;
-}
-
-.field input,
-.field select{
-    width:100%;
-    padding:12px;
-    background:#0b0b0b;
-    color:white;
-    border:1px solid #333;
-    border-radius:8px;
-    outline:none;
-}
-
-.field input:focus,
-.field select:focus{
-    border-color:var(--gold);
-}
-
-/* PRICE */
-
-.price-box{
-    margin-top:20px;
-    padding:20px;
-    border:1px solid #3a321c;
-    background:#111;
-    border-radius:12px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-    text-align:center;
-}
-
-.price-item span{
-    display:block;
-    color:#888;
-    font-size:12px;
-}
-
-.price-item strong{
-    color:var(--gold);
-    font-size:22px;
-}
-
-.booking-button{
-    width:100%;
-    margin-top:20px;
-    font-size:16px;
-}
-
-.booking-note{
-    text-align:center;
-    color:#777;
-    font-size:12px;
-    margin-top:10px;
-}
-
-/* SECTIONS */
-
-section{
-    padding:90px 20px;
-}
-
-.container{
-    max-width:1250px;
-    margin:auto;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:45px;
-}
-
-.section-title small{
-    color:var(--gold);
-    font-weight:bold;
-}
-
-.section-title h2{
-    font-size:40px;
-}
-
-.section-title p{
-    color:#888;
-    max-width:650px;
-    margin:8px auto;
-}
-
-/* CARS */
-
-#cars{
-    background:var(--dark);
-}
-
-.cars-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-}
-
-.car-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:15px;
-    overflow:hidden;
-    transition:.3s;
-}
-
-.car-card:hover{
-    transform:translateY(-6px);
-    border-color:#887323;
-}
-
-.car-image{
-    height:210px;
-    background:#111;
-    overflow:hidden;
-}
-
-.car-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.5s;
-}
-
-.car-card:hover img{
-    transform:scale(1.06);
-}
-
-.car-info{
-    padding:20px;
-}
-
-.car-info h3{
-    font-size:20px;
-    margin-bottom:10px;
-}
-
-.car-specs{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-    margin-bottom:18px;
-}
-
-.spec{
-    background:#222;
-    color:#aaa;
-    padding:4px 8px;
-    border-radius:5px;
-    font-size:11px;
-}
-
-.car-bottom{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.car-price{
-    color:var(--gold);
-    font-weight:bold;
-}
-
-.car-price small{
-    color:#777;
-    font-weight:normal;
-}
-
-.reserve{
-    background:var(--gold);
-    color:#000;
-    padding:8px 14px;
-    border-radius:7px;
-    font-size:12px;
-    font-weight:bold;
-}
-
-/* SERVICES */
-
-.services{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.service{
-    background:#111;
-    border:1px solid #252525;
-    border-radius:14px;
-    padding:28px;
-    text-align:center;
-}
-
-.service-icon{
-    font-size:38px;
-    margin-bottom:10px;
-}
-
-.service p{
-    color:#888;
-    font-size:14px;
-}
-
-/* AIRPORTS */
-
-#airports{
-    background:#090909;
-}
-
-.airports-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:12px;
-}
-
-.airport{
-    background:#141414;
-    border:1px solid #272727;
-    padding:14px;
-    border-radius:9px;
-    color:#ddd;
-}
-
-.airport strong{
-    color:var(--gold);
-}
-
-.airport small{
-    display:block;
-    color:#777;
-}
-
-/* CONTACT */
-
-#contact{
-    background:var(--dark);
-}
-
-.contact-box{
-    max-width:900px;
-    margin:auto;
-    text-align:center;
-    padding:55px 20px;
-    background:#141414;
-    border:1px solid #292929;
-    border-radius:20px;
-}
-
-.contact-box h2{
-    font-size:40px;
-}
-
-.contact-box p{
-    color:#888;
-    margin:10px 0 20px;
-}
-
-.phone{
-    display:block;
-    direction:ltr;
-    color:var(--gold);
-    font-size:28px;
-    font-weight:bold;
-    margin-bottom:25px;
-}
-
-.contact-buttons{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-/* FOOTER */
-
-footer{
-    padding:35px 20px;
-    text-align:center;
-    color:#777;
-    border-top:1px solid #222;
-    font-size:13px;
-}
-
-footer strong{
-    color:var(--gold);
-}
-
-/* WHATSAPP */
-
-.whatsapp{
-    position:fixed;
-    left:20px;
-    bottom:20px;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:var(--green);
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-    z-index:9999;
-    box-shadow:0 8px 30px rgba(0,0,0,.5);
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-    .menu{
-        display:block;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .nav-links{
-        display:none;
-        position:absolute;
-        top:65px;
-        right:0;
-        width:100%;
-        background:#080808;
-        padding:22px;
-        flex-direction:column;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .nav-links.active{
-        display:flex;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f6f8;
+      color: #20252b;
+      line-height: 1.6;
     }
 
-    .booking-grid{
-        grid-template-columns:1fr 1fr;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    .cars-grid,
-    .services{
-        grid-template-columns:1fr 1fr;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    .airports-grid{
-        grid-template-columns:1fr 1fr;
+    .container {
+      width: 92%;
+      max-width: 1150px;
+      margin: auto;
     }
 
-    .price-box{
-        grid-template-columns:1fr 1fr;
-    }
-}
+    /* ================= HEADER ================= */
 
-@media(max-width:600px){
-
-    section{
-        padding:70px 15px;
-    }
-
-    .hero-content{
-        padding:130px 20px 90px;
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #11161c;
+      border-bottom: 1px solid rgba(255,255,255,.1);
     }
 
-    .hero h1{
-        font-size:42px;
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .hero p{
-        font-size:16px;
+    .logo {
+      font-size: 23px;
+      font-weight: 900;
+      color: white;
     }
 
-    .booking-box{
-        padding:20px 15px;
+    .logo span {
+      color: #d9ad57;
     }
 
-    .booking-grid,
-    .cars-grid,
-    .services,
-    .airports-grid{
-        grid-template-columns:1fr;
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
     }
 
-    .price-box{
-        grid-template-columns:1fr;
+    nav a {
+      color: #eee;
+      font-size: 14px;
     }
 
-    .section-title h2,
-    .contact-box h2{
-        font-size:30px;
+    nav a:hover {
+      color: #d9ad57;
     }
 
-    .phone{
-        font-size:21px;
+    .nav-button {
+      background: #d9ad57;
+      color: #111;
+      padding: 10px 16px;
+      border-radius: 9px;
+      font-weight: bold;
     }
-}
 
-</style>
+    /* ================= HERO ================= */
+
+    .hero {
+      background:
+        radial-gradient(circle at 80% 20%, rgba(217,173,87,.25), transparent 35%),
+        linear-gradient(135deg, #11161c, #27313d);
+
+      color: white;
+      padding: 90px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: #e7c97e;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 65px);
+      line-height: 1.08;
+      margin-bottom: 20px;
+    }
+
+    .hero-text {
+      color: #cbd2da;
+      font-size: 18px;
+      max-width: 650px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 13px 20px;
+      border-radius: 9px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+
+    .button-primary {
+      background: #d9ad57;
+      color: #111;
+    }
+
+    .button-secondary {
+      border: 1px solid #69727d;
+      color: white;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 25px;
+      border-radius: 20px;
+    }
+
+    .hero-car {
+      height: 230px;
+      border-radius: 15px;
+      background: linear-gradient(145deg,#303b47,#11161c);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 90px;
+      margin-bottom: 20px;
+    }
+
+    .hero-card h2 {
+      margin-bottom: 7px;
+    }
+
+    .hero-card p {
+      color: #c3cad2;
+      font-size: 14px;
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 40px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #6c7580;
+    }
+
+    /* ================= ADS ================= */
+
+    .ad-container {
+      width: 100%;
+      max-width: 970px;
+      min-height: 90px;
+      margin: 25px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed #cdd2d8;
+      background: #fafafa;
+      color: #8a9199;
+      font-size: 12px;
+      border-radius: 8px;
+    }
+
+    /* ================= FEATURES ================= */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .feature {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      border: 1px solid #e5e7ea;
+    }
+
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: #f6eddc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+      margin-bottom: 7px;
+    }
+
+    .feature p {
+      color: #6b737d;
+      font-size: 14px;
+    }
+
+    /* ================= FLEET ================= */
+
+    .fleet {
+      background: white;
+    }
+
+    .cars {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .car-card {
+      background: white;
+      border: 1px solid #e2e5e8;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,.04);
+    }
+
+    .car-image {
+      height: 190px;
+      background: linear-gradient(145deg,#e1e5e9,#fafafa);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 75px;
+    }
+
+    .car-content {
+      padding: 21px;
+    }
+
+    .car-category {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 20px;
+      background: #f1f3f5;
+      color: #626a73;
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .car-content h3 {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .car-description {
+      color: #69727c;
+      font-size: 14px;
+    }
+
+    .specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 15px 0;
+    }
+
+    .spec {
+      background: #f5f6f7;
+      padding: 5px 8px;
+      border-radius: 7px;
+      font-size: 11px;
+    }
+
+    .car-button {
+      width: 100%;
+      padding: 12px;
+      background: #11161c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .car-button:hover {
+      background: #303943;
+    }
+
+    /* ================= LOCATIONS ================= */
+
+    .locations {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 15px;
+    }
+
+    .location {
+      background: white;
+      border: 1px solid #e4e7ea;
+      border-radius: 13px;
+      padding: 20px;
+    }
+
+    .location strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .location span {
+      color: #737b85;
+      font-size: 13px;
+    }
+
+    /* ================= BOOKING ================= */
+
+    .booking {
+      background: #11161c;
+      color: white;
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .booking-description {
+      color: #b9c1ca;
+    }
+
+    .booking-form {
+      background: white;
+      color: #20252b;
+      padding: 25px;
+      border-radius: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #dfe2e6;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .submit-button {
+      width: 100%;
+      padding: 14px;
+      background: #20a464;
+      color: white;
+      border: none;
+      border-radius: 9px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .form-note {
+      color: #777f88;
+      font-size: 11px;
+      margin-top: 10px;
+    }
+
+    /* ================= CONTENT ================= */
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .content-box {
+      background: white;
+      border: 1px solid #e4e7ea;
+      border-radius: 15px;
+      padding: 25px;
+    }
+
+    .content-box h3 {
+      margin-bottom: 10px;
+    }
+
+    .content-box p,
+    .content-box li {
+      color: #69727c;
+      font-size: 14px;
+    }
+
+    .content-box ul {
+      padding-left: 20px;
+    }
+
+    /* ================= FAQ ================= */
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      background: white;
+      border: 1px solid #e2e5e8;
+      padding: 18px;
+      border-radius: 10px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    details p {
+      color: #6d7580;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #0c1117;
+      color: #b8c0c9;
+      padding: 45px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 35px;
+    }
+
+    footer h3 {
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    footer a {
+      display: block;
+      margin: 7px 0;
+      font-size: 14px;
+    }
+
+    footer p {
+      font-size: 14px;
+    }
+
+    .footer-info {
+      border-top: 1px solid #252c34;
+      margin-top: 30px;
+      padding-top: 20px;
+      font-size: 12px;
+    }
+
+    /* ================= WHATSAPP ================= */
+
+    .whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+      width: 58px;
+      height: 58px;
+      background: #20a464;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 27px;
+      box-shadow: 0 8px 25px rgba(0,0,0,.25);
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media(max-width:850px) {
+
+      nav {
+        display: none;
+      }
+
+      .hero-grid,
+      .booking-grid,
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features,
+      .cars {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .locations {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:560px) {
+
+      .hero {
+        padding: 65px 0 50px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .features,
+      .cars,
+      .locations,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .hero-car {
+        height: 180px;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
 
-<!-- NAVBAR -->
+<header>
 
-<nav>
+  <div class="container nav">
 
-<div class="nav-container">
+    <a href="#accueil" class="logo">
+      YOUSSEF<span>CARS</span>
+    </a>
 
-<a href="#home" class="logo">
-GROUP <span>NOURA</span> LLD
-</a>
+    <nav>
+      <a href="#flotte">Flotte</a>
+      <a href="#services">Services</a>
+      <a href="#villes">Villes</a>
+      <a href="#faq">FAQ</a>
+      <a href="#reservation" class="nav-button">Réserver</a>
+    </nav>
 
-<div class="menu" onclick="toggleMenu()">☰</div>
+  </div>
 
-<ul class="nav-links" id="navLinks">
-
-<li><a href="#home">الرئيسية</a></li>
-<li><a href="#cars">السيارات</a></li>
-<li><a href="#booking">الحجز</a></li>
-<li><a href="#airports">المطارات</a></li>
-<li><a href="#contact">اتصل بنا</a></li>
-
-<li>
-<a href="#booking" class="nav-button">
-احجز الآن
-</a>
-</li>
-
-</ul>
-
-</div>
-
-</nav>
+</header>
 
 
-<!-- HERO -->
+<main id="accueil">
 
-<section class="hero" id="home">
+<!-- ================= HERO ================= -->
 
-<div class="hero-content">
+<section class="hero">
 
-<div class="badge">
-🇲🇦 Morocco · Marrakech
-</div>
+  <div class="container hero-grid">
 
-<h1>
-اكتشف المغرب
-<br>
-<span>بالسيارة المناسبة.</span>
-</h1>
+    <div>
 
-<p>
-GROUP NOURA LLD
-لـكراء السيارات في المغرب.
-اختار سيارتك، حدد تاريخ ومكان الاستلام،
-وتوصل معنا مباشرة عبر WhatsApp.
-</p>
+      <div class="eyebrow">
+        Location de voitures au Maroc
+      </div>
 
-<div class="buttons">
+      <h1>
+        Votre voiture.<br>
+        Votre liberté.
+      </h1>
 
-<a href="#booking" class="btn btn-primary">
-🚗 احجز سيارتك
-</a>
+      <p class="hero-text">
+        Découvrez notre sélection de voitures pour vos déplacements
+        professionnels, vos vacances et vos voyages au Maroc.
+      </p>
 
-<a href="https://wa.me/212631752271?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20كراء%20سيارة"
-target="_blank"
-class="btn btn-outline">
-💬 WhatsApp
-</a>
+      <div class="hero-buttons">
 
-</div>
+        <a href="#flotte" class="button button-primary">
+          Voir la flotte
+        </a>
 
-</div>
+        <a href="#reservation" class="button button-secondary">
+          Demander un devis
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+      <div class="hero-car">
+        🚙
+      </div>
+
+      <h2>
+        Une voiture pour chaque besoin
+      </h2>
+
+      <p>
+        Citadines économiques, SUV et véhicules premium.
+        Disponibilité et tarifs à confirmer selon vos dates.
+      </p>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- BOOKING -->
-
-<div class="booking-wrapper" id="booking">
-
-<div class="booking-box">
-
-<div class="booking-title">
-
-<h2>احجز سيارتك</h2>
-
-<span>⚡ حجز مباشر عبر WhatsApp</span>
-
-</div>
-
-
-<div class="booking-grid">
-
-
-<div class="field">
-
-<label>الاسم الكامل *</label>
-
-<input
-type="text"
-id="customerName"
-placeholder="مثال: Youssef">
-
-</div>
-
-
-<div class="field">
-
-<label>رقم الهاتف *</label>
-
-<input
-type="tel"
-id="customerPhone"
-placeholder="06XXXXXXXX">
-
-</div>
-
-
-<div class="field">
-
-<label>السيارة *</label>
-
-<select id="car" onchange="updatePrice()">
-
-<option value="RANGE ROVER VOGUE">RANGE ROVER VOGUE</option>
-<option value="CLIO 6">CLIO 6</option>
-<option value="RANGE ROVER SPORT HSE">RANGE ROVER SPORT HSE</option>
-<option value="CLIO 5 AUTOMATIQUE">CLIO 5 AUTOMATIQUE</option>
-<option value="MERCEDES CLASSE E">MERCEDES CLASSE E</option>
-<option value="CLIO 5 DIESEL">CLIO 5 DIESEL</option>
-<option value="PORSCHE MACAN">PORSCHE MACAN</option>
-<option value="PEUGEOT 208">PEUGEOT 208</option>
-<option value="VOLKSWAGEN TOUAREG">VOLKSWAGEN TOUAREG</option>
-<option value="PEUGEOT 2008">PEUGEOT 2008</option>
-<option value="VOLKSWAGEN T-ROC">VOLKSWAGEN T-ROC</option>
-<option value="CITROEN C5">CITROEN C5</option>
-<option value="VOLKSWAGEN GOLF 8.5 R">VOLKSWAGEN GOLF 8.5 R</option>
-<option value="RENAULT GARDIAN">RENAULT GARDIAN</option>
-<option value="AUDI Q3">AUDI Q3</option>
-<option value="DACIA LOGAN">DACIA LOGAN</option>
-<option value="HYUNDAI TUCSON">HYUNDAI TUCSON</option>
-<option value="DACIA SANDERO">DACIA SANDERO</option>
-<option value="SEAT IBIZA FR">SEAT IBIZA FR</option>
-
-</select>
-
-</div>
-
-
-<div class="field">
-
-<label>مكان الاستلام *</label>
-
-<select id="pickup">
-
-<option value="مطار مراكش المنارة - RAK">
-✈️ Marrakech Menara - RAK
-</option>
-
-<option value="مطار محمد الخامس - CMN">
-✈️ Casablanca Mohammed V - CMN
-</option>
-
-<option value="مطار الرباط سلا - RBA">
-✈️ Rabat-Salé - RBA
-</option>
-
-<option value="مطار فاس سايس - FEZ">
-✈️ Fès-Saïss - FEZ
-</option>
-
-<option value="مطار أكادير المسيرة - AGA">
-✈️ Agadir Al Massira - AGA
-</option>
-
-<option value="مطار طنجة ابن بطوطة - TNG">
-✈️ Tanger Ibn Battouta - TNG
-</option>
-
-<option value="مطار الناظور العروي - NDR">
-✈️ Nador El Aroui - NDR
-</option>
-
-<option value="مطار وجدة أنجاد - OUD">
-✈️ Oujda Angads - OUD
-</option>
-
-<option value="مطار الصويرة موكادور - ESU">
-✈️ Essaouira Mogador - ESU
-</option>
-
-<option value="مطار ورزازات - OZZ">
-✈️ Ouarzazate - OZZ
-</option>
-
-<option value="مطار الداخلة - VIL">
-✈️ Dakhla - VIL
-</option>
-
-<option value="مطار العيون الحسن الأول - EUN">
-✈️ Laâyoune Hassan I
-</option>
-
-<option value="مطار الرشيدية مولاي علي الشريف - ERH">
-✈️ Errachidia - ERH
-</option>
-
-<option value="مطار الحسيمة الشريف الإدريسي - AHU">
-✈️ Al Hoceima - AHU
-</option>
-
-<option value="مطار تطوان سانية الرمل - TTU">
-✈️ Tétouan - TTU
-</option>
-
-<option value="مطار كلميم - GLN">
-✈️ Guelmim - GLN
-</option>
-
-<option value="مطار بني ملال - BEM">
-✈️ Béni Mellal - BEM
-</option>
-
-<option value="مطار طانطان - TTA">
-✈️ Tan-Tan - TTA
-</option>
-
-<option value="مطار زاكورة">
-✈️ Zagora
-</option>
-
-<option value="مطار بوعرفة">
-✈️ Bouarfa
-</option>
-
-<option value="مطار بنسليمان">
-✈️ Benslimane
-</option>
-
-<option value="مطار كازا تيط مليل">
-✈️ Casablanca Tit Mellil
-</option>
-
-<option value="مطار إفران">
-✈️ Ifrane
-</option>
-
-</select>
-
-</div>
-
-
-<div class="field">
-
-<label>مكان الإرجاع</label>
-
-<select id="dropoff">
-
-<option value="نفس مكان الاستلام">
-نفس مكان الاستلام
-</option>
-
-<option value="مطار مراكش المنارة - RAK">
-Marrakech Menara - RAK
-</option>
-
-<option value="مطار محمد الخامس - CMN">
-Casablanca Mohammed V - CMN
-</option>
-
-<option value="مطار الرباط سلا - RBA">
-Rabat-Salé - RBA
-</option>
-
-<option value="مطار فاس سايس - FEZ">
-Fès-Saïss - FEZ
-</option>
-
-<option value="مطار أكادير المسيرة - AGA">
-Agadir Al Massira - AGA
-</option>
-
-<option value="مطار طنجة ابن بطوطة - TNG">
-Tanger Ibn Battouta - TNG
-</option>
-
-<option value="مكان آخر داخل المغرب">
-مكان آخر داخل المغرب
-</option>
-
-</select>
-
-</div>
-
-
-<div class="field">
-
-<label>تاريخ الاستلام *</label>
-
-<input type="date" id="startDate">
-
-</div>
-
-
-<div class="field">
-
-<label>وقت الاستلام *</label>
-
-<input type="time" id="startTime" value="10:00">
-
-</div>
-
-
-<div class="field">
-
-<label>تاريخ الإرجاع *</label>
-
-<input type="date" id="endDate">
-
-</div>
-
-
-<div class="field">
-
-<label>وقت الإرجاع *</label>
-
-<input type="time" id="endTime" value="10:00">
-
-</div>
-
-</div>
-
-
-<!-- PRICE -->
-
-<div class="price-box">
-
-<div class="price-item">
-
-<span>الثمن اليومي</span>
-
-<strong id="dailyPrice">
-500 DH
-</strong>
-
-</div>
-
-<div class="price-item">
-
-<span>عدد الأيام</span>
-
-<strong id="totalDays">
-0
-</strong>
-
-</div>
-
-<div class="price-item">
-
-<span>المجموع التقريبي</span>
-
-<strong id="totalPrice">
-0 DH
-</strong>
-
-</div>
-
-</div>
-
-
-<button
-class="btn btn-primary booking-button"
-onclick="sendBooking()">
-
-💬 تأكيد وإرسال طلب الحجز عبر WhatsApp
-
-</button>
-
-<div class="booking-note">
-
-الثمن المعروض تقديري ويمكن تأكيده مع الشركة حسب التوفر ومدة الكراء.
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- CARS -->
-
-<section id="cars">
+<!-- ================= ADS ================= -->
 
 <div class="container">
 
-<div class="section-title">
-
-<small>GROUP NOURA LLD</small>
-
-<h2>سياراتنا</h2>
-
-<p>
-اختار من بين مجموعة متنوعة من السيارات.
-</p>
+  <div class="ad-container">
+    Espace publicitaire
+  </div>
 
 </div>
 
 
-<div class="cars-grid">
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Pourquoi nous choisir ?
+      </h2>
+
+      <p>
+        Une expérience simple pour trouver une voiture adaptée
+        à votre séjour au Maroc.
+      </p>
+
+    </div>
 
 
-<script>
+    <div class="features">
 
-const cars = [
+      <article class="feature">
 
-["RANGE ROVER VOGUE","https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+        <div class="feature-icon">
+          🚗
+        </div>
 
-["CLIO 6","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=80"],
+        <h3>
+          Flotte variée
+        </h3>
 
-["RANGE ROVER SPORT HSE","https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+        <p>
+          Des citadines économiques aux SUV et véhicules premium,
+          selon les disponibilités.
+        </p>
 
-["CLIO 5 AUTOMATIQUE","https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1000&q=80"],
+      </article>
 
-["MERCEDES CLASSE E","https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1000&q=80"],
 
-["CLIO 5 DIESEL","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=80"],
+      <article class="feature">
 
-["PORSCHE MACAN","https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&w=1000&q=80"],
+        <div class="feature-icon">
+          📍
+        </div>
 
-["PEUGEOT 208","https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1000&q=80"],
+        <h3>
+          Plusieurs destinations
+        </h3>
 
-["VOLKSWAGEN TOUAREG","https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+        <p>
+          Nous pouvons étudier les demandes dans plusieurs villes
+          et aéroports du Maroc.
+        </p>
 
-["PEUGEOT 2008","https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1000&q=80"],
+      </article>
 
-["VOLKSWAGEN T-ROC","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=80"],
 
-["CITROEN C5","https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1000&q=80"],
+      <article class="feature">
 
-["VOLKSWAGEN GOLF 8.5 R","https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1000&q=80"],
+        <div class="feature-icon">
+          💬
+        </div>
 
-["RENAULT GARDIAN","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=80"],
+        <h3>
+          Réservation simple
+        </h3>
 
-["AUDI Q3","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=80"],
+        <p>
+          Envoyez votre demande directement par WhatsApp
+          avec vos dates et votre véhicule préféré.
+        </p>
 
-["DACIA LOGAN","https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1000&q=80"],
+      </article>
 
-["HYUNDAI TUCSON","https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=80"],
+    </div>
 
-["DACIA SANDERO","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=80"],
-
-["SEAT IBIZA FR","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=80"]
-
-];
-
-cars.forEach(car=>{
-
-document.write(`
-
-<div class="car-card">
-
-<div class="car-image">
-
-<img src="${car[1]}" alt="${car[0]}">
-
-</div>
-
-<div class="car-info">
-
-<h3>${car[0]}</h3>
-
-<div class="car-specs">
-
-<span class="spec">❄️ مكيفة</span>
-
-<span class="spec">🚗 متوفرة حسب الطلب</span>
-
-</div>
-
-<div class="car-bottom">
-
-<div class="car-price">
-من السعر المحدد
-</div>
-
-<a href="#booking"
-class="reserve"
-onclick="selectCar('${car[0]}')">
-
-احجز
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-`);
-
-});
-
-</script>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-<!-- AIRPORTS -->
+<!-- ================= FLEET ================= -->
 
-<section id="airports">
+<section id="flotte" class="fleet">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Notre flotte
+      </h2>
+
+      <p>
+        Découvrez les véhicules disponibles dans notre sélection.
+        La disponibilité et le prix doivent être confirmés avant réservation.
+      </p>
+
+    </div>
+
+
+    <div class="cars">
+
+
+      <!-- RANGE ROVER VOGUE -->
+
+      <article class="car-card">
+
+        <div class="car-image">
+          🚙
+        </div>
+
+        <div class="car-content">
+
+          <span class="car-category">
+            Premium SUV
+          </span>
+
+          <h3>
+            Range Rover Vogue
+          </h3>
+
+          <p class="car-description">
+            SUV premium conçu pour offrir confort et élégance
+            lors de vos déplacements.
+          </p>
+
+          <div class="specs">
+            <span class="spec">SUV</span>
+            <span class="spec">Premium</span>
+            <span class="spec">Automatique</span>
+          </div>
+
+          <button class="car-button"
+                  data-car="Range Rover Vogue">
+            Demander ce véhicule
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- RANGE ROVER SPORT -->
+
+      <article class="car-card">
+
+        <div class="car-image">
+          🚙
+        </div>
+
+        <div class="car-content">
+
+          <span class="car-category">
+            Premium SUV
+          </span>
+
+          <h3>
+            Range Rover Sport HSE
+          </h3>
+
+          <p class="car-description">
+            SUV premium combinant confort et expérience de conduite.
+          </p>
+
+          <div class="specs">
+            <span class="spec">SUV</span>
+            <span class="spec">HSE</span>
+            <span class="spec">Automatique</span>
+          </div>
+
+          <button class="car-button"
+                  data-car="Range Rover Sport HSE">
+            Demander ce véhicule
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- MERCEDES -->
+
+      <article class="car-card">
+
+        <div class="car-image">
+          🚘
+        </div>
+
+        <div class="car-content">
+
+          <span class="car-category">
+            Premium
+          </span>
+
+          <h3>
+            Mercedes Classe E
+          </h3>
+
+          <p class="car-description">
+            Berline élégante adaptée aux déplacements professionnels
+            et aux longs trajets.
+          </p>
+
+          <div class="specs">
+            <span class="spec">Berline</span>
+            <span class="spec">Premium</span>
+          </div>
+
+          <button class="car-button"
+                  data-car="Mercedes Classe E">
+            Demander ce véhicule
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- PORSCHE -->
+
+      <article class="car-card">
+
+        <div class="car-image">
+          🚘
+        </div>
+
+        <div class="car-content">
+
+          <span class="car-category">
+            Premium SUV
+          </span>
+
+          <h3>
+            Porsche Macan
+          </h3>
+
+          <p class="car-description">
+            SUV premium au caractère sportif pour vos déplacements.
+          </p>
+
+          <div class="specs">
+            <span class="spec">SUV</span>
+            <span class="spec">Premium</span>
+          </div>
+
+          <button class="car-button"
+                  data-car="Porsche Macan">
+            Demander ce véhicule
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- TOUAREG -->
+
+      <article class="car-card">
+
+        <div class="car-image">
+          🚙
+        </div>
+
+        <div class="car-content">
+
+          <span class="car-category">
+            SUV
+          </span>
+
+          <h3>
+            Volkswagen Touareg
+          </h3>
+
+          <p class="car-description">
+            SUV polyvalent pour les voyages et les trajets longue distance.
+          </p>
+
+          <div class="specs">
+            <span class="spec">SUV</span>
+            <span class="spec">Confort</span>
+          </div>
+
+          <button class="car-button"
+                  data-car="Volkswagen Touareg">
+            Demander ce véhicule
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- T ROC -->
+
+      <article class="car-card">
+
+        <div class="car-image">
+          🚙
+        </div>
+
+        <div class="car-content">
+
+          <span class="car-category">
+            SUV compact
+          </span>
+
+          <h3>
+            Volkswagen T-Roc
+          </h3>
+
+          <p class="car-description">
+            SUV compact pratique pour la ville et les escapades.
+          </p>
+
+          <div class="specs">
+            <span class="spec">SUV</span>
+            <span class="spec">Compact</span>
+          </div>
+
+          <button class="car-button"
+                  data-car="Volkswagen T-Roc">
+            Demander ce véhicule
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- CLIO 6 -->
+
+      <article class="car-card">
+
+        <div class="car-image">
+          🚗
+        </div>
+
+        <div class="car-content">
+
+          <span class="car-category">
+            Citadine
+          </span>
+
+          <h3>
+            Renault Clio 6
+          </h3>
+
+          <p class="car-description">
+            Une citadine moderne et pratique pour vos déplacements quotidiens.
+          </p>
+
+          <div class="specs">
+            <span class="spec">Citadine</span>
+            <span class="spec">Économique</span>
+          </div>
+
+          <button class="car-button"
+                  data-car="Renault Clio 6">
+            Demander ce véhicule
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- CLIO 5 AUTO -->
+
+      <article class="car-card">
+
+        <div class="car-image">
+          🚗
+        </div>
+
+        <div class="car-content">
+
+          <span class="car-category">
+            Citadine
+          </span>
+
+          <h3>
+            Renault Clio 5 Automatique
+          </h3>
+
+          <p class="car-description">
+            Une citadine automatique pratique pour la circulation urbaine.
+          </p>
+
+          <div class="specs">
+            <span class="spec">Automatique</span>
+            <span class="spec">Citadine</span>
+          </div>
+
+          <button class="car-button"
+                  data-car="Renault Clio 5 Automatique">
+            Demander ce véhicule
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- CLIO DIESEL -->
+
+      <article class="car-card">
+
+        <div class="car-image">
+          🚗
+        </div>
+
+        <div class="car-content">
+
+          <span class="car-category">
+            Économique
+          </span>
+
+          <h3>
+            Renault Clio 5 Diesel
+          </h3>
+
+          <p class="car-description">
+            Une solution pratique pour les déplacements quotidiens
+            et les trajets routiers.
+          </p>
+
+          <div class="specs">
+            <span class="spec">Diesel</span>
+            <span class="spec">Économique</span>
+          </div>
+
+          <button class="car-button"
+                  data-car="Renault Clio 5 Diesel">
+            Demander ce véhicule
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- PEUGEOT 208 -->
+
+      <article class="car-card">
+
+        <div class="car-image">
+          🚗
+        </div>
+
+        <div class="car-content">
+
+          <span class="car-category">
+            Citadine
+          </span>
+
+          <h3>
+            Peugeot 208
+          </h3>
+
+          <p class="car-description">
+            Une voiture compacte adaptée aux déplacements urbains.
+          </p>
+
+          <div class="specs">
+            <span class="spec">Citadine</span>
+            <span class="spec">Compacte</span>
+          </div>
+
+          <button class="car-button"
+                  data-car="Peugeot 208">
+            Demander ce véhicule
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- PEUGEOT 2008 -->
+
+      <article class="car-card">
+
+        <div class="car-image">
+          🚙
+        </div>
+
+        <div class="car-content">
+
+          <span class="car-category">
+            SUV compact
+          </span>
+
+          <h3>
+            Peugeot 2008
+          </h3>
+
+          <p class="car-description">
+            SUV compact polyvalent pour la ville et les voyages.
+          </p>
+
+          <div class="specs">
+            <span class="spec">SUV</span>
+            <span class="spec">Compact</span>
+          </div>
+
+          <button class="car-button"
+                  data-car="Peugeot 2008">
+            Demander ce véhicule
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- CITROEN -->
+
+      <article class="car-card">
+
+        <div class="car-image">
+          🚗
+        </div>
+
+        <div class="car-content">
+
+          <span class="car-category">
+            Citadine
+          </span>
+
+          <h3>
+            Citroën
+          </h3>
+
+          <p class="car-description">
+            Modèle disponible selon la flotte et les dates demandées.
+          </p>
+
+          <div class="specs">
+            <span class="spec">Confort</span>
+            <span class="spec">Citadine</span>
+          </div>
+
+          <button class="car-button"
+                  data-car="Citroën">
+            Demander ce véhicule
+          </button>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= LOCATIONS ================= -->
+
+<section id="villes">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Nos destinations
+      </h2>
+
+      <p>
+        Demandes possibles dans plusieurs villes et aéroports du Maroc,
+        selon disponibilité.
+      </p>
+
+    </div>
+
+
+    <div class="locations">
+
+      <div class="location">
+        <strong>Rabat</strong>
+        <span>Ville et alentours</span>
+      </div>
+
+      <div class="location">
+        <strong>Casablanca</strong>
+        <span>Ville et aéroport</span>
+      </div>
+
+      <div class="location">
+        <strong>Marrakech</strong>
+        <span>Ville et aéroport</span>
+      </div>
+
+      <div class="location">
+        <strong>Agadir</strong>
+        <span>Ville et aéroport</span>
+      </div>
+
+      <div class="location">
+        <strong>Tanger</strong>
+        <span>Ville et aéroport</span>
+      </div>
+
+      <div class="location">
+        <strong>Fès</strong>
+        <span>Ville et aéroport</span>
+      </div>
+
+      <div class="location">
+        <strong>Oujda</strong>
+        <span>Selon disponibilité</span>
+      </div>
+
+      <div class="location">
+        <strong>Autres villes</strong>
+        <span>Nous contacter</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= BOOKING ================= -->
+
+<section id="reservation" class="booking">
+
+  <div class="container booking-grid">
+
+    <div>
+
+      <div class="eyebrow">
+        Réservation
+      </div>
+
+      <h2 style="font-size:38px;margin-bottom:15px;">
+        Demandez votre voiture
+      </h2>
+
+      <p class="booking-description">
+        Remplissez le formulaire avec vos informations.
+        Un message WhatsApp sera préparé automatiquement
+        avec votre demande.
+      </p>
+
+      <br>
+
+      <p class="booking-description">
+        La réservation n'est confirmée qu'après validation
+        de la disponibilité et accord sur les conditions de location.
+      </p>
+
+    </div>
+
+
+    <form class="booking-form" id="bookingForm">
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label for="name">
+            Nom
+          </label>
+
+          <input
+            id="name"
+            type="text"
+            placeholder="Votre nom"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="phone">
+            Téléphone
+          </label>
+
+          <input
+            id="phone"
+            type="tel"
+            placeholder="+212..."
+            required
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="car">
+          Voiture
+        </label>
+
+        <select id="car" required>
+
+          <option value="">
+            Choisissez une voiture
+          </option>
+
+          <option>Range Rover Vogue</option>
+          <option>Range Rover Sport HSE</option>
+          <option>Mercedes Classe E</option>
+          <option>Porsche Macan</option>
+          <option>Volkswagen Touareg</option>
+          <option>Volkswagen T-Roc</option>
+          <option>Renault Clio 6</option>
+          <option>Renault Clio 5 Automatique</option>
+          <option>Renault Clio 5 Diesel</option>
+          <option>Peugeot 208</option>
+          <option>Peugeot 2008</option>
+          <option>Citroën</option>
+
+        </select>
+
+      </div>
+
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label for="pickup">
+            Lieu de départ
+          </label>
+
+          <input
+            id="pickup"
+            type="text"
+            placeholder="Ville / aéroport"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="dropoff">
+            Lieu de retour
+          </label>
+
+          <input
+            id="dropoff"
+            type="text"
+            placeholder="Ville / aéroport"
+            required
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label for="start">
+            Date de départ
+          </label>
+
+          <input
+            id="start"
+            type="date"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="end">
+            Date de retour
+          </label>
+
+          <input
+            id="end"
+            type="date"
+            required
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="message">
+          Message
+        </label>
+
+        <textarea
+          id="message"
+          placeholder="Précisez vos besoins..."
+        ></textarea>
+
+      </div>
+
+
+      <button
+        type="submit"
+        class="submit-button"
+      >
+        💬 Envoyer la demande sur WhatsApp
+      </button>
+
+
+      <p class="form-note">
+        Le formulaire ne stocke pas directement vos informations
+        sur ce site. Il prépare un message WhatsApp.
+      </p>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ADS ================= -->
 
 <div class="container">
 
-<div class="section-title">
-
-<small>
-AIRPORT PICKUP
-</small>
-
-<h2>
-مطارات المغرب
-</h2>
-
-<p>
-يمكنك اختيار المطار من نموذج الحجز.
-</p>
+  <div class="ad-container">
+    Espace publicitaire
+  </div>
 
 </div>
 
 
-<div class="airports-grid">
-
-<div class="airport">
-<strong>RAK</strong>
-Marrakech Menara
-<small>مراكش</small>
-</div>
-
-<div class="airport">
-<strong>CMN</strong>
-Mohammed V
-<small>الدار البيضاء</small>
-</div>
-
-<div class="airport">
-<strong>RBA</strong>
-Rabat-Salé
-<small>الرباط</small>
-</div>
-
-<div class="airport">
-<strong>FEZ</strong>
-Fès-Saïss
-<small>فاس</small>
-</div>
-
-<div class="airport">
-<strong>AGA</strong>
-Agadir Al Massira
-<small>أكادير</small>
-</div>
-
-<div class="airport">
-<strong>TNG</strong>
-Tanger Ibn Battouta
-<small>طنجة</small>
-</div>
-
-<div class="airport">
-<strong>NDR</strong>
-Nador El Aroui
-<small>الناظور</small>
-</div>
-
-<div class="airport">
-<strong>OUD</strong>
-Oujda Angads
-<small>وجدة</small>
-</div>
-
-<div class="airport">
-<strong>ESU</strong>
-Essaouira Mogador
-<small>الصويرة</small>
-</div>
-
-<div class="airport">
-<strong>OZZ</strong>
-Ouarzazate
-<small>ورزازات</small>
-</div>
-
-<div class="airport">
-<strong>VIL</strong>
-Dakhla
-<small>الداخلة</small>
-</div>
-
-<div class="airport">
-<strong>EUN</strong>
-Laâyoune Hassan I
-<small>العيون</small>
-</div>
-
-<div class="airport">
-<strong>ERH</strong>
-Errachidia
-<small>الرشيدية</small>
-</div>
-
-<div class="airport">
-<strong>AHU</strong>
-Al Hoceima
-<small>الحسيمة</small>
-</div>
-
-<div class="airport">
-<strong>TTU</strong>
-Tétouan
-<small>تطوان</small>
-</div>
-
-<div class="airport">
-<strong>GLN</strong>
-Guelmim
-<small>كلميم</small>
-</div>
-
-<div class="airport">
-<strong>BEM</strong>
-Béni Mellal
-<small>بني ملال</small>
-</div>
-
-<div class="airport">
-<strong>TTA</strong>
-Tan-Tan
-<small>طانطان</small>
-</div>
-
-<div class="airport">
-<strong>ZAO</strong>
-Zagora
-<small>زاكورة</small>
-</div>
-
-<div class="airport">
-<strong>UAR</strong>
-Bouarfa
-<small>بوعرفة</small>
-</div>
-
-<div class="airport">
-<strong>BEN</strong>
-Benslimane
-<small>بنسليمان</small>
-</div>
-
-<div class="airport">
-<strong>CAS</strong>
-Tit Mellil
-<small>الدار البيضاء</small>
-</div>
-
-<div class="airport">
-<strong>IFR</strong>
-Ifrane
-<small>إفران</small>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- SERVICES -->
+<!-- ================= GUIDE ================= -->
 
 <section>
 
-<div class="container">
+  <div class="container">
 
-<div class="section-title">
+    <div class="section-title">
 
-<small>SERVICES</small>
+      <h2>
+        Conseils pour louer une voiture au Maroc
+      </h2>
 
-<h2>خدمات GROUP NOURA LLD</h2>
+      <p>
+        Quelques informations utiles avant votre réservation.
+      </p>
 
-</div>
-
-<div class="services">
-
-<div class="service">
-<div class="service-icon">✈️</div>
-<h3>استلام من المطار</h3>
-<p>اختيار المطار مباشرة من نموذج الحجز.</p>
-</div>
-
-<div class="service">
-<div class="service-icon">🚗</div>
-<h3>مجموعة متنوعة</h3>
-<p>سيارات اقتصادية، SUV وفئات فاخرة.</p>
-</div>
-
-<div class="service">
-<div class="service-icon">📱</div>
-<h3>حجز WhatsApp</h3>
-<p>إرسال معلومات الحجز مباشرة للشركة.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
+    </div>
 
 
-<!-- CONTACT -->
+    <div class="content-grid">
 
-<section id="contact">
+      <article class="content-box">
 
-<div class="container">
+        <h3>
+          Avant de réserver
+        </h3>
 
-<div class="contact-box">
+        <ul>
 
-<h2>
-جاهز تحجز؟
-</h2>
+          <li>
+            Vérifiez les dates exactes de départ et de retour.
+          </li>
 
-<p>
-تواصل مع GROUP NOURA LLD لمعرفة التوفر والسعر النهائي.
-</p>
+          <li>
+            Indiquez clairement la ville ou l'aéroport.
+          </li>
 
-<a href="tel:+212631752271"
-class="phone">
+          <li>
+            Demandez les conditions de location et la caution.
+          </li>
 
-+212 6 31 75 22 71
+          <li>
+            Vérifiez les documents nécessaires.
+          </li>
 
-</a>
+        </ul>
 
-<div class="contact-buttons">
+      </article>
 
-<a href="https://wa.me/212631752271?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20كراء%20سيارة"
-target="_blank"
-class="btn btn-primary">
 
-💬 WhatsApp
+      <article class="content-box">
 
-</a>
+        <h3>
+          Choisir votre véhicule
+        </h3>
 
-<a href="tel:+212631752271"
-class="btn btn-outline">
+        <ul>
 
-📞 اتصل بنا
+          <li>
+            Une citadine est pratique pour les déplacements urbains.
+          </li>
 
-</a>
+          <li>
+            Un SUV peut être adapté aux longs trajets.
+          </li>
 
-</div>
+          <li>
+            Les véhicules premium sont adaptés aux occasions spéciales.
+          </li>
 
-</div>
+          <li>
+            Confirmez toujours le modèle exact avant paiement.
+          </li>
 
-</div>
+        </ul>
+
+      </article>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FAQ ================= -->
+
+<section id="faq">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Questions fréquentes
+      </h2>
+
+      <p>
+        Les informations définitives sont confirmées au moment de la réservation.
+      </p>
+
+    </div>
+
+
+    <div class="faq">
+
+      <details>
+
+        <summary>
+          Quels véhicules sont disponibles ?
+        </summary>
+
+        <p>
+          Notre sélection comprend plusieurs citadines, SUV et
+          véhicules premium. La disponibilité dépend des dates demandées.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Quels sont les tarifs ?
+        </summary>
+
+        <p>
+          Les tarifs dépendent du véhicule, de la durée,
+          des dates et du lieu de prise en charge.
+          Le prix doit être confirmé avant toute réservation.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Puis-je récupérer la voiture à un aéroport ?
+        </summary>
+
+        <p>
+          Une demande de prise en charge dans un aéroport
+          peut être étudiée selon la disponibilité.
+          Indiquez l'aéroport dans votre demande.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Comment confirmer une réservation ?
+        </summary>
+
+        <p>
+          Envoyez votre demande via WhatsApp.
+          La réservation est confirmée uniquement après validation
+          de la disponibilité et des conditions.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Est-ce que les prix affichés sur le site sont définitifs ?
+        </summary>
+
+        <p>
+          Non. Les prix doivent être confirmés selon les dates,
+          la durée, le véhicule et les services demandés.
+        </p>
+
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-<p>
-© 2026
-<strong>GROUP NOURA LLD</strong>
-— Morocco
-</p>
+  <div class="container">
 
-<p>
-Location de voitures · Marrakech · Maroc
-</p>
+    <div class="footer-grid">
+
+
+      <div>
+
+        <h3>
+          YOUSSEF CARS
+        </h3>
+
+        <p>
+          Service de location de voitures au Maroc.
+          Découvrez notre flotte et envoyez votre demande
+          de réservation directement par WhatsApp.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Navigation
+        </h3>
+
+        <a href="#flotte">
+          Notre flotte
+        </a>
+
+        <a href="#services">
+          Services
+        </a>
+
+        <a href="#villes">
+          Villes
+        </a>
+
+        <a href="#faq">
+          FAQ
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Informations
+        </h3>
+
+        <a href="#confidentialite">
+          Confidentialité
+        </a>
+
+        <a href="#conditions">
+          Conditions
+        </a>
+
+        <a href="#reservation">
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div
+      id="confidentialite"
+      class="footer-info"
+    >
+
+      <strong>
+        Politique de confidentialité
+      </strong>
+
+      <p>
+        Ce site utilise un formulaire qui prépare un message
+        WhatsApp pour permettre le traitement d'une demande
+        de location. Les données réellement traitées dépendent
+        des services utilisés sur le site.
+        Si des services publicitaires ou analytiques sont ajoutés,
+        cette politique devra être mise à jour pour expliquer
+        clairement leur fonctionnement.
+      </p>
+
+    </div>
+
+
+    <div
+      id="conditions"
+      class="footer-info"
+    >
+
+      <strong>
+        Conditions générales
+      </strong>
+
+      <p>
+        Les véhicules, disponibilités, prix, cautions,
+        assurances et conditions de location doivent être
+        confirmés avant toute réservation ou paiement.
+        Les informations présentées sur cette page ne constituent
+        pas à elles seules un contrat de location.
+      </p>
+
+    </div>
+
+
+    <div class="footer-info">
+
+      © 2026 Youssef Cars. Tous droits réservés.
+
+    </div>
+
+  </div>
 
 </footer>
 
 
-<!-- WHATSAPP -->
+<!-- ================= WHATSAPP ================= -->
 
-<a class="whatsapp"
-href="https://wa.me/212631752271?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20كراء%20سيارة"
-target="_blank">
-
-💬
-
+<a
+  class="whatsapp"
+  href="https://wa.me/212631752271"
+  target="_blank"
+  rel="noopener"
+  aria-label="Contacter Youssef Cars sur WhatsApp"
+>
+  ☎
 </a>
 
 
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
 
-/* ===================================
-   أسعار السيارات
-   بدل الأرقام هنا بالأسعار الحقيقية
-   =================================== */
+  /* رقم WhatsApp ديالك */
+  const whatsappNumber = "212631752271";
 
-const prices = {
 
-"RANGE ROVER VOGUE":1500,
-"CLIO 6":350,
-"RANGE ROVER SPORT HSE":1300,
-"CLIO 5 AUTOMATIQUE":400,
-"MERCEDES CLASSE E":900,
-"CLIO 5 DIESEL":300,
-"PORSCHE MACAN":1000,
-"PEUGEOT 208":350,
-"VOLKSWAGEN TOUAREG":900,
-"PEUGEOT 2008":450,
-"VOLKSWAGEN T-ROC":500,
-"CITROEN C5":500,
-"VOLKSWAGEN GOLF 8.5 R":900,
-"RENAULT GARDIAN":450,
-"AUDI Q3":650,
-"DACIA LOGAN":250,
-"HYUNDAI TUCSON":550,
-"DACIA SANDERO":280,
-"SEAT IBIZA FR":350
+  /*
+  ============================================
+  اختيار سيارة من الكروت
+  ============================================
+  */
 
-};
+  const carButtons =
+    document.querySelectorAll(".car-button");
 
+  carButtons.forEach(function(button) {
 
-/* MOBILE MENU */
+    button.addEventListener("click", function() {
 
-function toggleMenu(){
+      const selectedCar =
+        button.getAttribute("data-car");
 
-document
-.getElementById("navLinks")
-.classList
-.toggle("active");
+      document.getElementById("car").value =
+        selectedCar;
 
-}
+      document
+        .getElementById("reservation")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
 
+    });
 
-/* SELECT CAR */
+  });
 
-function selectCar(name){
 
-document
-.getElementById("car")
-.value=name;
+  /*
+  ============================================
+  FORMULAIRE -> WHATSAPP
+  ============================================
+  */
 
-updatePrice();
+  document
+    .getElementById("bookingForm")
+    .addEventListener("submit", function(event) {
 
-document
-.getElementById("booking")
-.scrollIntoView({
-behavior:"smooth"
-});
+      event.preventDefault();
 
-}
 
+      const name =
+        document.getElementById("name").value.trim();
 
-/* UPDATE PRICE */
+      const phone =
+        document.getElementById("phone").value.trim();
 
-function updatePrice(){
+      const car =
+        document.getElementById("car").value;
 
-const car =
-document
-.getElementById("car")
-.value;
+      const pickup =
+        document.getElementById("pickup").value.trim();
 
-const price =
-prices[car] || 0;
+      const dropoff =
+        document.getElementById("dropoff").value.trim();
 
-document
-.getElementById("dailyPrice")
-.innerText =
-price + " DH";
+      const start =
+        document.getElementById("start").value;
 
-calculateTotal();
+      const end =
+        document.getElementById("end").value;
 
-}
+      const message =
+        document.getElementById("message").value.trim();
 
 
-/* CALCULATE TOTAL */
+      /*
+      Vérification des dates
+      */
 
-function calculateTotal(){
+      if (start && end && end < start) {
 
-const start =
-document
-.getElementById("startDate")
-.value;
+        alert(
+          "La date de retour doit être après la date de départ."
+        );
 
-const end =
-document
-.getElementById("endDate")
-.value;
+        return;
 
-const car =
-document
-.getElementById("car")
-.value;
+      }
 
-if(!start || !end){
 
-document
-.getElementById("totalDays")
-.innerText="0";
+      /*
+      Création du message WhatsApp
+      */
 
-document
-.getElementById("totalPrice")
-.innerText="0 DH";
+      const whatsappMessage =
 
-return;
+`Bonjour, je souhaite louer une voiture.
 
-}
+Nom : ${name}
 
-const date1 =
-new Date(start);
+Téléphone : ${phone}
 
-const date2 =
-new Date(end);
+Voiture : ${car}
 
-if(date2 < date1){
+Lieu de départ : ${pickup}
 
-document
-.getElementById("totalDays")
-.innerText="0";
+Lieu de retour : ${dropoff}
 
-document
-.getElementById("totalPrice")
-.innerText="0 DH";
+Date de départ : ${start}
 
-return;
+Date de retour : ${end}
 
-}
+Message :
+${message || "Aucun message supplémentaire."}
 
+Merci de me confirmer la disponibilité et le tarif.`;
 
-/* حساب الأيام */
 
-const difference =
-date2 - date1;
+      /*
+      Ouverture de WhatsApp
+      */
 
-let days =
-Math.ceil(
-difference /
-(1000*60*60*24)
-);
+      const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(whatsappMessage);
 
 
-/* أقل مدة = يوم واحد */
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
 
-if(days < 1){
-days=1;
-}
+    });
 
 
-const dailyPrice =
-prices[car] || 0;
+  /*
+  ============================================
+  Empêcher de choisir une date passée
+  ============================================
+  */
 
-const total =
-days * dailyPrice;
+  const today =
+    new Date().toISOString().split("T")[0];
 
+  document.getElementById("start").min = today;
+  document.getElementById("end").min = today;
 
-document
-.getElementById("totalDays")
-.innerText =
-days;
 
+  /*
+  Quand la date de départ change,
+  la date de retour ne peut pas être avant.
+  */
 
-document
-.getElementById("totalPrice")
-.innerText =
-total.toLocaleString("fr-FR") +
-" DH";
+  document
+    .getElementById("start")
+    .addEventListener("change", function() {
 
-}
+      document.getElementById("end").min =
+        this.value;
 
-
-/* DATE EVENTS */
-
-document
-.getElementById("startDate")
-.addEventListener(
-"change",
-function(){
-
-document
-.getElementById("endDate")
-.min=this.value;
-
-calculateTotal();
-
-});
-
-
-document
-.getElementById("endDate")
-.addEventListener(
-"change",
-calculateTotal
-);
-
-
-/* MIN DATE */
-
-const today =
-new Date()
-.toISOString()
-.split("T")[0];
-
-document
-.getElementById("startDate")
-.min=today;
-
-document
-.getElementById("endDate")
-.min=today;
-
-
-/* SEND BOOKING */
-
-function sendBooking(){
-
-const name =
-document
-.getElementById("customerName")
-.value.trim();
-
-const phone =
-document
-.getElementById("customerPhone")
-.value.trim();
-
-const car =
-document
-.getElementById("car")
-.value;
-
-const pickup =
-document
-.getElementById("pickup")
-.value;
-
-const dropoff =
-document
-.getElementById("dropoff")
-.value;
-
-const startDate =
-document
-.getElementById("startDate")
-.value;
-
-const startTime =
-document
-.getElementById("startTime")
-.value;
-
-const endDate =
-document
-.getElementById("endDate")
-.value;
-
-const endTime =
-document
-.getElementById("endTime")
-.value;
-
-
-if(
-!name ||
-!phone ||
-!startDate ||
-!startTime ||
-!endDate ||
-!endTime
-){
-
-alert(
-"⚠️ من فضلك عمر جميع الخانات المطلوبة."
-);
-
-return;
-
-}
-
-
-const start =
-new Date(
-startDate+"T"+startTime
-);
-
-const end =
-new Date(
-endDate+"T"+endTime
-);
-
-
-if(end <= start){
-
-alert(
-"⚠️ تاريخ ووقت الإرجاع يجب أن يكونا بعد الاستلام."
-);
-
-return;
-
-}
-
-
-const difference =
-end - start;
-
-let days =
-Math.ceil(
-difference /
-(1000*60*60*24)
-);
-
-if(days < 1){
-days=1;
-}
-
-
-const dailyPrice =
-prices[car] || 0;
-
-const total =
-days * dailyPrice;
-
-
-function formatDate(date){
-
-const p =
-date.split("-");
-
-return p[2]+"/"+p[1]+"/"+p[0];
-
-}
-
-
-const message =
-
-"السلام عليكم، أريد حجز سيارة من GROUP NOURA LLD 🚗\n\n"+
-
-"👤 الاسم: "+name+"\n"+
-
-"📞 هاتف الزبون: "+phone+"\n\n"+
-
-"🚘 السيارة: "+car+"\n"+
-
-"💰 الثمن اليومي: "+dailyPrice+" DH\n"+
-
-"📅 عدد الأيام: "+days+"\n"+
-
-"💰 المجموع التقريبي: "+total.toLocaleString("fr-FR")+" DH\n\n"+
-
-"📍 مكان الاستلام: "+pickup+"\n"+
-
-"📍 مكان الإرجاع: "+dropoff+"\n\n"+
-
-"📅 تاريخ الاستلام: "+formatDate(startDate)+"\n"+
-
-"⏰ وقت الاستلام: "+startTime+"\n"+
-
-"📅 تاريخ الإرجاع: "+formatDate(endDate)+"\n"+
-
-"⏰ وقت الإرجاع: "+endTime+"\n\n"+
-
-"أريد تأكيد التوفر والسعر النهائي. شكراً لكم 🙏";
-
-
-const whatsappURL =
-
-"https://wa.me/212631752271?text="+
-encodeURIComponent(message);
-
-
-window.location.href =
-whatsappURL;
-
-}
-
-
-/* CLOSE MENU AFTER CLICK */
-
-document
-.querySelectorAll(".nav-links a")
-.forEach(link=>{
-
-link.addEventListener(
-"click",
-function(){
-
-document
-.getElementById("navLinks")
-.classList
-.remove("active");
-
-});
-
-});
-
-
-/* INITIAL PRICE */
-
-updatePrice();
+    });
 
 </script>
 
