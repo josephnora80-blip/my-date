@@ -1,1478 +1,932 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="theme-color" content="#071a17">
+  <title>مواقيتي | مواقيت الصلاة في المغرب</title>
 
-<meta name="description"
-content="مواقيتي - مواقيت الصلاة حسب موقعك أو مدينتك، مع معرفة الصلاة القادمة والوقت المتبقي.">
+  <meta name="description" content="مواقيت الصلاة في المغرب حسب مدينتك وموقعك الجغرافي. تعرف على أوقات الفجر والظهر والعصر والمغرب والعشاء والشروق مع عداد الصلاة القادمة.">
+  <meta name="keywords" content="مواقيت الصلاة, مواقيت الصلاة المغرب, أوقات الصلاة, الصلاة اليوم, الفجر, الظهر, العصر, المغرب, العشاء, الشروق, الرباط, سلا, الدار البيضاء">
+  <meta name="robots" content="index, follow">
 
-<title>مواقيتي | مواقيت الصلاة</title>
+  <link rel="canonical" href="https://josephnora80-blip.github.io/my-date/">
 
-<style>
+  <meta property="og:title" content="مواقيتي | مواقيت الصلاة في المغرب">
+  <meta property="og:description" content="تعرف على مواقيت الصلاة حسب مدينتك أو موقعك الجغرافي.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://josephnora80-blip.github.io/my-date/">
 
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
+  <meta name="theme-color" content="#0f766e">
 
-body{
-    font-family:Tahoma,Arial,sans-serif;
-
-    background:
-    radial-gradient(
-        circle at top,
-        #17483e 0%,
-        #071a17 45%,
-        #03100e 100%
-    );
-
-    color:white;
-
-    min-height:100vh;
-}
-
-.container{
-    width:94%;
-    max-width:850px;
-
-    margin:auto;
-
-    padding:15px 0 35px;
-}
-
-/* HEADER */
-
-header{
-    text-align:center;
-
-    padding:20px 10px 25px;
-}
-
-.logo{
-    width:70px;
-    height:70px;
-
-    margin:auto;
-    margin-bottom:12px;
-
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:34px;
-
-    background:
-    rgba(255,255,255,.08);
-
-    border:
-    1px solid rgba(255,255,255,.15);
-}
-
-h1{
-    font-size:30px;
-
-    margin-bottom:7px;
-}
-
-.subtitle{
-    color:#b7ccc7;
-
-    font-size:14px;
-}
-
-/* CARD */
-
-.card{
-
-    background:
-    rgba(255,255,255,.065);
-
-    border:
-    1px solid rgba(255,255,255,.12);
-
-    border-radius:22px;
-
-    padding:20px;
-
-    margin-bottom:16px;
-
-    backdrop-filter:blur(12px);
-
-    box-shadow:
-    0 15px 40px
-    rgba(0,0,0,.20);
-}
-
-/* ADVERTISEMENT */
-
-.ad-box{
-
-    min-height:90px;
-
-    margin-bottom:16px;
-
-    border-radius:18px;
-
-    border:
-    1px dashed
-    rgba(214,179,106,.35);
-
-    background:
-    rgba(255,255,255,.025);
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    color:#78938e;
-
-    font-size:12px;
-}
-
-/*
-مكان الإعلان
-
-من بعد يمكن وضع كود Google AdSense هنا
-*/
-
-/* LOCATION */
-
-.location{
-
-    display:flex;
-
-    gap:10px;
-
-    align-items:center;
-}
-
-select{
-
-    flex:1;
-
-    padding:14px;
-
-    border-radius:14px;
-
-    border:
-    1px solid
-    rgba(255,255,255,.15);
-
-    background:#102b27;
-
-    color:white;
-
-    font-size:15px;
-
-    outline:none;
-}
-
-button{
-
-    border:0;
-
-    border-radius:14px;
-
-    padding:14px 16px;
-
-    background:#d6b36a;
-
-    color:#10201c;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.2s;
-}
-
-button:active{
-
-    transform:scale(.97);
-}
-
-.location-btn{
-
-    width:100%;
-
-    margin-top:12px;
-
-    background:
-    rgba(214,179,106,.15);
-
-    color:#e8c982;
-
-    border:
-    1px solid
-    rgba(214,179,106,.4);
-}
-
-/* LOCATION STATUS */
-
-.location-status{
-
-    text-align:center;
-
-    margin-top:10px;
-
-    color:#9eb9b3;
-
-    font-size:12px;
-
-    line-height:1.7;
-}
-
-/* DATE */
-
-.date{
-
-    text-align:center;
-}
-
-.gregorian{
-
-    font-size:18px;
-
-    margin-bottom:7px;
-}
-
-.hijri{
-
-    color:#d6b36a;
-
-    font-size:15px;
-}
-
-/* CLOCK */
-
-.clock-card{
-
-    text-align:center;
-}
-
-.clock{
-
-    font-size:43px;
-
-    font-weight:bold;
-
-    letter-spacing:2px;
-}
-
-/* NEXT PRAYER */
-
-.next{
-
-    text-align:center;
-}
-
-.next-label{
-
-    color:#a9c1bc;
-
-    font-size:14px;
-
-    margin-bottom:7px;
-}
-
-.next-name{
-
-    color:#d6b36a;
-
-    font-size:28px;
-
-    font-weight:bold;
-}
-
-.remaining{
-
-    margin-top:9px;
-
-    font-size:16px;
-
-    color:#e8eeee;
-}
-
-/* PRAYERS */
-
-.prayers{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:12px;
-}
-
-.prayer{
-
-    padding:18px;
-
-    border-radius:18px;
-
-    background:
-    rgba(255,255,255,.055);
-
-    border:
-    1px solid
-    rgba(255,255,255,.08);
-
-    transition:.2s;
-}
-
-.prayer.active{
-
-    background:
-    rgba(214,179,106,.14);
-
-    border-color:#d6b36a;
-
-    transform:
-    translateY(-2px);
-}
-
-.prayer-top{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    margin-bottom:10px;
-}
-
-.prayer-name{
-
-    font-size:16px;
-}
-
-.icon{
-
-    font-size:20px;
-}
-
-.prayer-time{
-
-    color:#d6b36a;
-
-    font-size:25px;
-
-    font-weight:bold;
-}
-
-/* INFO */
-
-.info{
-
-    color:#a8c0bb;
-
-    font-size:13px;
-
-    line-height:1.9;
-
-    text-align:center;
-}
-
-/* LOADING */
-
-.loading{
-
-    text-align:center;
-
-    padding:25px;
-
-    color:#b9d1cc;
-}
-
-.error{
-
-    text-align:center;
-
-    color:#ffb4a9;
-
-    line-height:1.8;
-}
-
-/* FOOTER */
-
-footer{
-
-    text-align:center;
-
-    color:#708983;
-
-    font-size:12px;
-
-    padding-top:5px;
-}
-
-/* MOBILE */
-
-@media(max-width:500px){
-
-    .container{
-
-        width:94%;
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    h1{
-
-        font-size:27px;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .clock{
-
-        font-size:36px;
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: #f4f7f6;
+      color: #1f2937;
+      line-height: 1.7;
     }
 
-    .location{
-
-        flex-direction:column;
+    header {
+      background: linear-gradient(135deg, #0f766e, #115e59);
+      color: white;
+      padding: 28px 15px 35px;
+      text-align: center;
     }
 
-    select,
-    .location button{
-
-        width:100%;
+    header h1 {
+      font-size: 32px;
+      margin-bottom: 5px;
     }
 
-    .prayers{
-
-        grid-template-columns:1fr;
+    header p {
+      opacity: .92;
+      font-size: 15px;
     }
 
-}
+    nav {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-</style>
+    nav .nav-inner {
+      max-width: 1050px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      padding: 8px;
+    }
+
+    nav a {
+      color: #115e59;
+      text-decoration: none;
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      background: #ecfdf5;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: auto;
+      padding: 15px;
+    }
+
+    .hero {
+      background: white;
+      margin-top: 18px;
+      padding: 25px 18px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+
+    .hero h2 {
+      color: #115e59;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      color: #555;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .location-box {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      padding: 15px;
+      border-radius: 14px;
+      margin-top: 20px;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 13px;
+      border-radius: 10px;
+      font-size: 15px;
+      border: 1px solid #d1d5db;
+      margin-top: 8px;
+    }
+
+    button {
+      background: #0f766e;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      opacity: .9;
+    }
+
+    .date-card {
+      background: white;
+      margin-top: 18px;
+      border-radius: 18px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+
+    .date-card h3 {
+      color: #115e59;
+      margin-bottom: 5px;
+    }
+
+    #gregorianDate,
+    #hijriDate {
+      color: #555;
+      font-size: 14px;
+    }
+
+    .next-prayer {
+      background: linear-gradient(135deg, #134e4a, #0f766e);
+      color: white;
+      padding: 22px;
+      border-radius: 18px;
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .next-prayer h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    #nextPrayerName {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    #countdown {
+      font-size: 32px;
+      font-weight: bold;
+      direction: ltr;
+      margin-top: 5px;
+    }
+
+    .prayers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .prayer {
+      background: white;
+      border-radius: 15px;
+      padding: 18px 10px;
+      text-align: center;
+      box-shadow: 0 3px 15px rgba(0,0,0,.06);
+      border-top: 4px solid #0f766e;
+    }
+
+    .prayer .icon {
+      font-size: 28px;
+    }
+
+    .prayer h3 {
+      color: #115e59;
+      margin-top: 5px;
+    }
+
+    .prayer .time {
+      font-size: 24px;
+      font-weight: bold;
+      direction: ltr;
+      color: #222;
+    }
+
+    .ad {
+      background: #fff;
+      border: 1px dashed #cbd5e1;
+      color: #94a3b8;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 0;
+      border-radius: 12px;
+      font-size: 13px;
+    }
+
+    section.content {
+      background: white;
+      margin-top: 20px;
+      padding: 24px 20px;
+      border-radius: 18px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.05);
+    }
+
+    section.content h2 {
+      color: #115e59;
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    section.content h3 {
+      color: #374151;
+      margin-top: 18px;
+      margin-bottom: 5px;
+    }
+
+    section.content p {
+      color: #4b5563;
+      margin-bottom: 10px;
+    }
+
+    .faq {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 13px 0;
+    }
+
+    .faq:last-child {
+      border-bottom: none;
+    }
+
+    .faq strong {
+      color: #115e59;
+    }
+
+    .cities {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .city {
+      background: #f0fdfa;
+      padding: 10px;
+      text-align: center;
+      border-radius: 9px;
+      color: #115e59;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #134e4a;
+      color: white;
+      margin-top: 30px;
+      padding: 30px 15px;
+      text-align: center;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 7px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    footer p {
+      font-size: 13px;
+      opacity: .85;
+      margin-top: 10px;
+    }
+
+    .loading {
+      color: #64748b;
+      text-align: center;
+      padding: 15px;
+    }
+
+    @media (max-width: 700px) {
+      .prayers {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cities {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      header h1 {
+        font-size: 27px;
+      }
+
+      #countdown {
+        font-size: 27px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .prayers {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .prayer {
+        padding: 14px 6px;
+      }
+
+      .prayer .time {
+        font-size: 21px;
+      }
+
+      nav a {
+        font-size: 12px;
+        padding: 6px 8px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
-<div class="container">
-
-
-<!-- HEADER -->
-
 <header>
-
-    <div class="logo">
-        🕌
-    </div>
-
-    <h1>
-        مواقيتي
-    </h1>
-
-    <p class="subtitle">
-        مواقيت الصلاة في مدينتك
-    </p>
-
+  <h1>🕌 مواقيتي</h1>
+  <p>مواقيت الصلاة في المغرب حسب مدينتك أو موقعك</p>
 </header>
 
+<nav>
+  <div class="nav-inner">
+    <a href="#prayerTimes">مواقيت الصلاة</a>
+    <a href="#about">عن مواقيتي</a>
+    <a href="#faq">الأسئلة الشائعة</a>
+    <a href="#privacy">الخصوصية</a>
+    <a href="#contact">اتصل بنا</a>
+  </div>
+</nav>
 
-<!-- AD 1 -->
+<main class="container">
 
-<div class="ad-box">
+  <div class="hero">
+    <h2>مواقيت الصلاة اليوم</h2>
+    <p>
+      تعرف على أوقات الفجر والظهر والعصر والمغرب والعشاء والشروق
+      حسب مدينتك في المغرب، مع إمكانية تحديد موقعك تلقائياً.
+    </p>
 
+    <div class="location-box">
+      <strong>📍 اختر موقعك</strong>
+
+      <select id="citySelect">
+        <option value="Rabat">الرباط</option>
+        <option value="Sale">سلا</option>
+        <option value="Casablanca">الدار البيضاء</option>
+        <option value="Fes">فاس</option>
+        <option value="Marrakesh">مراكش</option>
+        <option value="Tangier">طنجة</option>
+        <option value="Agadir">أكادير</option>
+        <option value="Meknes">مكناس</option>
+        <option value="Oujda">وجدة</option>
+        <option value="Kenitra">القنيطرة</option>
+        <option value="Tetouan">تطوان</option>
+        <option value="El Jadida">الجديدة</option>
+        <option value="Safi">آسفي</option>
+        <option value="Beni Mellal">بني ملال</option>
+        <option value="Nador">الناظور</option>
+        <option value="Taza">تازة</option>
+        <option value="Settat">سطات</option>
+        <option value="Mohammedia">المحمدية</option>
+        <option value="Khouribga">خريبكة</option>
+        <option value="Errachidia">الرشيدية</option>
+      </select>
+
+      <button onclick="loadCity()">عرض مواقيت الصلاة</button>
+      <button onclick="detectLocation()">📍 تحديد موقعي تلقائياً</button>
+    </div>
+  </div>
+
+  <div class="date-card">
+    <h3 id="cityName">الرباط، المغرب</h3>
+    <div id="gregorianDate">جاري تحميل التاريخ...</div>
+    <div id="hijriDate">جاري تحميل التاريخ الهجري...</div>
+  </div>
+
+  <div class="next-prayer">
+    <h3>الصلاة القادمة</h3>
+    <div id="nextPrayerName">جاري الحساب...</div>
+    <div id="countdown">--:--:--</div>
+  </div>
+
+  <div class="ad">
     مساحة إعلانية
+  </div>
 
-</div>
+  <section id="prayerTimes">
+    <div class="prayers">
 
+      <div class="prayer">
+        <div class="icon">🌙</div>
+        <h3>الفجر</h3>
+        <div class="time" id="Fajr">--:--</div>
+      </div>
 
-<!-- LOCATION -->
+      <div class="prayer">
+        <div class="icon">🌅</div>
+        <h3>الشروق</h3>
+        <div class="time" id="Sunrise">--:--</div>
+      </div>
 
-<div class="card">
+      <div class="prayer">
+        <div class="icon">☀️</div>
+        <h3>الظهر</h3>
+        <div class="time" id="Dhuhr">--:--</div>
+      </div>
 
-    <div class="location">
+      <div class="prayer">
+        <div class="icon">🌤️</div>
+        <h3>العصر</h3>
+        <div class="time" id="Asr">--:--</div>
+      </div>
 
-        <select id="city">
+      <div class="prayer">
+        <div class="icon">🌇</div>
+        <h3>المغرب</h3>
+        <div class="time" id="Maghrib">--:--</div>
+      </div>
 
-            <option value="Rabat">
-                الرباط
-            </option>
-
-            <option value="Sale">
-                سلا
-            </option>
-
-            <option value="Casablanca">
-                الدار البيضاء
-            </option>
-
-            <option value="Fes">
-                فاس
-            </option>
-
-            <option value="Marrakesh">
-                مراكش
-            </option>
-
-            <option value="Tangier">
-                طنجة
-            </option>
-
-            <option value="Meknes">
-                مكناس
-            </option>
-
-            <option value="Agadir">
-                أكادير
-            </option>
-
-            <option value="Oujda">
-                وجدة
-            </option>
-
-            <option value="Kenitra">
-                القنيطرة
-            </option>
-
-            <option value="Tetouan">
-                تطوان
-            </option>
-
-            <option value="El Jadida">
-                الجديدة
-            </option>
-
-            <option value="Beni Mellal">
-                بني ملال
-            </option>
-
-            <option value="Nador">
-                الناظور
-            </option>
-
-        </select>
-
-
-        <button
-            onclick="loadPrayerTimes()">
-
-            تحديث المواقيت
-
-        </button>
+      <div class="prayer">
+        <div class="icon">🌃</div>
+        <h3>العشاء</h3>
+        <div class="time" id="Isha">--:--</div>
+      </div>
 
     </div>
+  </section>
 
-
-    <button
-        class="location-btn"
-        onclick="detectLocation()">
-
-        📍 تحديد موقعي تلقائياً
-
-    </button>
-
-
-    <div
-        id="locationStatus"
-        class="location-status">
-
-        يمكنك تحديد موقعك للحصول على مواقيت أقرب إليك.
-
-    </div>
-
-</div>
-
-
-<!-- DATE -->
-
-<div class="card date">
-
-    <div
-        id="gregorian"
-        class="gregorian">
-
-        جاري التحميل...
-
-    </div>
-
-
-    <div
-        id="hijri"
-        class="hijri">
-
-        ...
-
-    </div>
-
-</div>
-
-
-<!-- CLOCK -->
-
-<div class="card clock-card">
-
-    <div
-        id="clock"
-        class="clock">
-
-        00:00:00
-
-    </div>
-
-</div>
-
-
-<!-- AD 2 -->
-
-<div class="ad-box">
-
+  <div class="ad">
     مساحة إعلانية
+  </div>
 
-</div>
+  <section class="content" id="about">
+    <h2>عن مواقيتي</h2>
 
+    <p>
+      مواقيتي هو موقع إلكتروني يساعد المستخدمين على معرفة مواقيت الصلاة
+      اليومية بسهولة من الهاتف أو الكمبيوتر.
+    </p>
 
-<!-- NEXT PRAYER -->
+    <p>
+      يمكنك اختيار مدينتك يدوياً أو السماح للموقع باستخدام موقعك الجغرافي
+      للحصول على مواقيت الصلاة المناسبة لمكانك.
+    </p>
 
-<div class="card next">
+    <h3>ماذا يقدم موقع مواقيتي؟</h3>
 
-    <div class="next-label">
+    <p>• أوقات الفجر والشروق والظهر والعصر والمغرب والعشاء.</p>
+    <p>• اختيار مجموعة من المدن المغربية.</p>
+    <p>• تحديد الموقع الجغرافي تلقائياً.</p>
+    <p>• معرفة الصلاة القادمة والوقت المتبقي لها.</p>
+    <p>• عرض التاريخ الميلادي والهجري.</p>
+  </section>
 
-        الصلاة القادمة
+  <section class="content">
+    <h2>مواقيت الصلاة في مدن المغرب</h2>
 
+    <p>
+      يمكنك استخدام مواقيتي لمعرفة أوقات الصلاة في عدد من المدن المغربية،
+      مع إمكانية اختيار المدينة من القائمة الموجودة في أعلى الصفحة.
+    </p>
+
+    <div class="cities">
+      <div class="city">الرباط</div>
+      <div class="city">سلا</div>
+      <div class="city">الدار البيضاء</div>
+      <div class="city">فاس</div>
+      <div class="city">مراكش</div>
+      <div class="city">طنجة</div>
+      <div class="city">أكادير</div>
+      <div class="city">مكناس</div>
+      <div class="city">وجدة</div>
+      <div class="city">القنيطرة</div>
+      <div class="city">تطوان</div>
+      <div class="city">الجديدة</div>
+      <div class="city">آسفي</div>
+      <div class="city">بني ملال</div>
+      <div class="city">الناظور</div>
+      <div class="city">تازة</div>
+      <div class="city">سطات</div>
+      <div class="city">المحمدية</div>
     </div>
+  </section>
 
-
-    <div
-        id="nextName"
-        class="next-name">
-
-        ...
-
-    </div>
-
-
-    <div
-        id="remaining"
-        class="remaining">
-
-        جاري الحساب...
-
-    </div>
-
-</div>
-
-
-<!-- PRAYER TIMES -->
-
-<div class="card">
-
-    <div
-        id="prayerList"
-        class="loading">
-
-        جاري تحميل مواقيت الصلاة...
-
-    </div>
-
-</div>
-
-
-<!-- AD 3 -->
-
-<div class="ad-box">
-
+  <div class="ad">
     مساحة إعلانية
+  </div>
 
-</div>
+  <section class="content" id="faq">
+    <h2>الأسئلة الشائعة</h2>
 
+    <div class="faq">
+      <strong>كيف أعرف مواقيت الصلاة في مدينتي؟</strong>
+      <p>
+        اختر مدينتك من القائمة الموجودة في أعلى الموقع ثم اضغط على
+        "عرض مواقيت الصلاة".
+      </p>
+    </div>
 
-<!-- INFO -->
+    <div class="faq">
+      <strong>هل يمكن للموقع تحديد موقعي تلقائياً؟</strong>
+      <p>
+        نعم، يمكنك الضغط على "تحديد موقعي تلقائياً"، وإذا سمحت للمتصفح
+        باستخدام الموقع الجغرافي سيحاول الموقع تحديد المنطقة الأقرب إليك.
+      </p>
+    </div>
 
-<div class="card info">
+    <div class="faq">
+      <strong>هل مواقيت الصلاة ثابتة كل يوم؟</strong>
+      <p>
+        لا، أوقات الصلاة تتغير حسب التاريخ والموقع الجغرافي، لذلك يتم
+        تحديثها يومياً.
+      </p>
+    </div>
 
-    مواقيتي يساعدك على معرفة مواقيت الصلاة اليومية
-    حسب مدينتك أو موقعك الحالي.
-    قد تختلف المواقيت ببضع دقائق حسب طريقة الحساب
-    والموقع الجغرافي.
+    <div class="faq">
+      <strong>هل يمكن استعمال مواقيتي من الهاتف؟</strong>
+      <p>
+        نعم، الموقع مصمم ليعمل على الهواتف والأجهزة اللوحية وأجهزة الكمبيوتر.
+      </p>
+    </div>
 
-</div>
+    <div class="faq">
+      <strong>هل يمكن أن تختلف المواقيت عن مواقيت المسجد القريب مني؟</strong>
+      <p>
+        نعم، قد توجد فروقات حسب طريقة الحساب أو الجهة التي تعتمدها المساجد
+        المحلية. لذلك من الأفضل مقارنة الأوقات مع المسجد المحلي عند الحاجة.
+      </p>
+    </div>
+  </section>
 
+  <section class="content" id="privacy">
+    <h2>سياسة الخصوصية</h2>
+
+    <p>
+      نحن نحترم خصوصية زوار موقع مواقيتي. الموقع لا يطلب من المستخدم إنشاء
+      حساب من أجل الاطلاع على مواقيت الصلاة.
+    </p>
+
+    <p>
+      عند استخدام ميزة تحديد الموقع، قد يطلب المتصفح إذناً للوصول إلى موقعك
+      الجغرافي. يتم استخدام هذه المعلومات لمساعدتك في تحديد المنطقة المناسبة
+      وعرض مواقيت الصلاة.
+    </p>
+
+    <p>
+      قد يستخدم الموقع خدمات خارجية لتوفير بيانات مواقيت الصلاة وبعض الخدمات
+      التقنية. كما قد يتم استخدام خدمات إعلانية مستقبلاً، مثل Google AdSense،
+      والتي قد تستخدم تقنيات مثل ملفات تعريف الارتباط وفقاً لسياساتها.
+    </p>
+
+    <p>
+      ننصح المستخدم بمراجعة سياسات الخصوصية الخاصة بالخدمات الخارجية التي
+      يستخدمها الموقع.
+    </p>
+  </section>
+
+  <section class="content" id="contact">
+    <h2>اتصل بنا</h2>
+
+    <p>
+      إذا كان لديك اقتراح أو وجدت مشكلة في الموقع أو لديك ملاحظة حول مواقيت
+      الصلاة، يمكنك التواصل معنا عبر البريد الإلكتروني.
+    </p>
+
+    <p>
+      <strong>البريد الإلكتروني:</strong>
+      ضع بريدك الإلكتروني هنا
+    </p>
+
+    <p>
+      سنحاول قراءة الرسائل والاقتراحات والرد عليها عندما يكون ذلك ممكناً.
+    </p>
+  </section>
+
+  <section class="content">
+    <h2>شروط الاستخدام</h2>
+
+    <p>
+      باستخدامك لموقع مواقيتي، فإنك توافق على استخدام الموقع لأغراض
+      معلوماتية وشخصية.
+    </p>
+
+    <p>
+      مواقيت الصلاة المعروضة تعتمد على بيانات وخدمات حساب خارجية، وقد تختلف
+      أحياناً عن التوقيت المعتمد لدى بعض المساجد أو الجهات المحلية.
+    </p>
+
+    <p>
+      يجب على المستخدم التأكد من المواقيت المحلية عند الحاجة، خصوصاً في
+      الحالات التي تتطلب دقة شرعية أو محلية.
+    </p>
+  </section>
+
+</main>
 
 <footer>
+  <strong>🕌 مواقيتي</strong>
 
-    © 2026 مواقيتي
+  <div style="margin-top:10px;">
+    <a href="#about">عن الموقع</a>
+    <a href="#faq">الأسئلة الشائعة</a>
+    <a href="#privacy">الخصوصية</a>
+    <a href="#contact">اتصل بنا</a>
+  </div>
 
+  <p>© 2026 مواقيتي - جميع الحقوق محفوظة</p>
 </footer>
 
-
-</div>
-
-
 <script>
+  const API = "https://api.aladhan.com/v1/timingsByCity";
 
+  const prayerNames = {
+    Fajr: "الفجر",
+    Dhuhr: "الظهر",
+    Asr: "العصر",
+    Maghrib: "المغرب",
+    Isha: "العشاء"
+  };
 
-/* أسماء الصلوات */
+  let prayerTimes = {};
+  let countdownTimer = null;
 
-const prayerNames = {
+  async function loadCity() {
+    const city = document.getElementById("citySelect").value;
 
-    Fajr:"الفجر",
+    document.getElementById("cityName").textContent =
+      city + "، المغرب";
 
-    Sunrise:"الشروق",
+    try {
+      const url =
+        API +
+        "?city=" +
+        encodeURIComponent(city) +
+        "&country=Morocco&method=21";
 
-    Dhuhr:"الظهر",
+      const response = await fetch(url);
+      const result = await response.json();
 
-    Asr:"العصر",
+      if (!result.data) {
+        throw new Error("No data");
+      }
 
-    Maghrib:"المغرب",
+      const timings = result.data.timings;
+      prayerTimes = timings;
 
-    Isha:"العشاء"
+      document.getElementById("Fajr").textContent = cleanTime(timings.Fajr);
+      document.getElementById("Sunrise").textContent = cleanTime(timings.Sunrise);
+      document.getElementById("Dhuhr").textContent = cleanTime(timings.Dhuhr);
+      document.getElementById("Asr").textContent = cleanTime(timings.Asr);
+      document.getElementById("Maghrib").textContent = cleanTime(timings.Maghrib);
+      document.getElementById("Isha").textContent = cleanTime(timings.Isha);
 
-};
+      if (result.data.date) {
+        document.getElementById("gregorianDate").textContent =
+          "التاريخ الميلادي: " +
+          result.data.date.gregorian.date;
 
+        document.getElementById("hijriDate").textContent =
+          "التاريخ الهجري: " +
+          result.data.date.hijri.date;
+      }
 
-/* أيقونات */
+      startCountdown();
 
-const prayerIcons = {
+    } catch (error) {
+      document.getElementById("nextPrayerName").textContent =
+        "تعذر تحميل المواقيت";
 
-    Fajr:"🌅",
+      document.getElementById("countdown").textContent =
+        "--:--:--";
+    }
+  }
 
-    Sunrise:"☀️",
+  function cleanTime(time) {
+    if (!time) return "--:--";
+    return time.split(" ")[0];
+  }
 
-    Dhuhr:"🌞",
+  function timeToMinutes(time) {
+    const clean = cleanTime(time);
+    const parts = clean.split(":");
 
-    Asr:"🌤️",
+    if (parts.length !== 2) return null;
 
-    Maghrib:"🌇",
+    return parseInt(parts[0]) * 60 + parseInt(parts[1]);
+  }
 
-    Isha:"🌙"
-
-};
-
-
-let timings = {};
-
-
-/* الساعة */
-
-function updateClock(){
-
-    const now =
-        new Date();
-
-
-    const h =
-        String(
-            now.getHours()
-        ).padStart(2,"0");
-
-
-    const m =
-        String(
-            now.getMinutes()
-        ).padStart(2,"0");
-
-
-    const s =
-        String(
-            now.getSeconds()
-        ).padStart(2,"0");
-
-
-    document
-        .getElementById("clock")
-        .textContent =
-        `${h}:${m}:${s}`;
-
-
-    updateNextPrayer();
-
-}
-
-
-/* وقت الصلاة */
-
-function getTodayPrayer(name){
-
-    const value =
-        timings[name];
-
-
-    if(!value){
-
-        return null;
-
+  function startCountdown() {
+    if (countdownTimer) {
+      clearInterval(countdownTimer);
     }
 
+    updateCountdown();
+    countdownTimer = setInterval(updateCountdown, 1000);
+  }
 
-    const parts =
-        value
-        .split(":")
-        .map(Number);
+  function updateCountdown() {
+    if (!prayerTimes.Fajr) return;
 
-
-    const date =
-        new Date();
-
-
-    date.setHours(
-        parts[0],
-        parts[1],
-        0,
-        0
-    );
-
-
-    return date;
-
-}
-
-
-/* الصلاة القادمة */
-
-function updateNextPrayer(){
-
-    if(!timings.Fajr){
-
-        return;
-
-    }
-
-
-    const now =
-        new Date();
-
-
-    const order = [
-
-        "Fajr",
-        "Dhuhr",
-        "Asr",
-        "Maghrib",
-        "Isha"
-
+    const prayers = [
+      ["Fajr", prayerTimes.Fajr],
+      ["Dhuhr", prayerTimes.Dhuhr],
+      ["Asr", prayerTimes.Asr],
+      ["Maghrib", prayerTimes.Maghrib],
+      ["Isha", prayerTimes.Isha]
     ];
 
+    const now = new Date();
 
     let next = null;
 
-    let nextTime = null;
+    for (const prayer of prayers) {
+      const mins = timeToMinutes(prayer[1]);
 
+      if (mins === null) continue;
 
-    for(
-        const name of order
-    ){
+      const target = new Date(now);
+      target.setHours(Math.floor(mins / 60));
+      target.setMinutes(mins % 60);
+      target.setSeconds(0);
+      target.setMilliseconds(0);
 
-        const time =
-            getTodayPrayer(name);
-
-
-        if(
-            time &&
-            time > now
-        ){
-
-            next = name;
-
-            nextTime = time;
-
-            break;
-
-        }
-
+      if (target > now) {
+        next = {
+          name: prayerNames[prayer[0]],
+          target: target
+        };
+        break;
+      }
     }
 
+    if (!next) {
+      const mins = timeToMinutes(prayers[0][1]);
 
-    /* فجر الغد */
+      const target = new Date(now);
+      target.setDate(target.getDate() + 1);
+      target.setHours(Math.floor(mins / 60));
+      target.setMinutes(mins % 60);
+      target.setSeconds(0);
+      target.setMilliseconds(0);
 
-    if(!next){
-
-        next = "Fajr";
-
-
-        nextTime =
-            getTodayPrayer("Fajr");
-
-
-        if(nextTime){
-
-            nextTime.setDate(
-                nextTime.getDate()+1
-            );
-
-        }
-
+      next = {
+        name: prayerNames[prayers[0][0]],
+        target: target
+      };
     }
 
+    const difference = next.target - now;
 
-    document
-        .getElementById("nextName")
-        .textContent =
-        prayerNames[next];
+    const hours = Math.floor(difference / 3600000);
+    const minutes = Math.floor(
+      (difference % 3600000) / 60000
+    );
+    const seconds = Math.floor(
+      (difference % 60000) / 1000
+    );
 
+    document.getElementById("nextPrayerName").textContent =
+      next.name;
 
-    if(nextTime){
+    document.getElementById("countdown").textContent =
+      String(hours).padStart(2, "0") +
+      ":" +
+      String(minutes).padStart(2, "0") +
+      ":" +
+      String(seconds).padStart(2, "0");
+  }
 
-        let difference =
-            nextTime - now;
+  async function detectLocation() {
 
-
-        if(difference < 0){
-
-            difference = 0;
-
-        }
-
-
-        const hours =
-            Math.floor(
-                difference /
-                3600000
-            );
-
-
-        const minutes =
-            Math.floor(
-                (difference %
-                3600000) /
-                60000
-            );
-
-
-        const seconds =
-            Math.floor(
-                (difference %
-                60000) /
-                1000
-            );
-
-
-        document
-            .getElementById("remaining")
-            .textContent =
-
-            `متبقي ${hours} ساعة و ${minutes} دقيقة و ${seconds} ثانية`;
-
+    if (!navigator.geolocation) {
+      alert("المتصفح ديالك ما كيدعمش تحديد الموقع.");
+      return;
     }
-
-
-    highlightPrayer(next);
-
-}
-
-
-/* تمييز الصلاة */
-
-function highlightPrayer(next){
-
-    document
-        .querySelectorAll(".prayer")
-        .forEach(el => {
-
-            el.classList.remove(
-                "active"
-            );
-
-
-            if(
-                el.dataset.name === next
-            ){
-
-                el.classList.add(
-                    "active"
-                );
-
-            }
-
-        });
-
-}
-
-
-/* عرض المواقيت */
-
-function displayPrayers(){
-
-    const list =
-        document.getElementById(
-            "prayerList"
-        );
-
-
-    const order = [
-
-        "Fajr",
-        "Sunrise",
-        "Dhuhr",
-        "Asr",
-        "Maghrib",
-        "Isha"
-
-    ];
-
-
-    list.className =
-        "prayers";
-
-
-    list.innerHTML =
-        "";
-
-
-    order.forEach(name => {
-
-        const div =
-            document.createElement(
-                "div"
-            );
-
-
-        div.className =
-            "prayer";
-
-
-        div.dataset.name =
-            name;
-
-
-        div.innerHTML = `
-
-            <div class="prayer-top">
-
-                <span class="prayer-name">
-
-                    ${prayerNames[name]}
-
-                </span>
-
-                <span class="icon">
-
-                    ${prayerIcons[name]}
-
-                </span>
-
-            </div>
-
-            <div class="prayer-time">
-
-                ${formatTime(
-                    timings[name]
-                )}
-
-            </div>
-
-        `;
-
-
-        list.appendChild(div);
-
-    });
-
-}
-
-
-/* تنسيق الوقت */
-
-function formatTime(time){
-
-    if(!time){
-
-        return "--:--";
-
-    }
-
-
-    return time.substring(0,5);
-
-}
-
-
-/* التاريخ */
-
-function updateDate(data){
-
-    if(
-        !data ||
-        !data.date
-    ){
-
-        return;
-
-    }
-
-
-    const gregorian =
-        data.date.gregorian;
-
-
-    const hijri =
-        data.date.hijri;
-
-
-    document
-        .getElementById("gregorian")
-        .textContent =
-
-        `${gregorian.day} ${gregorian.month.en} ${gregorian.year}`;
-
-
-    document
-        .getElementById("hijri")
-        .textContent =
-
-        `${hijri.day} ${hijri.month.ar} ${hijri.year} هـ`;
-
-}
-
-
-/* تحميل المواقيت حسب المدينة */
-
-async function loadPrayerTimes(){
-
-    const city =
-        document
-        .getElementById("city")
-        .value;
-
-
-    const list =
-        document
-        .getElementById(
-            "prayerList"
-        );
-
-
-    list.className =
-        "loading";
-
-
-    list.textContent =
-        "جاري تحميل مواقيت الصلاة...";
-
-
-    try{
-
-        const url =
-
-        `https://api.aladhan.com/v1/timingsByCity?city=${encodeURIComponent(city)}&country=Morocco&method=21`;
-
-
-        const response =
-            await fetch(url);
-
-
-        if(!response.ok){
-
-            throw new Error(
-                "Network error"
-            );
-
-        }
-
-
-        const result =
-            await response.json();
-
-
-        if(
-            result.code !== 200
-        ){
-
-            throw new Error(
-                "API error"
-            );
-
-        }
-
-
-        timings =
-            result.data.timings;
-
-
-        displayPrayers();
-
-
-        updateDate(
-            result.data
-        );
-
-
-        updateNextPrayer();
-
-
-        document
-            .getElementById(
-                "locationStatus"
-            )
-            .textContent =
-            `📍 مواقيت ${city} محدثة بنجاح`;
-
-
-    }catch(error){
-
-        list.className =
-            "error";
-
-
-        list.innerHTML = `
-
-            ⚠️ تعذر تحميل مواقيت الصلاة.
-
-            <br>
-
-            تأكد من اتصالك بالإنترنت
-            وحاول مرة أخرى.
-
-        `;
-
-    }
-
-}
-
-
-/* تحديد الموقع */
-
-function detectLocation(){
-
-    const status =
-        document.getElementById(
-            "locationStatus"
-        );
-
-
-    if(!navigator.geolocation){
-
-        status.textContent =
-            "❌ المتصفح ديالك لا يدعم تحديد الموقع.";
-
-        return;
-
-    }
-
-
-    status.textContent =
-        "📍 جاري تحديد موقعك...";
-
 
     navigator.geolocation.getCurrentPosition(
+      async function(position) {
 
-        async function(position){
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
 
-            const latitude =
-                position.coords.latitude;
+        try {
 
+          const response = await fetch(
+            "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=" +
+            lat +
+            "&longitude=" +
+            lon +
+            "&localityLanguage=ar"
+          );
 
-            const longitude =
-                position.coords.longitude;
+          const data = await response.json();
 
+          const city =
+            data.city ||
+            data.locality ||
+            data.principalSubdivision ||
+            "Rabat";
 
-            try{
+          document.getElementById("cityName").textContent =
+            city + "، المغرب";
 
-                const url =
+          const prayerURL =
+            "https://api.aladhan.com/v1/timings/" +
+            Math.floor(Date.now() / 1000) +
+            "?latitude=" +
+            lat +
+            "&longitude=" +
+            lon +
+            "&method=21";
 
-                `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=ar`;
+          const prayerResponse =
+            await fetch(prayerURL);
 
+          const prayerData =
+            await prayerResponse.json();
 
-                const response =
-                    await fetch(url);
+          if (!prayerData.data) {
+            throw new Error("No prayer data");
+          }
 
+          const timings = prayerData.data.timings;
 
-                const data =
-                    await response.json();
+          prayerTimes = timings;
 
+          document.getElementById("Fajr").textContent =
+            cleanTime(timings.Fajr);
 
-                const city =
-                    data.city ||
-                    data.locality ||
-                    data.principalSubdivision;
+          document.getElementById("Sunrise").textContent =
+            cleanTime(timings.Sunrise);
 
+          document.getElementById("Dhuhr").textContent =
+            cleanTime(timings.Dhuhr);
 
-                if(!city){
+          document.getElementById("Asr").textContent =
+            cleanTime(timings.Asr);
 
-                    throw new Error(
-                        "City not found"
-                    );
+          document.getElementById("Maghrib").textContent =
+            cleanTime(timings.Maghrib);
 
-                }
+          document.getElementById("Isha").textContent =
+            cleanTime(timings.Isha);
 
+          if (prayerData.data.date) {
 
-                const cityMap = {
+            document.getElementById("gregorianDate").textContent =
+              "التاريخ الميلادي: " +
+              prayerData.data.date.gregorian.date;
 
-                    "Rabat":"Rabat",
-                    "الرباط":"Rabat",
+            document.getElementById("hijriDate").textContent =
+              "التاريخ الهجري: " +
+              prayerData.data.date.hijri.date;
+          }
 
-                    "Salé":"Sale",
-                    "سلا":"Sale",
+          startCountdown();
 
-                    "Casablanca":"Casablanca",
-                    "الدار البيضاء":"Casablanca",
+        } catch (error) {
 
-                    "Fès":"Fes",
-                    "فاس":"Fes",
-
-                    "Marrakesh":"Marrakesh",
-                    "Marrakech":"Marrakesh",
-                    "مراكش":"Marrakesh",
-
-                    "Tangier":"Tangier",
-                    "طنجة":"Tangier",
-
-                    "Meknes":"Meknes",
-                    "مكناس":"Meknes",
-
-                    "Agadir":"Agadir",
-                    "أكادير":"Agadir",
-
-                    "Oujda":"Oujda",
-                    "وجدة":"Oujda",
-
-                    "Kenitra":"Kenitra",
-                    "القنيطرة":"Kenitra",
-
-                    "Tetouan":"Tetouan",
-                    "تطوان":"Tetouan",
-
-                    "El Jadida":"El Jadida",
-                    "الجديدة":"El Jadida",
-
-                    "Beni Mellal":"Beni Mellal",
-                    "بني ملال":"Beni Mellal",
-
-                    "Nador":"Nador",
-                    "الناظور":"Nador"
-
-                };
-
-
-                const apiCity =
-                    cityMap[city] ||
-                    city;
-
-
-                const select =
-                    document.getElementById(
-                        "city"
-                    );
-
-
-                let found = false;
-
-
-                for(
-                    let i=0;
-                    i<select.options.length;
-                    i++
-                ){
-
-                    if(
-                        select.options[i].value
-                        .toLowerCase()
-                        ===
-                        apiCity.toLowerCase()
-                    ){
-
-                        select.selectedIndex =
-                            i;
-
-                        found = true;
-
-                        break;
-
-                    }
-
-                }
-
-
-                if(found){
-
-                    await loadPrayerTimes();
-
-
-                    status.textContent =
-                        `📍 تم تحديد موقعك: ${city}`;
-
-                }else{
-
-                    status.textContent =
-                        `📍 موقعك هو ${city}. اختار المدينة يدوياً من القائمة للحصول على المواقيت.`;
-
-                }
-
-
-            }catch(error){
-
-                status.textContent =
-                    "⚠️ تعذر معرفة المدينة. يمكنك اختيارها يدوياً.";
-
-            }
-
-        },
-
-
-        function(error){
-
-            if(
-                error.code === 1
-            ){
-
-                status.textContent =
-                    "⚠️ خاصك تسمح للموقع بالوصول إلى موقعك.";
-
-            }else{
-
-                status.textContent =
-                    "⚠️ تعذر تحديد موقعك. حاول مرة أخرى.";
-
-            }
-
-        },
-
-        {
-            enableHighAccuracy:true,
-
-            timeout:10000,
-
-            maximumAge:300000
+          alert(
+            "تعذر الحصول على مواقيت موقعك. جرب اختيار المدينة يدوياً."
+          );
 
         }
 
+      },
+
+      function() {
+        alert(
+          "خاصك تسمح للموقع باستعمال موقعك الجغرافي، أو اختار المدينة يدوياً."
+        );
+      },
+
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 300000
+      }
     );
+  }
 
-}
+  function updateClock() {
+    // الساعة الحالية يمكن إضافتها هنا لاحقاً
+  }
 
-
-/* تغيير المدينة */
-
-document
-    .getElementById("city")
-    .addEventListener(
-        "change",
-        loadPrayerTimes
-    );
-
-
-/* تشغيل الساعة */
-
-updateClock();
-
-
-setInterval(
-    updateClock,
-    1000
-);
-
-
-/* تحميل المواقيت الافتراضية */
-
-loadPrayerTimes();
-
+  window.addEventListener("load", function() {
+    loadCity();
+  });
 </script>
 
 </body>
