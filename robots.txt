@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://josephnora80-blip.github.io/my-date/sitemap.xml
