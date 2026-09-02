@@ -1,592 +1,543 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Group Noura LLD | Location de voitures au Maroc</title>
-
-  <meta name="description" content="Group Noura LLD - Location de voitures au Maroc. Découvrez notre sélection de voitures et réservez facilement par WhatsApp.">
-  <meta name="keywords" content="location voiture Maroc, location voiture Rabat, location voiture Casablanca, location voiture Marrakech, Group Noura LLD">
-  <meta name="author" content="Group Noura LLD">
-
-  <meta property="og:title" content="Group Noura LLD - Location de voitures">
-  <meta property="og:description" content="Louez votre voiture au Maroc avec Group Noura LLD.">
-  <meta property="og:type" content="website">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f6f7f9;
-      color: #222;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    header {
-      background: #111;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.15);
-    }
-
-    .navbar {
-      max-width: 1200px;
-      margin: auto;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 23px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    .logo span {
-      color: #d4af37;
-    }
-
-    nav {
-      display: flex;
-      gap: 25px;
-    }
-
-    nav a {
-      color: white;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #d4af37;
-    }
-
-    .menu-btn {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    .hero {
-      min-height: 620px;
-      background:
-        linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.62)),
-        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=85")
-        center/cover no-repeat;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 40px 20px;
-    }
-
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .hero h1 {
-      font-size: 52px;
-      margin-bottom: 15px;
-    }
-
-    .hero h1 span {
-      color: #d4af37;
-    }
-
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 27px;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: 0.3s;
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn-gold {
-      background: #d4af37;
-      color: #111;
-    }
-
-    .btn-gold:hover {
-      background: #f0ca4d;
-      transform: translateY(-2px);
-    }
-
-    .btn-dark {
-      background: #111;
-      color: white;
-    }
-
-    .btn-dark:hover {
-      background: #333;
-    }
-
-    section {
-      padding: 70px 20px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      color: #666;
-    }
-
-    /* SEARCH */
-
-    .search-box {
-      max-width: 1100px;
-      margin: -60px auto 60px;
-      position: relative;
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-      z-index: 5;
-    }
-
-    .search-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 7px;
-    }
-
-    .form-group input,
-    .form-group select {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #ddd;
-      border-radius: 7px;
-      outline: none;
-      font-size: 15px;
-    }
-
-    .search-button {
-      margin-top: 22px;
-      width: 100%;
-    }
-
-    /* CARS */
-
-    .cars-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .car-card {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      transition: 0.3s;
-    }
-
-    .car-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.14);
-    }
-
-    .car-image {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      background: #eee;
-    }
-
-    .car-info {
-      padding: 20px;
-    }
-
-    .car-info h3 {
-      font-size: 21px;
-      margin-bottom: 8px;
-    }
-
-    .car-details {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin: 12px 0;
-      color: #666;
-      font-size: 14px;
-    }
-
-    .price {
-      font-size: 22px;
-      font-weight: bold;
-      color: #b28b16;
-      margin: 15px 0;
-    }
-
-    .price small {
-      color: #777;
-      font-size: 13px;
-      font-weight: normal;
-    }
-
-    .reserve-btn {
-      width: 100%;
-      text-align: center;
-      background: #25D366;
-      color: white;
-      padding: 12px;
-      border-radius: 7px;
-      display: block;
-      font-weight: bold;
-    }
-
-    .reserve-btn:hover {
-      background: #1ebe5d;
-    }
-
-    /* SERVICES */
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .service {
-      background: white;
-      padding: 30px 20px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.06);
-    }
-
-    .service-icon {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
-
-    .service h3 {
-      margin-bottom: 8px;
-    }
-
-    .service p {
-      color: #666;
-      font-size: 14px;
-    }
-
-    /* LOCATIONS */
-
-    .locations {
-      background: #111;
-      color: white;
-    }
-
-    .locations .section-title p {
-      color: #bbb;
-    }
-
-    .locations-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .location {
-      border: 1px solid #333;
-      padding: 18px;
-      border-radius: 8px;
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .location:hover {
-      border-color: #d4af37;
-      color: #d4af37;
-    }
-
-    /* ABOUT */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .about-image {
-      width: 100%;
-      border-radius: 15px;
-      height: 380px;
-      object-fit: cover;
-    }
-
-    .about-text h2 {
-      font-size: 35px;
-      margin-bottom: 15px;
-    }
-
-    .about-text p {
-      color: #666;
-      margin-bottom: 15px;
-    }
-
-    /* CONTACT */
-
-    .contact-box {
-      background: white;
-      border-radius: 15px;
-      padding: 40px;
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-    }
-
-    .contact-box h2 {
-      font-size: 32px;
-      margin-bottom: 12px;
-    }
-
-    .phone {
-      font-size: 30px;
-      font-weight: bold;
-      color: #111;
-      margin: 20px 0;
-    }
-
-    .whatsapp-big {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      padding: 15px 35px;
-      border-radius: 8px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #080808;
-      color: white;
-      padding: 35px 20px;
-      text-align: center;
-    }
-
-    footer p {
-      color: #aaa;
-      margin: 5px;
-    }
-
-    .footer-logo {
-      font-size: 23px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .footer-logo span {
-      color: #d4af37;
-    }
-
-    /* FLOATING WHATSAPP */
-
-    .whatsapp-float {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      width: 60px;
-      height: 60px;
-      background: #25D366;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      z-index: 9999;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-
-      nav {
-        display: none;
-        position: absolute;
-        top: 65px;
-        left: 0;
-        width: 100%;
-        background: #111;
-        flex-direction: column;
-        padding: 20px;
-        gap: 15px;
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      .menu-btn {
-        display: block;
-      }
-
-      .hero h1 {
-        font-size: 38px;
-      }
-
-      .search-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .cars-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .locations-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-
-      .navbar {
-        padding: 13px 15px;
-      }
-
-      .logo {
-        font-size: 19px;
-      }
-
-      .hero {
-        min-height: 560px;
-      }
-
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-
-      section {
-        padding: 55px 15px;
-      }
-
-      .section-title h2 {
-        font-size: 29px;
-      }
-
-      .search-box {
-        margin: -35px 15px 40px;
-        padding: 18px;
-      }
-
-      .search-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .cars-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .locations-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .about-text h2 {
-        font-size: 28px;
-      }
-
-      .contact-box {
-        padding: 25px 15px;
-      }
-
-      .phone {
-        font-size: 23px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Group Noura LLD | Location de voitures au Maroc</title>
+
+<meta name="description" content="Group Noura LLD - Location de voitures au Maroc. Découvrez nos voitures et réservez facilement par WhatsApp.">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f6f8;
+color:#171717;
+line-height:1.6
+}
+
+a{text-decoration:none}
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:#090909;
+color:white;
+box-shadow:0 3px 20px rgba(0,0,0,.25)
+}
+
+.navbar{
+max-width:1200px;
+margin:auto;
+padding:16px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between
+}
+
+.logo{
+font-size:23px;
+font-weight:800;
+letter-spacing:1px;
+color:white
+}
+
+.logo span{color:#d4af37}
+
+nav{
+display:flex;
+gap:25px
+}
+
+nav a{
+color:#fff;
+font-weight:600;
+font-size:15px
+}
+
+nav a:hover{color:#d4af37}
+
+.menu{
+display:none;
+font-size:28px;
+cursor:pointer
+}
+
+/* HERO */
+
+.hero{
+min-height:650px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:30px 20px;
+color:white;
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85")
+center/cover no-repeat
+}
+
+.hero-content{max-width:850px}
+
+.hero h1{
+font-size:54px;
+line-height:1.15;
+margin-bottom:20px
+}
+
+.hero h1 span{color:#d4af37}
+
+.hero p{
+font-size:20px;
+color:#eee;
+margin-bottom:30px
+}
+
+.btn{
+display:inline-block;
+padding:14px 28px;
+border-radius:8px;
+font-weight:bold;
+transition:.3s
+}
+
+.gold{
+background:#d4af37;
+color:#111
+}
+
+.gold:hover{
+background:#f0ca4d;
+transform:translateY(-2px)
+}
+
+.dark{
+background:#111;
+color:white
+}
+
+/* SEARCH */
+
+.search{
+max-width:1100px;
+margin:-65px auto 0;
+position:relative;
+z-index:5;
+background:white;
+border-radius:16px;
+padding:28px;
+box-shadow:0 10px 35px rgba(0,0,0,.15)
+}
+
+.search h3{
+font-size:22px;
+margin-bottom:18px
+}
+
+.search-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px
+}
+
+label{
+font-size:13px;
+font-weight:bold;
+display:block;
+margin-bottom:6px
+}
+
+input,select{
+width:100%;
+padding:13px;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:14px;
+background:white
+}
+
+.search button{
+border:0;
+width:100%;
+margin-top:20px;
+padding:14px;
+border-radius:8px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer
+}
+
+/* GENERAL */
+
+section{padding:80px 20px}
+
+.container{
+max-width:1200px;
+margin:auto
+}
+
+.title{
+text-align:center;
+margin-bottom:45px
+}
+
+.title h2{
+font-size:38px;
+margin-bottom:10px
+}
+
+.title p{color:#666}
+
+/* CARS */
+
+.cars{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px
+}
+
+.card{
+background:white;
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 6px 25px rgba(0,0,0,.08);
+transition:.3s
+}
+
+.card:hover{
+transform:translateY(-7px);
+box-shadow:0 12px 35px rgba(0,0,0,.14)
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+display:block
+}
+
+.card-content{padding:20px}
+
+.card h3{
+font-size:21px;
+margin-bottom:10px
+}
+
+.tags{
+display:flex;
+flex-wrap:wrap;
+gap:7px;
+margin-bottom:14px
+}
+
+.tag{
+background:#f0f1f3;
+padding:5px 9px;
+border-radius:20px;
+font-size:12px;
+color:#555
+}
+
+.price{
+font-size:21px;
+font-weight:800;
+color:#b28b16;
+margin:12px 0 17px
+}
+
+.price small{
+font-size:13px;
+color:#777;
+font-weight:normal
+}
+
+.whatsapp{
+display:block;
+text-align:center;
+padding:12px;
+border-radius:8px;
+background:#25D366;
+color:white;
+font-weight:bold
+}
+
+.whatsapp:hover{background:#1ebe5d}
+
+/* SERVICES */
+
+.services{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px
+}
+
+.service{
+background:white;
+padding:30px 20px;
+text-align:center;
+border-radius:14px;
+box-shadow:0 5px 20px rgba(0,0,0,.06)
+}
+
+.icon{
+font-size:40px;
+margin-bottom:12px
+}
+
+.service h3{margin-bottom:8px}
+
+.service p{
+font-size:14px;
+color:#666
+}
+
+/* LOCATIONS */
+
+.dark-section{
+background:#0c0c0c;
+color:white
+}
+
+.dark-section .title p{color:#aaa}
+
+.locations{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:13px
+}
+
+.location{
+border:1px solid #333;
+padding:17px;
+border-radius:8px;
+text-align:center;
+transition:.3s
+}
+
+.location:hover{
+border-color:#d4af37;
+color:#d4af37
+}
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center
+}
+
+.about img{
+width:100%;
+height:400px;
+object-fit:cover;
+border-radius:16px
+}
+
+.about h2{
+font-size:38px;
+margin-bottom:18px
+}
+
+.about p{
+color:#666;
+margin-bottom:15px
+}
+
+/* CONTACT */
+
+.contact{
+max-width:850px;
+margin:auto;
+background:white;
+padding:45px 25px;
+border-radius:16px;
+text-align:center;
+box-shadow:0 7px 25px rgba(0,0,0,.08)
+}
+
+.phone{
+font-size:30px;
+font-weight:bold;
+margin:20px 0
+}
+
+.big-whatsapp{
+display:inline-block;
+background:#25D366;
+color:white;
+padding:15px 30px;
+border-radius:8px;
+font-weight:bold;
+font-size:17px
+}
+
+/* FOOTER */
+
+footer{
+background:#070707;
+color:white;
+text-align:center;
+padding:35px 20px
+}
+
+footer .logo{margin-bottom:8px}
+
+footer p{
+color:#aaa;
+font-size:14px;
+margin:4px
+}
+
+/* FLOAT WHATSAPP */
+
+.float{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+background:#25D366;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:29px;
+z-index:9999;
+box-shadow:0 5px 20px rgba(0,0,0,.3)
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+nav{
+display:none;
+position:absolute;
+top:65px;
+left:0;
+right:0;
+background:#090909;
+flex-direction:column;
+padding:20px
+}
+
+nav.open{display:flex}
+
+.menu{display:block}
+
+.hero h1{font-size:40px}
+
+.search-grid{
+grid-template-columns:1fr 1fr
+}
+
+.cars{
+grid-template-columns:1fr 1fr
+}
+
+.services{
+grid-template-columns:1fr 1fr
+}
+
+.locations{
+grid-template-columns:1fr 1fr
+}
+
+.about{
+grid-template-columns:1fr
+}
+
+}
+
+@media(max-width:600px){
+
+.hero{
+min-height:570px
+}
+
+.hero h1{
+font-size:33px
+}
+
+.hero p{
+font-size:17px
+}
+
+.search{
+margin: -35px 15px 0;
+padding:20px
+}
+
+.search-grid{
+grid-template-columns:1fr
+}
+
+.cars{
+grid-template-columns:1fr
+}
+
+.services{
+grid-template-columns:1fr
+}
+
+.locations{
+grid-template-columns:1fr 1fr
+}
+
+.about h2{
+font-size:30px
+}
+
+.about img{
+height:280px
+}
+
+.title h2{
+font-size:30px
+}
+
+.phone{
+font-size:24px
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
-  <div class="navbar">
 
-    <a href="#" class="logo">
-      GROUP <span>NOURA</span> LLD
-    </a>
+<div class="navbar">
 
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+<a href="#accueil" class="logo">
+GROUP <span>NOURA</span> LLD
+</a>
 
-    <nav id="nav">
-      <a href="#accueil">Accueil</a>
-      <a href="#voitures">Voitures</a>
-      <a href="#services">Services</a>
-      <a href="#villes">Villes</a>
-      <a href="#apropos">À propos</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<div class="menu" onclick="menu()">☰</div>
 
-  </div>
+<nav id="nav">
+<a href="#accueil">Accueil</a>
+<a href="#voitures">Voitures</a>
+<a href="#services">Services</a>
+<a href="#villes">Villes</a>
+<a href="#apropos">À propos</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</div>
+
 </header>
 
 
@@ -594,84 +545,86 @@
 
 <section class="hero" id="accueil">
 
-  <div class="hero-content">
+<div class="hero-content">
 
-    <h1>
-      Location de voitures avec
-      <span>Group Noura LLD</span>
-    </h1>
+<h1>
+Votre voiture,
+<br>
+<span>votre liberté.</span>
+</h1>
 
-    <p>
-      Votre voiture, votre liberté. Louez facilement partout au Maroc.
-    </p>
+<p>
+Location de voitures au Maroc avec Group Noura LLD.
+Réservez rapidement et simplement par WhatsApp.
+</p>
 
-    <a href="#voitures" class="btn btn-gold">
-      Découvrir nos voitures
-    </a>
+<a href="#voitures" class="btn gold">
+Voir nos voitures
+</a>
 
-  </div>
+</div>
 
 </section>
 
 
 <!-- SEARCH -->
 
-<div class="search-box">
+<div class="search">
 
-  <div class="search-grid">
+<h3>🔎 Rechercher une voiture</h3>
 
-    <div class="form-group">
-      <label>Ville / Aéroport</label>
+<div class="search-grid">
 
-      <select id="location">
-        <option value="">Choisir une destination</option>
-        <option>Rabat</option>
-        <option>Casablanca</option>
-        <option>Marrakech</option>
-        <option>Tanger</option>
-        <option>Agadir</option>
-        <option>Fès</option>
-        <option>Oujda</option>
-        <option>Aéroport Mohammed V</option>
-        <option>Aéroport Rabat-Salé</option>
-        <option>Aéroport Marrakech-Menara</option>
-        <option>Aéroport Tanger Ibn Battouta</option>
-        <option>Aéroport Agadir-Al Massira</option>
-        <option>Aéroport Fès-Saïss</option>
-      </select>
-    </div>
+<div>
+<label>Ville / Aéroport</label>
 
+<select id="ville">
+<option value="">Choisir</option>
+<option>Rabat</option>
+<option>Salé</option>
+<option>Casablanca</option>
+<option>Marrakech</option>
+<option>Tanger</option>
+<option>Agadir</option>
+<option>Fès</option>
+<option>Oujda</option>
+<option>Aéroport Rabat-Salé</option>
+<option>Aéroport Mohammed V</option>
+<option>Aéroport Marrakech-Menara</option>
+<option>Aéroport Tanger Ibn Battouta</option>
+<option>Aéroport Agadir-Al Massira</option>
+<option>Aéroport Fès-Saïss</option>
+</select>
+</div>
 
-    <div class="form-group">
-      <label>Date de départ</label>
-      <input type="date" id="dateStart">
-    </div>
+<div>
+<label>Date de départ</label>
+<input type="date" id="depart">
+</div>
 
+<div>
+<label>Date de retour</label>
+<input type="date" id="retour">
+</div>
 
-    <div class="form-group">
-      <label>Date de retour</label>
-      <input type="date" id="dateEnd">
-    </div>
+<div>
+<label>Catégorie</label>
 
+<select id="categorie">
+<option value="">Toutes</option>
+<option value="Citadine">Citadine</option>
+<option value="SUV">SUV</option>
+<option value="Berline">Berline</option>
+<option value="Premium">Premium</option>
+</select>
 
-    <div class="form-group">
-      <label>Type de voiture</label>
+</div>
 
-      <select id="carType">
-        <option value="">Toutes les voitures</option>
-        <option>Citadine</option>
-        <option>Berline</option>
-        <option>SUV</option>
-        <option>Premium</option>
-      </select>
+</div>
 
-    </div>
-
-  </div>
-
-  <button class="btn btn-dark search-button" onclick="searchCars()">
-    🔎 Rechercher une voiture
-  </button>
+<button class="dark" onclick="rechercher()">
+Rechercher
+</button>
 
 </div>
 
@@ -680,304 +633,590 @@
 
 <section id="voitures">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-title">
+<div class="title">
 
-      <h2>Nos voitures</h2>
+<h2>Notre flotte</h2>
 
-      <p>
-        Découvrez notre sélection de véhicules pour tous vos déplacements.
-      </p>
+<p>
+Des véhicules adaptés à tous vos besoins.
+</p>
 
-    </div>
+</div>
 
 
-    <div class="cars-grid">
+<div class="cars">
 
 
-      <!-- CAR 1 -->
+<!-- CLIO 5 DIESEL -->
 
-      <div class="car-card" data-type="Premium">
+<div class="card" data-category="Citadine">
 
-        <img
-          class="car-image"
-          src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80"
-          alt="Range Rover Vogue">
+<img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=900&q=80" alt="Clio 5 Diesel">
 
-        <div class="car-info">
+<div class="card-content">
 
-          <h3>Range Rover Vogue</h3>
+<h3>Renault Clio 5 Diesel</h3>
 
-          <div class="car-details">
-            <span>⚙️ Automatique</span>
-            <span>👥 5 places</span>
-            <span>⛽ Diesel</span>
-          </div>
+<div class="tags">
+<span class="tag">⛽ Diesel</span>
+<span class="tag">⚙️ Manuelle</span>
+<span class="tag">👥 5 places</span>
+</div>
 
-          <div class="price">
-            À partir de 1 200 DH <small>/ jour</small>
-          </div>
+<div class="price">
+250 DH <small>/ jour</small>
+</div>
 
-          <a class="reserve-btn"
-             href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20souhaite%20louer%20une%20Range%20Rover%20Vogue."
-             target="_blank">
-            📱 Réserver sur WhatsApp
-          </a>
+<a class="whatsapp" target="_blank"
+href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20Renault%20Clio%205%20Diesel.">
+💬 Réserver
+</a>
 
-        </div>
-      </div>
+</div>
+</div>
 
 
-      <!-- CAR 2 -->
+<!-- PEUGEOT 208 -->
 
-      <div class="car-card" data-type="Premium">
+<div class="card" data-category="Citadine">
 
-        <img
-          class="car-image"
-          src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=900&q=80"
-          alt="Range Rover Sport HSE">
+<img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=900&q=80" alt="Peugeot 208">
 
-        <div class="car-info">
+<div class="card-content">
 
-          <h3>Range Rover Sport HSE</h3>
+<h3>Peugeot 208</h3>
 
-          <div class="car-details">
-            <span>⚙️ Automatique</span>
-            <span>👥 5 places</span>
-            <span>⛽ Diesel</span>
-          </div>
+<div class="tags">
+<span class="tag">⛽ Diesel</span>
+<span class="tag">⚙️ Manuelle</span>
+<span class="tag">👥 5 places</span>
+</div>
 
-          <div class="price">
-            À partir de 1 000 DH <small>/ jour</small>
-          </div>
+<div class="price">
+280 DH <small>/ jour</small>
+</div>
 
-          <a class="reserve-btn"
-             href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20souhaite%20louer%20une%20Range%20Rover%20Sport%20HSE."
-             target="_blank">
-            📱 Réserver sur WhatsApp
-          </a>
+<a class="whatsapp" target="_blank"
+href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20Peugeot%20208.">
+💬 Réserver
+</a>
 
-        </div>
-      </div>
+</div>
+</div>
 
 
-      <!-- CAR 3 -->
+<!-- CLIO 5 AUTO -->
 
-      <div class="car-card" data-type="Premium">
+<div class="card" data-category="Citadine">
 
-        <img
-          class="car-image"
-          src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=80"
-          alt="Mercedes Classe E">
+<img src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80" alt="Clio 5 Automatique">
 
-        <div class="car-info">
+<div class="card-content">
 
-          <h3>Mercedes Classe E</h3>
+<h3>Clio 5 Automatique</h3>
 
-          <div class="car-details">
-            <span>⚙️ Automatique</span>
-            <span>👥 5 places</span>
-            <span>⛽ Diesel</span>
-          </div>
+<div class="tags">
+<span class="tag">⛽ Essence</span>
+<span class="tag">⚙️ Automatique</span>
+<span class="tag">👥 5 places</span>
+</div>
 
-          <div class="price">
-            À partir de 900 DH <small>/ jour</small>
-          </div>
+<div class="price">
+300 DH <small>/ jour</small>
+</div>
 
-          <a class="reserve-btn"
-             href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20souhaite%20louer%20une%20Mercedes%20Classe%20E."
-             target="_blank">
-            📱 Réserver sur WhatsApp
-          </a>
+<a class="whatsapp" target="_blank"
+href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20Clio%205%20Automatique.">
+💬 Réserver
+</a>
 
-        </div>
-      </div>
+</div>
+</div>
 
 
-      <!-- CAR 4 -->
+<!-- CLIO 6 -->
 
-      <div class="car-card" data-type="Citadine">
+<div class="card" data-category="Citadine">
 
-        <img
-          class="car-image"
-          src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=900&q=80"
-          alt="Clio 6">
+<img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=900&q=80" alt="Clio 6">
 
-        <div class="car-info">
+<div class="card-content">
 
-          <h3>Renault Clio 6</h3>
+<h3>Renault Clio 6</h3>
 
-          <div class="car-details">
-            <span>⚙️ Automatique</span>
-            <span>👥 5 places</span>
-            <span>⛽ Essence</span>
-          </div>
+<div class="tags">
+<span class="tag">⛽ Essence</span>
+<span class="tag">⚙️ Automatique</span>
+<span class="tag">👥 5 places</span>
+</div>
 
-          <div class="price">
-            À partir de 350 DH <small>/ jour</small>
-          </div>
+<div class="price">
+350 DH <small>/ jour</small>
+</div>
 
-          <a class="reserve-btn"
-             href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20souhaite%20louer%20une%20Clio%206."
-             target="_blank">
-            📱 Réserver sur WhatsApp
-          </a>
+<a class="whatsapp" target="_blank"
+href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20Renault%20Clio%206.">
+💬 Réserver
+</a>
 
-        </div>
-      </div>
+</div>
+</div>
 
 
-      <!-- CAR 5 -->
+<!-- PEUGEOT 2008 -->
 
-      <div class="car-card" data-type="Citadine">
+<div class="card" data-category="SUV">
 
-        <img
-          class="car-image"
-          src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80"
-          alt="Clio 5 Automatique">
+<img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=900&q=80" alt="Peugeot 2008">
 
-        <div class="car-info">
+<div class="card-content">
 
-          <h3>Clio 5 Automatique</h3>
+<h3>Peugeot 2008</h3>
 
-          <div class="car-details">
-            <span>⚙️ Automatique</span>
-            <span>👥 5 places</span>
-            <span>⛽ Essence</span>
-          </div>
+<div class="tags">
+<span class="tag">⛽ Essence</span>
+<span class="tag">⚙️ Automatique</span>
+<span class="tag">👥 5 places</span>
+</div>
 
-          <div class="price">
-            À partir de 300 DH <small>/ jour</small>
-          </div>
+<div class="price">
+400 DH <small>/ jour</small>
+</div>
 
-          <a class="reserve-btn"
-             href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20souhaite%20louer%20une%20Clio%205%20Automatique."
-             target="_blank">
-            📱 Réserver sur WhatsApp
-          </a>
+<a class="whatsapp" target="_blank"
+href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20Peugeot%202008.">
+💬 Réserver
+</a>
 
-        </div>
-      </div>
+</div>
+</div>
 
 
-      <!-- CAR 6 -->
+<!-- T ROC -->
 
-      <div class="car-card" data-type="Citadine">
+<div class="card" data-category="SUV">
 
-        <img
-          class="car-image"
-          src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=900&q=80"
-          alt="Peugeot 208">
+<img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=80" alt="Volkswagen T-Roc">
 
-        <div class="car-info">
+<div class="card-content">
 
-          <h3>Peugeot 208</h3>
+<h3>Volkswagen T-Roc</h3>
 
-          <div class="car-details">
-            <span>⚙️ Manuelle</span>
-            <span>👥 5 places</span>
-            <span>⛽ Diesel</span>
-          </div>
+<div class="tags">
+<span class="tag">⛽ Diesel</span>
+<span class="tag">⚙️ Automatique</span>
+<span class="tag">👥 5 places</span>
+</div>
 
-          <div class="price">
-            À partir de 280 DH <small>/ jour</small>
-          </div>
+<div class="price">
+450 DH <small>/ jour</small>
+</div>
 
-          <a class="reserve-btn"
-             href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20souhaite%20louer%20une%20Peugeot%20208."
-             target="_blank">
-            📱 Réserver sur WhatsApp
-          </a>
+<a class="whatsapp" target="_blank"
+href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20Volkswagen%20T-Roc.">
+💬 Réserver
+</a>
 
-        </div>
-      </div>
+</div>
+</div>
 
 
-      <!-- CAR 7 -->
+<!-- TOUAREG -->
 
-      <div class="car-card" data-type="SUV">
+<div class="card" data-category="SUV">
 
-        <img
-          class="car-image"
-          src="https://images.unsplash.com/photo-1625231334168-35067f8853ed?auto=format&fit=crop&w=900&q=80"
-          alt="Porsche Macan">
+<img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=80" alt="Volkswagen Touareg">
 
-        <div class="car-info">
+<div class="card-content">
 
-          <h3>Porsche Macan</h3>
+<h3>Volkswagen Touareg</h3>
 
-          <div class="car-details">
-            <span>⚙️ Automatique</span>
-            <span>👥 5 places</span>
-            <span>⛽ Essence</span>
-          </div>
+<div class="tags">
+<span class="tag">⛽ Diesel</span>
+<span class="tag">⚙️ Automatique</span>
+<span class="tag">👥 5 places</span>
+</div>
 
-          <div class="price">
-            À partir de 1 000 DH <small>/ jour</small>
-          </div>
+<div class="price">
+700 DH <small>/ jour</small>
+</div>
 
-          <a class="reserve-btn"
-             href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20souhaite%20louer%20une%20Porsche%20Macan."
-             target="_blank">
-            📱 Réserver sur WhatsApp
-          </a>
+<a class="whatsapp" target="_blank"
+href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20Volkswagen%20Touareg.">
+💬 Réserver
+</a>
 
-        </div>
-      </div>
+</div>
+</div>
 
 
-      <!-- CAR 8 -->
+<!-- MERCEDES -->
 
-      <div class="car-card" data-type="SUV">
+<div class="card" data-category="Berline">
 
-        <img
-          class="car-image"
-          src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=80"
-          alt="Volkswagen Touareg">
+<img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=80" alt="Mercedes Classe E">
 
-        <div class="car-info">
+<div class="card-content">
 
-          <h3>Volkswagen Touareg</h3>
+<h3>Mercedes Classe E</h3>
 
-          <div class="car-details">
-            <span>⚙️ Automatique</span>
-            <span>👥 5 places</span>
-            <span>⛽ Diesel</span>
-          </div>
+<div class="tags">
+<span class="tag">⛽ Diesel</span>
+<span class="tag">⚙️ Automatique</span>
+<span class="tag">👥 5 places</span>
+</div>
 
-          <div class="price">
-            À partir de 700 DH <small>/ jour</small>
-          </div>
+<div class="price">
+900 DH <small>/ jour</small>
+</div>
 
-          <a class="reserve-btn"
-             href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20souhaite%20louer%20une%20Volkswagen%20Touareg."
-             target="_blank">
-            📱 Réserver sur WhatsApp
-          </a>
+<a class="whatsapp" target="_blank"
+href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20Mercedes%20Classe%20E.">
+💬 Réserver
+</a>
 
-        </div>
-      </div>
+</div>
+</div>
 
 
-      <!-- CAR 9 -->
+<!-- RANGE SPORT -->
 
-      <div class="car-card" data-type="SUV">
+<div class="card" data-category="Premium">
 
-        <img
-          class="car-image"
-          src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80"
-          alt="Volkswagen T-Roc">
+<img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=900&q=80" alt="Range Rover Sport HSE">
 
-        <div class="car-info">
+<div class="card-content">
 
-          <h3>Volkswagen T-Roc</h3>
+<h3>Range Rover Sport HSE</h3>
 
-          <div class="car-details">
-            <span>⚙️ Automatique</span>
-            <span>👥 5 places</span>
-            <span>⛽ Diesel</span>
-          </div>
+<div class="tags">
+<span class="tag">⛽ Diesel</span>
+<span class="tag">⚙️ Automatique</span>
+<span class="tag">👥 5 places</span>
+</div>
 
-          <div class="price">
-            À partir de 450 DH <small>/ 
+<div class="price">
+1 000 DH <small>/ jour</small>
+</div>
+
+<a class="whatsapp" target="_blank"
+href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20Range%20Rover%20Sport%20HSE.">
+💬 Réserver
+</a>
+
+</div>
+</div>
+
+
+<!-- PORSCHE -->
+
+<div class="card" data-category="Premium">
+
+<img src="https://images.unsplash.com/photo-1625231334168-35067f8853ed?auto=format&fit=crop&w=900&q=80" alt="Porsche Macan">
+
+<div class="card-content">
+
+<h3>Porsche Macan</h3>
+
+<div class="tags">
+<span class="tag">⛽ Essence</span>
+<span class="tag">⚙️ Automatique</span>
+<span class="tag">👥 5 places</span>
+</div>
+
+<div class="price">
+1 000 DH <small>/ jour</small>
+</div>
+
+<a class="whatsapp" target="_blank"
+href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20Porsche%20Macan.">
+💬 Réserver
+</a>
+
+</div>
+</div>
+
+
+<!-- RANGE VOGUE -->
+
+<div class="card" data-category="Premium">
+
+<img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80" alt="Range Rover Vogue">
+
+<div class="card-content">
+
+<h3>Range Rover Vogue</h3>
+
+<div class="tags">
+<span class="tag">⛽ Diesel</span>
+<span class="tag">⚙️ Automatique</span>
+<span class="tag">👥 5 places</span>
+</div>
+
+<div class="price">
+1 200 DH <small>/ jour</small>
+</div>
+
+<a class="whatsapp" target="_blank"
+href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20Range%20Rover%20Vogue.">
+💬 Réserver
+</a>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="title">
+
+<h2>Pourquoi nous choisir ?</h2>
+
+<p>Un service simple, rapide et adapté à vos besoins.</p>
+
+</div>
+
+<div class="services">
+
+<div class="service">
+<div class="icon">🚗</div>
+<h3>Large choix</h3>
+<p>Des voitures citadines, SUV, berlines et premium.</p>
+</div>
+
+<div class="service">
+<div class="icon">📱</div>
+<h3>Réservation facile</h3>
+<p>Contactez-nous directement sur WhatsApp.</p>
+</div>
+
+<div class="service">
+<div class="icon">✈️</div>
+<h3>Aéroports</h3>
+<p>Possibilité de livraison selon disponibilité.</p>
+</div>
+
+<div class="service">
+<div class="icon">🇲🇦</div>
+<h3>Partout au Maroc</h3>
+<p>Plusieurs villes et destinations disponibles.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VILLES -->
+
+<section class="dark-section" id="villes">
+
+<div class="container">
+
+<div class="title">
+
+<h2>Nos destinations</h2>
+
+<p>Nous proposons nos services dans plusieurs villes du Maroc.</p>
+
+</div>
+
+<div class="locations">
+
+<div class="location">📍 Rabat</div>
+<div class="location">📍 Salé</div>
+<div class="location">📍 Casablanca</div>
+<div class="location">📍 Marrakech</div>
+<div class="location">📍 Tanger</div>
+<div class="location">📍 Agadir</div>
+<div class="location">📍 Fès</div>
+<div class="location">📍 Oujda</div>
+
+<div class="location">✈️ Aéroport Rabat-Salé</div>
+<div class="location">✈️ Aéroport Mohammed V</div>
+<div class="location">✈️ Marrakech-Menara</div>
+<div class="location">✈️ Tanger Ibn Battouta</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="apropos">
+
+<div class="container">
+
+<div class="about">
+
+<div>
+
+<img
+src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85"
+alt="Group Noura LLD">
+
+</div>
+
+<div>
+
+<h2>À propos de Group Noura LLD</h2>
+
+<p>
+Group Noura LLD vous accompagne dans vos déplacements
+avec une sélection de voitures adaptées à vos besoins.
+</p>
+
+<p>
+Que ce soit pour un voyage, un déplacement professionnel
+ou quelques jours de vacances, nous vous proposons
+différentes catégories de véhicules.
+</p>
+
+<p>
+Pour connaître la disponibilité et les conditions de location,
+contactez directement notre équipe sur WhatsApp.
+</p>
+
+<a class="btn gold"
+target="_blank"
+href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20souhaite%20avoir%20plus%20d%27informations.">
+Nous contacter
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact">
+
+<h2>Contactez Group Noura LLD</h2>
+
+<p>
+Une question ? Une réservation ?
+Notre équipe est à votre disposition.
+</p>
+
+<div class="phone">
+📞 0773 737 392
+</div>
+
+<a class="big-whatsapp"
+target="_blank"
+href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20souhaite%20faire%20une%20r%C3%A9servation.">
+💬 Réserver sur WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="logo">
+GROUP <span>NOURA</span> LLD
+</div>
+
+<p>Location de voitures au Maroc</p>
+
+<p>📞 0773 737 392</p>
+
+<p>
+© <span id="year"></span> Group Noura LLD - Tous droits réservés.
+</p>
+
+</footer>
+
+
+<!-- FLOATING WHATSAPP -->
+
+<a
+class="float"
+target="_blank"
+href="https://wa.me/212773737392?text=Bonjour%20Group%20Noura%20LLD%2C%20je%20souhaite%20louer%20une%20voiture."
+aria-label="WhatsApp">
+💬
+</a>
+
+
+<script>
+
+function menu(){
+document.getElementById("nav").classList.toggle("open")
+}
+
+const today=new Date().toISOString().split("T")[0];
+
+document.getElementById("depart").min=today;
+document.getElementById("retour").min=today;
+
+document.getElementById("depart").addEventListener("change",function(){
+document.getElementById("retour").min=this.value;
+});
+
+
+function rechercher(){
+
+const category=document.getElementById("categorie").value;
+
+const cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+if(category==="" || card.dataset.category===category){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+document.getElementById("voitures").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+document.getElementById("year").textContent=
+new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
