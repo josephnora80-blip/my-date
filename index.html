@@ -2,13 +2,14 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="مواقيتي - مواقيت الصلاة اليومية حسب مدينتك، مع معرفة الصلاة القادمة والوقت المتبقي.">
-<meta name="keywords" content="مواقيت الصلاة, الصلاة, الأذان, الفجر, الظهر, العصر, المغرب, العشاء, المغرب">
-<meta name="author" content="مواقيتي">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <meta name="theme-color" content="#071a17">
+
+<meta name="description"
+content="مواقيتي - مواقيت الصلاة حسب موقعك أو مدينتك، مع معرفة الصلاة القادمة والوقت المتبقي.">
 
 <title>مواقيتي | مواقيت الصلاة</title>
 
@@ -21,87 +22,157 @@
 }
 
 body{
-    font-family:Tahoma, Arial, sans-serif;
+    font-family:Tahoma,Arial,sans-serif;
+
     background:
-    radial-gradient(circle at top,#123b34 0%,#071a17 45%,#04110f 100%);
-    color:#fff;
+    radial-gradient(
+        circle at top,
+        #17483e 0%,
+        #071a17 45%,
+        #03100e 100%
+    );
+
+    color:white;
+
     min-height:100vh;
 }
 
 .container{
-    width:92%;
+    width:94%;
     max-width:850px;
+
     margin:auto;
-    padding:20px 0 40px;
+
+    padding:15px 0 35px;
 }
+
+/* HEADER */
 
 header{
     text-align:center;
+
     padding:20px 10px 25px;
 }
 
 .logo{
-    width:68px;
-    height:68px;
+    width:70px;
+    height:70px;
+
+    margin:auto;
+    margin-bottom:12px;
+
     border-radius:50%;
-    margin:0 auto 14px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    font-size:32px;
+    font-size:34px;
 
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.15);
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid rgba(255,255,255,.15);
 }
 
 h1{
-    font-size:31px;
+    font-size:30px;
+
     margin-bottom:7px;
 }
 
 .subtitle{
-    color:#b9d1cc;
+    color:#b7ccc7;
+
     font-size:14px;
 }
 
-/* البطاقات */
+/* CARD */
 
 .card{
-    background:rgba(255,255,255,.07);
-    border:1px solid rgba(255,255,255,.12);
+
+    background:
+    rgba(255,255,255,.065);
+
+    border:
+    1px solid rgba(255,255,255,.12);
 
     border-radius:22px;
 
     padding:20px;
-    margin-bottom:17px;
+
+    margin-bottom:16px;
 
     backdrop-filter:blur(12px);
 
-    box-shadow:0 15px 40px rgba(0,0,0,.20);
+    box-shadow:
+    0 15px 40px
+    rgba(0,0,0,.20);
 }
 
-/* اختيار المدينة */
+/* ADVERTISEMENT */
+
+.ad-box{
+
+    min-height:90px;
+
+    margin-bottom:16px;
+
+    border-radius:18px;
+
+    border:
+    1px dashed
+    rgba(214,179,106,.35);
+
+    background:
+    rgba(255,255,255,.025);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:#78938e;
+
+    font-size:12px;
+}
+
+/*
+مكان الإعلان
+
+من بعد يمكن وضع كود Google AdSense هنا
+*/
+
+/* LOCATION */
 
 .location{
+
     display:flex;
+
     gap:10px;
+
     align-items:center;
 }
 
 select{
+
     flex:1;
 
     padding:14px;
 
     border-radius:14px;
 
-    border:1px solid rgba(255,255,255,.15);
+    border:
+    1px solid
+    rgba(255,255,255,.15);
 
     background:#102b27;
 
-    color:#fff;
+    color:white;
 
     font-size:15px;
 
@@ -109,11 +180,12 @@ select{
 }
 
 button{
+
     border:0;
 
     border-radius:14px;
 
-    padding:14px 17px;
+    padding:14px 16px;
 
     background:#d6b36a;
 
@@ -122,165 +194,203 @@ button{
     font-weight:bold;
 
     cursor:pointer;
+
+    transition:.2s;
 }
 
-/* التاريخ */
+button:active{
+
+    transform:scale(.97);
+}
+
+.location-btn{
+
+    width:100%;
+
+    margin-top:12px;
+
+    background:
+    rgba(214,179,106,.15);
+
+    color:#e8c982;
+
+    border:
+    1px solid
+    rgba(214,179,106,.4);
+}
+
+/* LOCATION STATUS */
+
+.location-status{
+
+    text-align:center;
+
+    margin-top:10px;
+
+    color:#9eb9b3;
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+/* DATE */
 
 .date{
+
     text-align:center;
 }
 
 .gregorian{
+
     font-size:18px;
+
     margin-bottom:7px;
 }
 
 .hijri{
+
     color:#d6b36a;
+
     font-size:15px;
 }
 
-/* الساعة */
+/* CLOCK */
+
+.clock-card{
+
+    text-align:center;
+}
 
 .clock{
-    text-align:center;
 
     font-size:43px;
 
     font-weight:bold;
 
     letter-spacing:2px;
-
-    margin:5px 0;
 }
 
-/* الصلاة القادمة */
+/* NEXT PRAYER */
 
 .next{
+
     text-align:center;
 }
 
 .next-label{
-    color:#b9d1cc;
+
+    color:#a9c1bc;
 
     font-size:14px;
 
-    margin-bottom:8px;
+    margin-bottom:7px;
 }
 
 .next-name{
-    font-size:28px;
 
     color:#d6b36a;
+
+    font-size:28px;
 
     font-weight:bold;
 }
 
 .remaining{
-    margin-top:8px;
 
-    font-size:17px;
+    margin-top:9px;
+
+    font-size:16px;
+
+    color:#e8eeee;
 }
 
-/* مواقيت الصلاة */
+/* PRAYERS */
 
 .prayers{
+
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+    repeat(2,1fr);
 
     gap:12px;
 }
 
 .prayer{
+
     padding:18px;
 
     border-radius:18px;
 
-    background:rgba(255,255,255,.06);
+    background:
+    rgba(255,255,255,.055);
 
-    border:1px solid rgba(255,255,255,.08);
+    border:
+    1px solid
+    rgba(255,255,255,.08);
 
     transition:.2s;
 }
 
 .prayer.active{
-    background:rgba(214,179,106,.15);
+
+    background:
+    rgba(214,179,106,.14);
 
     border-color:#d6b36a;
 
-    transform:translateY(-2px);
+    transform:
+    translateY(-2px);
 }
 
 .prayer-top{
+
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
+
+    justify-content:space-between;
 
     margin-bottom:10px;
 }
 
 .prayer-name{
+
     font-size:16px;
 }
 
 .icon{
+
     font-size:20px;
 }
 
 .prayer-time{
+
+    color:#d6b36a;
+
     font-size:25px;
 
     font-weight:bold;
-
-    color:#d6b36a;
 }
 
-/* الإعلانات */
-
-.ad-box{
-    min-height:90px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    border:1px dashed rgba(214,179,106,.35);
-
-    border-radius:18px;
-
-    background:rgba(255,255,255,.035);
-
-    color:#78938e;
-
-    font-size:12px;
-
-    margin-bottom:17px;
-}
-
-.ad-box span{
-    opacity:.8;
-}
-
-/* المعلومات */
+/* INFO */
 
 .info{
-    color:#aac2bd;
+
+    color:#a8c0bb;
 
     font-size:13px;
 
-    line-height:1.8;
+    line-height:1.9;
 
     text-align:center;
 }
 
+/* LOADING */
+
 .loading{
+
     text-align:center;
 
     padding:25px;
@@ -289,6 +399,7 @@ button{
 }
 
 .error{
+
     text-align:center;
 
     color:#ffb4a9;
@@ -296,46 +407,54 @@ button{
     line-height:1.8;
 }
 
+/* FOOTER */
+
 footer{
+
     text-align:center;
 
-    color:#718d87;
+    color:#708983;
 
     font-size:12px;
 
-    padding-top:10px;
+    padding-top:5px;
 }
 
-/* الهاتف */
+/* MOBILE */
 
 @media(max-width:500px){
 
     .container{
-        width:94%;
 
-        padding-top:10px;
+        width:94%;
     }
 
     h1{
+
         font-size:27px;
     }
 
     .clock{
+
         font-size:36px;
     }
 
-    .prayers{
-        grid-template-columns:1fr;
-    }
-
     .location{
+
         flex-direction:column;
     }
 
     select,
-    button{
+    .location button{
+
         width:100%;
     }
+
+    .prayers{
+
+        grid-template-columns:1fr;
+    }
+
 }
 
 </style>
@@ -346,6 +465,8 @@ footer{
 
 <div class="container">
 
+
+<!-- HEADER -->
 
 <header>
 
@@ -364,22 +485,16 @@ footer{
 </header>
 
 
-<!-- الإعلان رقم 1 -->
+<!-- AD 1 -->
 
 <div class="ad-box">
 
-    <span>
-        مساحة إعلانية
-    </span>
-
-    <!--
-    ضع كود Google AdSense هنا مستقبلاً
-    -->
+    مساحة إعلانية
 
 </div>
 
 
-<!-- اختيار المدينة -->
+<!-- LOCATION -->
 
 <div class="card">
 
@@ -446,7 +561,8 @@ footer{
         </select>
 
 
-        <button onclick="loadPrayerTimes()">
+        <button
+            onclick="loadPrayerTimes()">
 
             تحديث المواقيت
 
@@ -454,16 +570,34 @@ footer{
 
     </div>
 
+
+    <button
+        class="location-btn"
+        onclick="detectLocation()">
+
+        📍 تحديد موقعي تلقائياً
+
+    </button>
+
+
+    <div
+        id="locationStatus"
+        class="location-status">
+
+        يمكنك تحديد موقعك للحصول على مواقيت أقرب إليك.
+
+    </div>
+
 </div>
 
 
-<!-- التاريخ -->
+<!-- DATE -->
 
 <div class="card date">
 
     <div
-        class="gregorian"
-        id="gregorian">
+        id="gregorian"
+        class="gregorian">
 
         جاري التحميل...
 
@@ -471,8 +605,8 @@ footer{
 
 
     <div
-        class="hijri"
-        id="hijri">
+        id="hijri"
+        class="hijri">
 
         ...
 
@@ -481,13 +615,13 @@ footer{
 </div>
 
 
-<!-- الساعة -->
+<!-- CLOCK -->
 
-<div class="card">
+<div class="card clock-card">
 
     <div
-        class="clock"
-        id="clock">
+        id="clock"
+        class="clock">
 
         00:00:00
 
@@ -496,22 +630,16 @@ footer{
 </div>
 
 
-<!-- الإعلان رقم 2 -->
+<!-- AD 2 -->
 
 <div class="ad-box">
 
-    <span>
-        مساحة إعلانية
-    </span>
-
-    <!--
-    ضع كود Google AdSense هنا مستقبلاً
-    -->
+    مساحة إعلانية
 
 </div>
 
 
-<!-- الصلاة القادمة -->
+<!-- NEXT PRAYER -->
 
 <div class="card next">
 
@@ -523,8 +651,8 @@ footer{
 
 
     <div
-        class="next-name"
-        id="nextName">
+        id="nextName"
+        class="next-name">
 
         ...
 
@@ -532,8 +660,8 @@ footer{
 
 
     <div
-        class="remaining"
-        id="remaining">
+        id="remaining"
+        class="remaining">
 
         جاري الحساب...
 
@@ -542,7 +670,7 @@ footer{
 </div>
 
 
-<!-- مواقيت الصلاة -->
+<!-- PRAYER TIMES -->
 
 <div class="card">
 
@@ -557,27 +685,23 @@ footer{
 </div>
 
 
-<!-- الإعلان رقم 3 -->
+<!-- AD 3 -->
 
 <div class="ad-box">
 
-    <span>
-        مساحة إعلانية
-    </span>
-
-    <!--
-    ضع كود Google AdSense هنا مستقبلاً
-    -->
+    مساحة إعلانية
 
 </div>
 
 
-<!-- معلومات -->
+<!-- INFO -->
 
 <div class="card info">
 
-    مواقيت الصلاة المعروضة تقريبية حسب طريقة الحساب المعتمدة،
-    وقد تختلف دقائق قليلة حسب الموقع وطريقة الحساب المحلية.
+    مواقيتي يساعدك على معرفة مواقيت الصلاة اليومية
+    حسب مدينتك أو موقعك الحالي.
+    قد تختلف المواقيت ببضع دقائق حسب طريقة الحساب
+    والموقع الجغرافي.
 
 </div>
 
@@ -614,7 +738,7 @@ const prayerNames = {
 };
 
 
-/* الرموز */
+/* أيقونات */
 
 const prayerIcons = {
 
@@ -636,41 +760,35 @@ const prayerIcons = {
 let timings = {};
 
 
-/* تحويل الوقت */
-
-function formatTime(time){
-
-    if(!time){
-
-        return "--:--";
-
-    }
-
-    return time.substring(0,5);
-
-}
-
-
-/* الساعة الحالية */
+/* الساعة */
 
 function updateClock(){
 
-    const now = new Date();
+    const now =
+        new Date();
 
 
     const h =
-        String(now.getHours()).padStart(2,"0");
+        String(
+            now.getHours()
+        ).padStart(2,"0");
 
 
     const m =
-        String(now.getMinutes()).padStart(2,"0");
+        String(
+            now.getMinutes()
+        ).padStart(2,"0");
 
 
     const s =
-        String(now.getSeconds()).padStart(2,"0");
+        String(
+            now.getSeconds()
+        ).padStart(2,"0");
 
 
-    document.getElementById("clock").textContent =
+    document
+        .getElementById("clock")
+        .textContent =
         `${h}:${m}:${s}`;
 
 
@@ -679,11 +797,12 @@ function updateClock(){
 }
 
 
-/* تحويل توقيت الصلاة إلى Date */
+/* وقت الصلاة */
 
 function getTodayPrayer(name){
 
-    const value = timings[name];
+    const value =
+        timings[name];
 
 
     if(!value){
@@ -694,10 +813,13 @@ function getTodayPrayer(name){
 
 
     const parts =
-        value.split(":").map(Number);
+        value
+        .split(":")
+        .map(Number);
 
 
-    const date = new Date();
+    const date =
+        new Date();
 
 
     date.setHours(
@@ -713,7 +835,7 @@ function getTodayPrayer(name){
 }
 
 
-/* معرفة الصلاة القادمة */
+/* الصلاة القادمة */
 
 function updateNextPrayer(){
 
@@ -724,7 +846,8 @@ function updateNextPrayer(){
     }
 
 
-    const now = new Date();
+    const now =
+        new Date();
 
 
     const order = [
@@ -743,13 +866,18 @@ function updateNextPrayer(){
     let nextTime = null;
 
 
-    for(const name of order){
+    for(
+        const name of order
+    ){
 
         const time =
             getTodayPrayer(name);
 
 
-        if(time && time > now){
+        if(
+            time &&
+            time > now
+        ){
 
             next = name;
 
@@ -762,7 +890,7 @@ function updateNextPrayer(){
     }
 
 
-    /* إذا سالات صلاة العشاء، القادمة هي فجر الغد */
+    /* فجر الغد */
 
     if(!next){
 
@@ -784,7 +912,9 @@ function updateNextPrayer(){
     }
 
 
-    document.getElementById("nextName").textContent =
+    document
+        .getElementById("nextName")
+        .textContent =
         prayerNames[next];
 
 
@@ -803,23 +933,30 @@ function updateNextPrayer(){
 
         const hours =
             Math.floor(
-                difference / 3600000
+                difference /
+                3600000
             );
 
 
         const minutes =
             Math.floor(
-                (difference % 3600000) / 60000
+                (difference %
+                3600000) /
+                60000
             );
 
 
         const seconds =
             Math.floor(
-                (difference % 60000) / 1000
+                (difference %
+                60000) /
+                1000
             );
 
 
-        document.getElementById("remaining").textContent =
+        document
+            .getElementById("remaining")
+            .textContent =
 
             `متبقي ${hours} ساعة و ${minutes} دقيقة و ${seconds} ثانية`;
 
@@ -831,7 +968,7 @@ function updateNextPrayer(){
 }
 
 
-/* تمييز الصلاة القادمة */
+/* تمييز الصلاة */
 
 function highlightPrayer(next){
 
@@ -839,12 +976,18 @@ function highlightPrayer(next){
         .querySelectorAll(".prayer")
         .forEach(el => {
 
-            el.classList.remove("active");
+            el.classList.remove(
+                "active"
+            );
 
 
-            if(el.dataset.name === next){
+            if(
+                el.dataset.name === next
+            ){
 
-                el.classList.add("active");
+                el.classList.add(
+                    "active"
+                );
 
             }
 
@@ -853,12 +996,14 @@ function highlightPrayer(next){
 }
 
 
-/* عرض مواقيت الصلاة */
+/* عرض المواقيت */
 
 function displayPrayers(){
 
     const list =
-        document.getElementById("prayerList");
+        document.getElementById(
+            "prayerList"
+        );
 
 
     const order = [
@@ -873,22 +1018,28 @@ function displayPrayers(){
     ];
 
 
-    list.className = "prayers";
+    list.className =
+        "prayers";
 
 
-    list.innerHTML = "";
+    list.innerHTML =
+        "";
 
 
     order.forEach(name => {
 
         const div =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
 
-        div.className = "prayer";
+        div.className =
+            "prayer";
 
 
-        div.dataset.name = name;
+        div.dataset.name =
+            name;
 
 
         div.innerHTML = `
@@ -901,7 +1052,6 @@ function displayPrayers(){
 
                 </span>
 
-
                 <span class="icon">
 
                     ${prayerIcons[name]}
@@ -910,10 +1060,11 @@ function displayPrayers(){
 
             </div>
 
-
             <div class="prayer-time">
 
-                ${formatTime(timings[name])}
+                ${formatTime(
+                    timings[name]
+                )}
 
             </div>
 
@@ -927,50 +1078,79 @@ function displayPrayers(){
 }
 
 
+/* تنسيق الوقت */
+
+function formatTime(time){
+
+    if(!time){
+
+        return "--:--";
+
+    }
+
+
+    return time.substring(0,5);
+
+}
+
+
 /* التاريخ */
 
 function updateDate(data){
 
     if(
-        data &&
-        data.date
+        !data ||
+        !data.date
     ){
 
-        const gregorian =
-            data.date.gregorian;
-
-
-        const hijri =
-            data.date.hijri;
-
-
-        document.getElementById("gregorian").textContent =
-
-            `${gregorian.day} ${gregorian.month.en} ${gregorian.year}`;
-
-
-        document.getElementById("hijri").textContent =
-
-            `${hijri.day} ${hijri.month.ar} ${hijri.year} هـ`;
+        return;
 
     }
+
+
+    const gregorian =
+        data.date.gregorian;
+
+
+    const hijri =
+        data.date.hijri;
+
+
+    document
+        .getElementById("gregorian")
+        .textContent =
+
+        `${gregorian.day} ${gregorian.month.en} ${gregorian.year}`;
+
+
+    document
+        .getElementById("hijri")
+        .textContent =
+
+        `${hijri.day} ${hijri.month.ar} ${hijri.year} هـ`;
 
 }
 
 
-/* تحميل المواقيت */
+/* تحميل المواقيت حسب المدينة */
 
 async function loadPrayerTimes(){
 
     const city =
-        document.getElementById("city").value;
+        document
+        .getElementById("city")
+        .value;
 
 
     const list =
-        document.getElementById("prayerList");
+        document
+        .getElementById(
+            "prayerList"
+        );
 
 
-    list.className = "loading";
+    list.className =
+        "loading";
 
 
     list.textContent =
@@ -978,7 +1158,6 @@ async function loadPrayerTimes(){
 
 
     try{
-
 
         const url =
 
@@ -1002,7 +1181,9 @@ async function loadPrayerTimes(){
             await response.json();
 
 
-        if(result.code !== 200){
+        if(
+            result.code !== 200
+        ){
 
             throw new Error(
                 "API error"
@@ -1026,8 +1207,15 @@ async function loadPrayerTimes(){
         updateNextPrayer();
 
 
-    }catch(error){
+        document
+            .getElementById(
+                "locationStatus"
+            )
+            .textContent =
+            `📍 مواقيت ${city} محدثة بنجاح`;
 
+
+    }catch(error){
 
         list.className =
             "error";
@@ -1039,12 +1227,223 @@ async function loadPrayerTimes(){
 
             <br>
 
-            تأكد من اتصال الهاتف بالإنترنت
-            ثم حاول مرة أخرى.
+            تأكد من اتصالك بالإنترنت
+            وحاول مرة أخرى.
 
         `;
 
     }
+
+}
+
+
+/* تحديد الموقع */
+
+function detectLocation(){
+
+    const status =
+        document.getElementById(
+            "locationStatus"
+        );
+
+
+    if(!navigator.geolocation){
+
+        status.textContent =
+            "❌ المتصفح ديالك لا يدعم تحديد الموقع.";
+
+        return;
+
+    }
+
+
+    status.textContent =
+        "📍 جاري تحديد موقعك...";
+
+
+    navigator.geolocation.getCurrentPosition(
+
+        async function(position){
+
+            const latitude =
+                position.coords.latitude;
+
+
+            const longitude =
+                position.coords.longitude;
+
+
+            try{
+
+                const url =
+
+                `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=ar`;
+
+
+                const response =
+                    await fetch(url);
+
+
+                const data =
+                    await response.json();
+
+
+                const city =
+                    data.city ||
+                    data.locality ||
+                    data.principalSubdivision;
+
+
+                if(!city){
+
+                    throw new Error(
+                        "City not found"
+                    );
+
+                }
+
+
+                const cityMap = {
+
+                    "Rabat":"Rabat",
+                    "الرباط":"Rabat",
+
+                    "Salé":"Sale",
+                    "سلا":"Sale",
+
+                    "Casablanca":"Casablanca",
+                    "الدار البيضاء":"Casablanca",
+
+                    "Fès":"Fes",
+                    "فاس":"Fes",
+
+                    "Marrakesh":"Marrakesh",
+                    "Marrakech":"Marrakesh",
+                    "مراكش":"Marrakesh",
+
+                    "Tangier":"Tangier",
+                    "طنجة":"Tangier",
+
+                    "Meknes":"Meknes",
+                    "مكناس":"Meknes",
+
+                    "Agadir":"Agadir",
+                    "أكادير":"Agadir",
+
+                    "Oujda":"Oujda",
+                    "وجدة":"Oujda",
+
+                    "Kenitra":"Kenitra",
+                    "القنيطرة":"Kenitra",
+
+                    "Tetouan":"Tetouan",
+                    "تطوان":"Tetouan",
+
+                    "El Jadida":"El Jadida",
+                    "الجديدة":"El Jadida",
+
+                    "Beni Mellal":"Beni Mellal",
+                    "بني ملال":"Beni Mellal",
+
+                    "Nador":"Nador",
+                    "الناظور":"Nador"
+
+                };
+
+
+                const apiCity =
+                    cityMap[city] ||
+                    city;
+
+
+                const select =
+                    document.getElementById(
+                        "city"
+                    );
+
+
+                let found = false;
+
+
+                for(
+                    let i=0;
+                    i<select.options.length;
+                    i++
+                ){
+
+                    if(
+                        select.options[i].value
+                        .toLowerCase()
+                        ===
+                        apiCity.toLowerCase()
+                    ){
+
+                        select.selectedIndex =
+                            i;
+
+                        found = true;
+
+                        break;
+
+                    }
+
+                }
+
+
+                if(found){
+
+                    await loadPrayerTimes();
+
+
+                    status.textContent =
+                        `📍 تم تحديد موقعك: ${city}`;
+
+                }else{
+
+                    status.textContent =
+                        `📍 موقعك هو ${city}. اختار المدينة يدوياً من القائمة للحصول على المواقيت.`;
+
+                }
+
+
+            }catch(error){
+
+                status.textContent =
+                    "⚠️ تعذر معرفة المدينة. يمكنك اختيارها يدوياً.";
+
+            }
+
+        },
+
+
+        function(error){
+
+            if(
+                error.code === 1
+            ){
+
+                status.textContent =
+                    "⚠️ خاصك تسمح للموقع بالوصول إلى موقعك.";
+
+            }else{
+
+                status.textContent =
+                    "⚠️ تعذر تحديد موقعك. حاول مرة أخرى.";
+
+            }
+
+        },
+
+        {
+            enableHighAccuracy:true,
+
+            timeout:10000,
+
+            maximumAge:300000
+
+        }
+
+    );
 
 }
 
@@ -1070,7 +1469,7 @@ setInterval(
 );
 
 
-/* تحميل المواقيت */
+/* تحميل المواقيت الافتراضية */
 
 loadPrayerTimes();
 
